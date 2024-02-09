@@ -1,0 +1,954 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# abuyop <abuyop@gmail.com>, 2016-2019
+msgid ""
+msgstr ""
+"Project-Id-Version: Deepin Desktop Environment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-19 15:46+0800\n"
+"PO-Revision-Date: 2019-04-22 07:32+0000\n"
+"Last-Translator: abuyop <abuyop@gmail.com>\n"
+"Language-Team: Malay (http://www.transifex.com/linuxdeepin/deepin-desktop-environment/language/ms/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ms\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../accounts/checkers/password.go:54
+msgid "Please enter a password not less than 8 characters"
+msgstr "Sila masukkan kata aluan tidak kurang dari 8 aksara panjangnya"
+
+#: ../../accounts/checkers/password.go:56
+msgid ""
+"The password must contain English letters (case-sensitive), numbers or "
+"special symbols (~!@#$%^&*()[]{}\\|/?,.<>)"
+msgstr "Kata laluan mesti mengandungi abjad Bahasa Inggeris (sensitif-kata), nombor atau simbol khas (~!@#$%^&*()[]{}\\|/?,.<>)"
+
+#: ../../accounts/checkers/username.go:60
+msgid "Username cannot be empty"
+msgstr "Nama pengguna tidak boleh kosong"
+
+#: ../../accounts/checkers/username.go:62
+msgid "Username must comprise a~z, 0~9, - or _"
+msgstr "Nama pengguna mesti mengandungi a~z, 0~9, - atau _"
+
+#: ../../accounts/checkers/username.go:64
+msgid "The first character must be in lower case"
+msgstr "Aksara pertama mesti berhuruf kecil"
+
+#: ../../accounts/checkers/username.go:66
+msgid "The username exists"
+msgstr "Nama pengguna sudah wujud"
+
+#: ../../accounts/checkers/username.go:68
+msgid "The username has been used by system"
+msgstr "Nama pengguna telah digunakan oleh sistem"
+
+#: ../../accounts/checkers/username.go:70
+msgid "The username's length exceeds the limit"
+msgstr "Panjang nama pengguna melebihi had"
+
+#: ../../appearance/scale.go:61
+msgid "Set successfully"
+msgstr "Berjaya ditetapkan"
+
+#: ../../appearance/scale.go:62
+msgid "Please log back in to view the changes"
+msgstr "Sila daftar masuk kembali untuk melihat perubahan yang berlaku"
+
+#: ../../appearance/scale.go:66
+msgid "Display scaling"
+msgstr "Penskalaan paparan"
+
+#: ../../appearance/scale.go:67
+msgid "Setting display scaling"
+msgstr "Menetapkan penskalaan paparan"
+
+#: ../../bin/dde-authority/fprint_transaction.go:20
+msgid "Fingerprint verification failed"
+msgstr "Pengecaman cap jari gagal"
+
+#: ../../bin/dde-authority/fprint_transaction.go:21
+msgid "Fingerprint verification timed out"
+msgstr "Pengecaman cap jari telah tamat masa"
+
+#: ../../bluetooth/bluez_profile.go:29
+msgid "Serial port"
+msgstr "Port serial"
+
+#: ../../bluetooth/bluez_profile.go:30
+msgid "Dial-Up networking"
+msgstr "Perangkaian dailan"
+
+#: ../../bluetooth/bluez_profile.go:31
+msgid "Hands-Free device"
+msgstr "Peranti Bebas-Tangan"
+
+#: ../../bluetooth/bluez_profile.go:32
+msgid "Hands-Free voice gateway"
+msgstr "Get laluan suara Bebas-Tangan"
+
+#: ../../bluetooth/bluez_profile.go:33
+msgid "Headset voice gateway"
+msgstr "Get laluan suara set kepala"
+
+#: ../../bluetooth/bluez_profile.go:34
+msgid "Object push"
+msgstr "Tolak objek"
+
+#: ../../bluetooth/bluez_profile.go:35
+msgid "File transfer"
+msgstr "Pemindahan fail"
+
+#: ../../bluetooth/bluez_profile.go:36
+msgid "Synchronization"
+msgstr "Penyegerakan"
+
+#: ../../bluetooth/bluez_profile.go:37
+msgid "Phone book access"
+msgstr "Capaian buku telefon"
+
+#: ../../bluetooth/bluez_profile.go:38
+msgid "Phone book access client"
+msgstr "Klien capaian buku telefon"
+
+#: ../../bluetooth/bluez_profile.go:39
+msgid "Message access"
+msgstr "Capaian mesej"
+
+#: ../../bluetooth/bluez_profile.go:40
+msgid "Message notification"
+msgstr "Pemberitahuan mesej"
+
+#: ../../bluetooth/utils_notify.go:52 ../../network/utils_notify.go:107
+msgid "Connected"
+msgstr "Bersambung"
+
+#: ../../bluetooth/utils_notify.go:55 ../../network/utils_notify.go:80
+#: ../../network/utils_notify.go:84 ../../network/utils_notify.go:88
+#: ../../network/utils_notify.go:92 ../../network/utils_notify.go:110
+#: ../../network/utils_notify.go:113 ../../network/utils_notify.go:202
+msgid "Disconnected"
+msgstr "Terputus"
+
+#: ../../bluetooth/utils_notify.go:59
+msgid "Make sure %q is turned on and in range"
+msgstr "Pastikan %q dihidupkan dan berada dalam julat"
+
+#: ../../bluetooth/utils_notify.go:64
+msgid "Failed to connect %q, pairing failed"
+msgstr "Gagal menyambung dengan %q, perpasangan gagal"
+
+#: ../../bluetooth/utils_notify.go:69
+msgid "Bluetooth connection failed"
+msgstr "Sambungan Bluetooth telah gagal"
+
+#: ../../dock/app_entry_menu.go:100
+msgid "_Open"
+msgstr "_Buka"
+
+#: ../../dock/app_entry_menu.go:107
+msgid "_Close All"
+msgstr "_Tutup Semua"
+
+#: ../../dock/app_entry_menu.go:128
+msgid "_Force Quit"
+msgstr "_Paksa Keluar"
+
+#: ../../dock/app_entry_menu.go:135
+msgid "_Dock"
+msgstr "_Labuh"
+
+#: ../../dock/app_entry_menu.go:142
+msgid "_Undock"
+msgstr "_Nyahlabuh"
+
+#: ../../dock/app_entry_menu.go:149
+msgid "_All windows"
+msgstr "Semu_a tetingkap"
+
+#: ../../housekeeping/init.go:90
+msgid "Insufficient disk space, please clean up in time!"
+msgstr "Ruang Cakera Tidak Mencukupi, sila bersihkan mengikut masa!"
+
+#: ../../keybinding/shortcuts/id_name_map.go:28
+msgid "Launcher"
+msgstr "Pelancar"
+
+#: ../../keybinding/shortcuts/id_name_map.go:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../../keybinding/shortcuts/id_name_map.go:30
+msgid "Deepin Screen Recorder"
+msgstr "Perakam Skrin Deepin"
+
+#: ../../keybinding/shortcuts/id_name_map.go:31
+msgid "Lock screen"
+msgstr "Kunci skrin"
+
+#: ../../keybinding/shortcuts/id_name_map.go:32
+msgid "Show/Hide the dock"
+msgstr "Tunjuk/Sembunyi labuh"
+
+#: ../../keybinding/shortcuts/id_name_map.go:33
+msgid "Shutdown interface"
+msgstr "Antaramuka Matikan Komputer"
+
+#: ../../keybinding/shortcuts/id_name_map.go:34
+msgid "Terminal Quake Window"
+msgstr "Tetingkap Terminal Quake"
+
+#: ../../keybinding/shortcuts/id_name_map.go:35
+msgid "Screenshot"
+msgstr "Cekupan skrin"
+
+#: ../../keybinding/shortcuts/id_name_map.go:36
+msgid "Full screenshot"
+msgstr "Cekupan skrin penuh"
+
+#: ../../keybinding/shortcuts/id_name_map.go:37
+msgid "Window screenshot"
+msgstr "Cekupan skrin bertetingkap"
+
+#: ../../keybinding/shortcuts/id_name_map.go:38
+msgid "Delay screenshot"
+msgstr "Lengah cekupan skrin"
+
+#: ../../keybinding/shortcuts/id_name_map.go:39
+msgid "File manager"
+msgstr "Pengurus fail"
+
+#: ../../keybinding/shortcuts/id_name_map.go:40
+msgid "Disable Touchpad"
+msgstr "Lumpuhkan Pad Sentuh"
+
+#: ../../keybinding/shortcuts/id_name_map.go:41
+msgid "Switch window effects"
+msgstr "Tukar kesan tetingkap"
+
+#: ../../keybinding/shortcuts/id_name_map.go:42
+msgid "Fast Screen Off"
+msgstr "Skrin Pantas Mati"
+
+#: ../../keybinding/shortcuts/id_name_map.go:43
+msgid "Deepin System Monitor"
+msgstr "Pemantau Sistem Deepin"
+
+#: ../../keybinding/shortcuts/id_name_map.go:44
+msgid "Deepin Picker"
+msgstr "Pemilih Deepin"
+
+#: ../../keybinding/shortcuts/id_name_map.go:51
+msgid "Switch Layout"
+msgstr "Tukar Bentangan"
+
+#: ../../keybinding/shortcuts/id_name_map.go:70
+msgid "Switch to left workspace"
+msgstr "Tukar ke ruang kerja kiri"
+
+#: ../../keybinding/shortcuts/id_name_map.go:71
+msgid "Switch to right workspace"
+msgstr "Tukar ke ruang kerja kanan"
+
+#: ../../keybinding/shortcuts/id_name_map.go:72
+msgid "Switch to upper workspace"
+msgstr "Tukar ke ruang kerja atas"
+
+#: ../../keybinding/shortcuts/id_name_map.go:73
+msgid "Switch to lower workspace"
+msgstr "Tukar ke ruang kerja bawah"
+
+#: ../../keybinding/shortcuts/id_name_map.go:75
+msgid "Switch similar windows"
+msgstr "Tukar tetingkap yang serupa"
+
+#: ../../keybinding/shortcuts/id_name_map.go:76
+msgid "Switch similar windows in reverse"
+msgstr "Tukar tetingkap yang serupa secara songsang"
+
+#: ../../keybinding/shortcuts/id_name_map.go:77
+msgid "Switch windows"
+msgstr "Tukar tetingkap"
+
+#: ../../keybinding/shortcuts/id_name_map.go:78
+msgid "Switch windows in reverse"
+msgstr "Tukar tetingkap secara songsang"
+
+#: ../../keybinding/shortcuts/id_name_map.go:89
+msgid "Show desktop"
+msgstr "Tunjuk desktop"
+
+#: ../../keybinding/shortcuts/id_name_map.go:98
+msgid "Maximize window"
+msgstr "Maksimumkan tetingkap"
+
+#: ../../keybinding/shortcuts/id_name_map.go:99
+msgid "Restore window"
+msgstr "Pulih tetingkap"
+
+#: ../../keybinding/shortcuts/id_name_map.go:101
+msgid "Minimize window"
+msgstr "Minimumkan tetingkap"
+
+#: ../../keybinding/shortcuts/id_name_map.go:102
+msgid "Close window"
+msgstr "Tutup tetingkap"
+
+#: ../../keybinding/shortcuts/id_name_map.go:103
+msgid "Move window"
+msgstr "Alih tetingkap"
+
+#: ../../keybinding/shortcuts/id_name_map.go:104
+msgid "Resize window"
+msgstr "Saiz semula tetingkap"
+
+#: ../../keybinding/shortcuts/id_name_map.go:119
+msgid "Move to left workspace"
+msgstr "Alih ke ruang kerja kiri"
+
+#: ../../keybinding/shortcuts/id_name_map.go:120
+msgid "Move to right workspace"
+msgstr "Alih ke ruang kerja kanan"
+
+#: ../../keybinding/shortcuts/id_name_map.go:121
+msgid "Move to upper workspace"
+msgstr "Alih ke ruang kerja aras"
+
+#: ../../keybinding/shortcuts/id_name_map.go:122
+msgid "Move to lower workspace"
+msgstr "Alih ke ruang kerja bawah"
+
+#: ../../keybinding/shortcuts/id_name_map.go:144
+msgid "Display windows of all workspaces"
+msgstr "Papar tetingkap pada semua ruang kerja"
+
+#: ../../keybinding/shortcuts/id_name_map.go:145
+msgid "Display windows of current workspace"
+msgstr "Papar tetingkap pada ruang kerja semasa"
+
+#: ../../keybinding/shortcuts/id_name_map.go:146
+msgid "Display workspace"
+msgstr "Papar ruang kerja"
+
+#: ../../langselector/locale.go:61
+msgid "Authentication is required to switch language"
+msgstr "Pengesahihan diperlukan untuk mengubah bahasa"
+
+#: ../../langselector/locale.go:354
+msgid "Failed to change system language, please try later"
+msgstr "Gagal mengubah bahasa sistem, sila cuba lagi kemudian..."
+
+#: ../../langselector/locale.go:378
+msgid ""
+"Changing system language and installing the required language packages, "
+"please wait..."
+msgstr "Mengubah bahasa sistem dan  memasang pakej bahasa yang diperlukan, tunggu sebentar..."
+
+#: ../../langselector/locale.go:381
+msgid "Changing system language, please wait..."
+msgstr "Mengubah bahasa sistem, tunggu sebentar..."
+
+#: ../../langselector/locale.go:429
+msgid "System language changed, please log out and then log in"
+msgstr "Bahasa sistem telah diubah, sila daftar keluar kemudian daftar masuk"
+
+#: ../../lastore/check_source.go:51
+msgid "Restore"
+msgstr "Pulih"
+
+#: ../../lastore/check_source.go:70 ../../lastore/lastore.go:248
+msgid "Cancel"
+msgstr "Batal"
+
+#: ../../lastore/lastore.go:240
+msgid "Retry"
+msgstr "Cuba lagi"
+
+#: ../../lastore/notify.go:82
+msgid "%q installed successfully."
+msgstr "%q berjaya dipasangkan."
+
+#: ../../lastore/notify.go:85
+msgid "%q failed to install."
+msgstr "%q gagal dipasangkan."
+
+#: ../../lastore/notify.go:93
+msgid "%q removed successfully."
+msgstr "%q berjaya dibuang."
+
+#: ../../lastore/notify.go:95
+msgid "%q failed to remove."
+msgstr "%q gagal dibuang."
+
+#: ../../lastore/notify.go:102
+msgid ""
+"In order to prevent automatic shutdown, please plug in for normal update."
+msgstr "Untuk menghindari komputer dimatikan secara automatik, sila palamkan bagi kemaskini biasa."
+
+#: ../../lastore/notify.go:107
+msgid "Package cache wiped"
+msgstr "Cache pakej disapu bersih"
+
+#: ../../lastore/notify.go:112
+msgid ""
+"Your system source has been modified, please restore to official source for "
+"your normal use"
+msgstr "Sumber sistem anda telah diubahsuai, sila pulihkan dengan sumber rasmi untuk kegunaan biasa anda"
+
+#: ../../launcher/manager_uninstall.go:69
+msgid "%q removed successfully"
+msgstr "%q berjaya dibuang"
+
+#: ../../launcher/manager_uninstall.go:71
+msgid "Failed to uninstall %q"
+msgstr "Gagal menyahpasang %q"
+
+#: ../../network/manager_active_conn.go:318
+msgid "A (5 GHz)"
+msgstr "A (5 GHz)"
+
+#: ../../network/manager_active_conn.go:320
+msgid "BG (2.4 GHz)"
+msgstr "BG (2.4 GHz)"
+
+#: ../../network/manager_active_conn.go:322
+msgid "Automatic"
+msgstr "Automatik"
+
+#: ../../network/manager_active_conn.go:333
+#: ../../network/manager_active_conn.go:338
+msgid "None"
+msgstr "Tiada"
+
+#: ../../network/manager_active_conn.go:340
+msgid "WEP 40/128-bit Key"
+msgstr "Kunci WEP 40/128-bit"
+
+#: ../../network/manager_active_conn.go:342
+msgid "WPA/WPA2 Personal"
+msgstr "WPA/WPA2 Persendirian"
+
+#: ../../network/manager_active_conn.go:350
+msgid "TLS"
+msgstr "TLS"
+
+#: ../../network/manager_active_conn.go:352
+msgid "MD5"
+msgstr "MD5"
+
+#: ../../network/manager_active_conn.go:354
+msgid "LEAP"
+msgstr "LEAP"
+
+#: ../../network/manager_active_conn.go:356
+msgid "FAST"
+msgstr "FAST"
+
+#: ../../network/manager_active_conn.go:358
+msgid "Tunneled TLS"
+msgstr "TLS Berterowong"
+
+#: ../../network/manager_active_conn.go:360
+msgid "Protected EAP"
+msgstr "EAP Terlindung"
+
+#: ../../network/manager_connection.go:278 ../../network/nm_custom_type.go:225
+msgid "Wired Connection"
+msgstr "Sambungan Berwayar"
+
+#: ../../network/nm_custom_type.go:223
+msgid "Connection"
+msgstr "Sambungan"
+
+#: ../../network/nm_custom_type.go:227
+msgid "Wireless Connection"
+msgstr "Sambungan Tanpa Wayar"
+
+#: ../../network/nm_custom_type.go:229
+msgid "Wireless Ad-Hoc"
+msgstr "Ad-Hoc Tanpa Wayar"
+
+#: ../../network/nm_custom_type.go:231
+msgid "Wireless Ap-Hotspot"
+msgstr "Kawasan-Khas-AP Tanpa Wayar"
+
+#: ../../network/nm_custom_type.go:233
+msgid "PPPoE Connection"
+msgstr "Sambungan PPPoE"
+
+#: ../../network/nm_custom_type.go:235
+msgid "Mobile Connection"
+msgstr "Sambungan Mudah Alih"
+
+#: ../../network/nm_custom_type.go:237
+msgid "Mobile GSM Connection"
+msgstr "Sambungan GSM Mudah Alih"
+
+#: ../../network/nm_custom_type.go:239
+msgid "Mobile CDMA Connection"
+msgstr "Sambungan CDMA Mudah Alih"
+
+#: ../../network/nm_custom_type.go:241
+msgid "VPN Connection"
+msgstr "Sambungan VPN"
+
+#: ../../network/nm_custom_type.go:243
+msgid "VPN L2TP"
+msgstr "L2TP VPN"
+
+#: ../../network/nm_custom_type.go:245
+msgid "VPN OpenConnect"
+msgstr "OpenConnect VPN"
+
+#: ../../network/nm_custom_type.go:247
+msgid "VPN OpenVPN"
+msgstr "OpenVPN VPN"
+
+#: ../../network/nm_custom_type.go:249
+msgid "VPN PPTP"
+msgstr "PPTP VPN"
+
+#: ../../network/nm_custom_type.go:251
+msgid "VPN StrongSwan"
+msgstr "VPN StrongSwan"
+
+#: ../../network/nm_custom_type.go:253
+msgid "VPN VPNC"
+msgstr "VPNC VPN"
+
+#: ../../network/state_handler.go:39
+msgid "Device state changed"
+msgstr "Keadaan peranti berubah"
+
+#: ../../network/state_handler.go:40
+msgid "Device state changed, reason unknown"
+msgstr "Keadaan peranti berubah, sebab tidak diketahui"
+
+#: ../../network/state_handler.go:41
+msgid "The device is now managed"
+msgstr "Peranti kini diurus"
+
+#: ../../network/state_handler.go:42
+msgid "The device is no longer managed"
+msgstr "Peranti tidak lagi diurus"
+
+#: ../../network/state_handler.go:43
+msgid "The device has not been ready for configuration"
+msgstr "Peranti belum bersedia untuk konfigurasi"
+
+#: ../../network/state_handler.go:44
+msgid ""
+"IP configuration could not be reserved (no available address, timeout, etc)"
+msgstr "Konfigurasi IP tidak dapat disimpan (tiada alamat, had masa tamat, dan lain-lain)"
+
+#: ../../network/state_handler.go:45
+msgid "The IP configuration is no longer valid"
+msgstr "Konfigurasi IP tidak lagi sah"
+
+#: ../../network/state_handler.go:46
+msgid "Passwords were required but not provided"
+msgstr "Kata laluan diperlukan tetapi tidak disediakan"
+
+#: ../../network/state_handler.go:47
+msgid ""
+"The 802.1X supplicant disconnected from the access point or authentication "
+"server"
+msgstr "Perayuan 802.1X terputus dari titik capaian atau pelayan pengesahihan"
+
+#: ../../network/state_handler.go:48
+msgid "Configuration of the 802.1X supplicant failed"
+msgstr "Konfigurasi perayuan 802.1X telah gagal"
+
+#: ../../network/state_handler.go:49
+msgid "The 802.1X supplicant quitted or failed unexpectedly"
+msgstr "Perayuan 802.1X ditamatkan atau gagal dengan tidak dijangka"
+
+#: ../../network/state_handler.go:50
+msgid "The 802.1X supplicant took too long time to authenticate"
+msgstr "Perayuan 802.1X mengambil masa terlalu lama untuk disahihkan"
+
+#: ../../network/state_handler.go:51
+msgid "The PPP service failed to start within the allowed time"
+msgstr "Perkhidmatan PPP gagal dimulakan dalam tempoh yang ditetapkan"
+
+#: ../../network/state_handler.go:52
+msgid "The PPP service disconnected unexpectedly"
+msgstr "Perkhidmatan PPP terputus dengan tidak dijangka"
+
+#: ../../network/state_handler.go:53
+msgid "The PPP service quitted or failed unexpectedly"
+msgstr "Perkhidmatan PPP ditamatkan atau gagal dengan tidak dijangka"
+
+#: ../../network/state_handler.go:54
+msgid "The DHCP service failed to start within the allowed time"
+msgstr "Perkhidmatan DHCP gagal dimulakan dalam tempoh yang ditetapkan"
+
+#: ../../network/state_handler.go:55
+msgid "The DHCP service reported an unexpected error"
+msgstr "Perkhidmatan PPP melaporkan ralat tidak dijangka"
+
+#: ../../network/state_handler.go:56
+msgid "The DHCP service quitted or failed unexpectedly"
+msgstr "Perkhidmatan DHCP ditamatkan atau gagal dengan tidak dijangka"
+
+#: ../../network/state_handler.go:57
+msgid "The shared connection service failed to start"
+msgstr "Perkhidmatan sambungan terkongsi gagal dimulakan"
+
+#: ../../network/state_handler.go:58
+msgid "The shared connection service quitted or failed unexpectedly"
+msgstr "Perkhidmatan sambungan terkongsi ditamatkan atau gagal dengan tidak dijangka"
+
+#: ../../network/state_handler.go:59
+msgid "The AutoIP service failed to start"
+msgstr "Perkhidmatan AutoIP gagal dimulakan"
+
+#: ../../network/state_handler.go:60
+msgid "The AutoIP service reported an unexpected error"
+msgstr "Perkhidmatan AutoIP melaporkan ralat tidak dijangka"
+
+#: ../../network/state_handler.go:61
+msgid "The AutoIP service quitted or failed unexpectedly"
+msgstr "Perkhidmatan AutoIP ditamatkan atau gagal dengan tidak dijangka"
+
+#: ../../network/state_handler.go:62
+msgid "Dialing failed due to busy lines"
+msgstr "Pendailan gagal kerana talian sibuk"
+
+#: ../../network/state_handler.go:63
+msgid "Dialing failed due to no dial tone"
+msgstr "Pendailan gagal kerana tiada nada dail"
+
+#: ../../network/state_handler.go:64
+msgid "Dialing failed due to the carrier"
+msgstr "Pendailan gagal disebabkan oleh penyedia"
+
+#: ../../network/state_handler.go:65
+msgid "Dialing timed out"
+msgstr "Pendailan telah tamat masa"
+
+#: ../../network/state_handler.go:66
+msgid "Dialing failed"
+msgstr "Pendailan gagal"
+
+#: ../../network/state_handler.go:67
+msgid "Modem initialization failed"
+msgstr "Pengawalan modem gagal"
+
+#: ../../network/state_handler.go:68
+msgid "Failed to select the specified GSM APN"
+msgstr "Gagal memilih APN GSM yang dinyatakan"
+
+#: ../../network/state_handler.go:69
+msgid "No networks searched"
+msgstr "Tiada rangkaian digelintar"
+
+#: ../../network/state_handler.go:70
+msgid "Network registration was denied"
+msgstr "Pendaftaran rangkaian telah dinafikan"
+
+#: ../../network/state_handler.go:71
+msgid "Network registration timed out"
+msgstr "Pendaftaran rangkaian telah tamat masa"
+
+#: ../../network/state_handler.go:72
+msgid "Failed to register to the requested GSM network"
+msgstr "Pendaftaran ke rangkaian GSM yang dipinta telah gagal."
+
+#: ../../network/state_handler.go:73
+msgid "PIN check failed"
+msgstr "Semakan PIN gagal"
+
+#: ../../network/state_handler.go:74
+msgid "Necessary firmware for the device may be missed"
+msgstr "Perisian tegar yang diperlukan oleh peranti telah hilang"
+
+#: ../../network/state_handler.go:75
+msgid "The device was removed"
+msgstr "Peranti telah dibuang"
+
+#: ../../network/state_handler.go:76
+msgid "NetworkManager went to sleep"
+msgstr "Pengurus Rangkaian telah tidur"
+
+#: ../../network/state_handler.go:77
+msgid "The device's active connection was removed or disappeared"
+msgstr "Sambungan aktif peranti telah dibuang atau hilang"
+
+#: ../../network/state_handler.go:78
+msgid "A user or client requested to disconnect"
+msgstr "Pengguna atau klien telah minta diputuskan"
+
+#: ../../network/state_handler.go:79
+msgid "The device's carrier/link changed"
+msgstr "Talian/penyedia peranti telah berubah"
+
+#: ../../network/state_handler.go:80
+msgid "The device's existing connection was assumed"
+msgstr "Sambungan sedia ada peranti telah dijangka"
+
+#: ../../network/state_handler.go:81
+msgid "The 802.1x supplicant is now available"
+msgstr "Perayuan 802.1X kini telah tersedia"
+
+#: ../../network/state_handler.go:82
+msgid "The modem could not be found"
+msgstr "Modem tidak ditemui"
+
+#: ../../network/state_handler.go:83
+msgid "The Bluetooth connection timed out or failed"
+msgstr "Sambungan Bluetooth telah tamat masa atau gagal"
+
+#: ../../network/state_handler.go:84
+msgid "GSM Modem's SIM Card was not inserted"
+msgstr "Kad SIM Modem GSM tidak dimasukkan"
+
+#: ../../network/state_handler.go:85
+msgid "GSM Modem's SIM PIN required"
+msgstr "PIN SIM Modem GSM diperlukan"
+
+#: ../../network/state_handler.go:86
+msgid "GSM Modem's SIM PUK required"
+msgstr "PUK SIM Modem GSM diperlukan"
+
+#: ../../network/state_handler.go:87
+msgid "SIM card error in GSM Modem"
+msgstr "Ralat kad SIM dalam Modem GSM"
+
+#: ../../network/state_handler.go:88
+msgid "InfiniBand device does not support connected mode"
+msgstr "Peranti InfiniBand tidak menyokong mod bersambung"
+
+#: ../../network/state_handler.go:89
+msgid "A dependency of the connection failed"
+msgstr "Satu dependensi sambungan mengalami kegagalan"
+
+#: ../../network/state_handler.go:90
+msgid "RFC 2684 Ethernet bridging error to ADSL"
+msgstr "Ralat titian Ethernet RFC 2684 pada ADSL"
+
+#: ../../network/state_handler.go:91
+msgid "ModemManager did not run or quitted unexpectedly"
+msgstr "Pengurus Modem tidak dijalankan atau keluar tanpa dijangka"
+
+#: ../../network/state_handler.go:92
+msgid "The 802.11 Wi-Fi network could not be found"
+msgstr "Rangkaian Wi-Fi 802.11 tidak ditemui"
+
+#: ../../network/state_handler.go:93
+msgid "A secondary connection of the base connection failed"
+msgstr "Sambungan sekunder bagi sambungan dasar telah gagal"
+
+#: ../../network/state_handler.go:96
+msgid "DCB or FCoE setup failed"
+msgstr "Persediaan DCB atay FCoE gagal"
+
+#: ../../network/state_handler.go:97
+msgid "Network teaming control failed"
+msgstr "Kawalan pasukan rangkaian telah gagal"
+
+#: ../../network/state_handler.go:98
+msgid "Modem failed to run or not available"
+msgstr "Modem gagal dijalankan atau tidak tersedia"
+
+#: ../../network/state_handler.go:99
+msgid "Modem now ready and available"
+msgstr "Modem kini tersedia"
+
+#: ../../network/state_handler.go:100
+msgid "SIM PIN is incorrect"
+msgstr "PIN SIM adalah salah"
+
+#: ../../network/state_handler.go:101
+msgid "New connection activation is enqueuing"
+msgstr "Pengaktifan sambungan baharu sedang dibaris gilirkan"
+
+#: ../../network/state_handler.go:102
+msgid "Parent device changed"
+msgstr "Peranti induk berubah"
+
+#: ../../network/state_handler.go:103
+msgid "Management status of parent device changed"
+msgstr "Status pengurusan peranti induk berubah"
+
+#: ../../network/state_handler.go:106
+msgid "Network cable is unplugged"
+msgstr "Kabel rangkaian telah dicabut"
+
+#: ../../network/state_handler.go:107
+msgid "Please make sure SIM card has been inserted with mobile network signal"
+msgstr "Sila pastikan kad SIM telah disisip dengan isyarat rangkaian mudah alih"
+
+#: ../../network/state_handler.go:108
+msgid ""
+"Please make sure a correct plan was selected without arrearage of SIM card"
+msgstr "Sila pastikan plan yang betul telah dipilih tanpa menyusun semula kad SIM"
+
+#: ../../network/state_handler.go:111
+msgid "Failed to activate VPN connection, reason unknown"
+msgstr "Gagal mengaktifkan sambungan VPN, sebab tidak diketahui"
+
+#: ../../network/state_handler.go:112
+msgid "Failed to activate VPN connection"
+msgstr "Gagal mengaktifkan sambungan VPN"
+
+#: ../../network/state_handler.go:113
+msgid "The VPN connection state changed due to being disconnected by users"
+msgstr "Keadaan sambungan VPN telah berubah kerana terputus sambungan dengan pengguna"
+
+#: ../../network/state_handler.go:114
+msgid ""
+"The VPN connection state changed due to being disconnected from devices"
+msgstr "Keadaan sambungan VPN telah berubah kerana terputus sambungan dengan peranti"
+
+#: ../../network/state_handler.go:115
+msgid "VPN service stopped"
+msgstr "Perkhidmatan VPN terhenti"
+
+#: ../../network/state_handler.go:116
+msgid "The IP config of VPN connection was invalid"
+msgstr "Konfig IP bagi sambungan VPN tidah sah"
+
+#: ../../network/state_handler.go:117
+msgid "The connection attempt to VPN service timed out"
+msgstr "Percubaan sambungan ke perkhidmatan VPN telah tamat masa"
+
+#: ../../network/state_handler.go:118
+msgid "The VPN service start timed out"
+msgstr "Perkhidmatan memulakan VPN telah tamat masa"
+
+#: ../../network/state_handler.go:119
+msgid "The VPN service failed to start"
+msgstr "Perkhidmatan VPN gagal dimulakan"
+
+#: ../../network/state_handler.go:120
+msgid "The VPN connection password was not provided"
+msgstr "Kata laluan sambungan VPN tidak disediakan"
+
+#: ../../network/state_handler.go:121
+msgid "Authentication to VPN server failed"
+msgstr "Pengesahihan ke pelayan VPN telah gagal"
+
+#: ../../network/state_handler.go:122
+msgid "The connection was deleted from settings"
+msgstr "Sambungan telah dipadam dari tetapan"
+
+#: ../../network/state_handler.go:251
+msgid "Try enabling hotspot"
+msgstr "Cuba membenarkan kawasan khas"
+
+#: ../../network/state_handler.go:253
+msgid "Try connecting %q"
+msgstr "Cuba bersambung dengan %q"
+
+#: ../../network/state_handler.go:261
+msgid "Hotspot share enabled"
+msgstr "Perkongsian kawasan khas dibenarkan"
+
+#: ../../network/state_handler.go:263
+msgid "%q connected"
+msgstr "%q bersambung"
+
+#: ../../network/state_handler.go:274 ../../network/state_handler.go:325
+msgid "Hotspot share turned off"
+msgstr "Perkongsian kawasan khas dimatikan"
+
+#: ../../network/state_handler.go:327 ../../network/state_handler.go:343
+msgid "%q disconnected"
+msgstr "%q terputus"
+
+#: ../../network/state_handler.go:333
+msgid "Unable to share hotspot, please check dnsmasq settings"
+msgstr "Tidak boleh berkongsi kawasan khas, sila periksa tetapan dnsmasq"
+
+#: ../../network/state_handler.go:335
+msgid "Unable to connect %q, please keep closer to the wireless router"
+msgstr "Tidak boleh bersambung dengan %q, pastikan anda berhampiran dengan penghala tanpa wayar"
+
+#: ../../network/state_handler.go:337
+msgid "Unable to connect %q, please check your router or net cable."
+msgstr "Tidak boleh bersambung dengan %q, sila periksa penghala atau kabel rangkaian anda."
+
+#: ../../network/state_handler.go:340
+msgid "Connection failed, unable to connect %q, wrong password"
+msgstr "Sambungan gagal, tidak dapat bersambung dengan %q, kata laluan salah"
+
+#: ../../network/utils_dbus_nm.go:227
+msgid "Unknown"
+msgstr "Tidak diketahui"
+
+#: ../../network/utils_notify.go:80
+msgid "You are now offline."
+msgstr "Anda kini berada diluar talian."
+
+#: ../../network/utils_notify.go:84
+msgid "Airplane mode enabled."
+msgstr "Mod kapal terbang dibenarkan."
+
+#: ../../network/utils_notify.go:92
+msgid "Access Point mode is not supported by this device."
+msgstr "Mod Titik Capaian tidak disokong oleh peranti ini."
+
+#: ../../network/utils_notify.go:96 ../../network/utils_notify.go:100
+#: ../../network/utils_notify.go:103
+msgid "Network"
+msgstr "Rangkaian"
+
+#: ../../network/utils_notify.go:96
+msgid ""
+"The hardware switch of WLAN Card is off, please switch on as necessary."
+msgstr "Suis perkakasan Kad WLAN dimatikan, sila hidupkan jika perlu."
+
+#: ../../network/utils_notify.go:100
+msgid "System proxy is set successfully."
+msgstr "Proksi sistem berjaya ditetapkan."
+
+#: ../../network/utils_notify.go:103
+msgid "System proxy has been cancelled."
+msgstr "Proksi sistem dibatalkan."
+
+#: ../../session/power/manager_events.go:133
+msgid "Battery Critically Low"
+msgstr "Kuasa Bateri Sangat Rendah"
+
+#: ../../session/power/manager_events.go:134
+msgid "Computer will suspend very soon, please plug in now"
+msgstr "Komputer akan ditangguhkan tidak lama lagi, sila palamkan kabel kuasa sekarang"
+
+#: ../../session/power/manager_events.go:157
+#: ../../session/power/manager_events.go:164
+msgid "Battery Low"
+msgstr "Kuasa Bateri Rendah"
+
+#: ../../session/power/manager_events.go:158
+msgid "Computer will suspend soon, please plug in"
+msgstr "Komputer akan ditangguhkan tidak lama lagi, sila palamkan kabel kuasa sekarang"
+
+#: ../../session/power/manager_events.go:165
+msgid "Battery low, please plug in"
+msgstr "Kuasa bateri lemah, sila palamkan kuasa"
+
+#: ../../timedate/manager_ifc.go:56
+msgid "Authentication is required to set the system time"
+msgstr "Pengesahihan diperlukan untuk menetap waktu sistem"
+
+#: ../../timedate/manager_ifc.go:69
+msgid ""
+"Authentication is required to control whether network time synchronization "
+"shall be enabled"
+msgstr "Pengesahihan diperlukan untuk mengawal sama ada penyegerakan waktu rangkaian dapat dibenarkan"
+
+#: ../../timedate/manager_ifc.go:89
+msgid ""
+"Authentication is required to control whether the RTC stores the local or "
+"UTC time"
+msgstr "Pengesahihan diperlukan untuk mengawal sama ada RTC menyimpan waktu setempat atau UTC"
+
+#: ../../timedate/manager_ifc.go:108
+msgid "Authentication is required to set the system timezone"
+msgstr "Pengesahihan diperlukan untuk menetap zon waktu sistem"

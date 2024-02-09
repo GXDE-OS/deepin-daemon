@@ -1,0 +1,956 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# kolera <koleramilan@gmail.com>, 2017
+# Један Пријатељ <3acejax@gmail.com>, 2018-2019
+# Један Пријатељ <3acejax@gmail.com>, 2018-2019
+msgid ""
+msgstr ""
+"Project-Id-Version: Deepin Desktop Environment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-19 15:46+0800\n"
+"PO-Revision-Date: 2019-07-04 19:59+0000\n"
+"Last-Translator: Један Пријатељ <3acejax@gmail.com>\n"
+"Language-Team: Serbian (http://www.transifex.com/linuxdeepin/deepin-desktop-environment/language/sr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../../accounts/checkers/password.go:54
+msgid "Please enter a password not less than 8 characters"
+msgstr "Молимо унесите лозинку од најмање 8 карактера"
+
+#: ../../accounts/checkers/password.go:56
+msgid ""
+"The password must contain English letters (case-sensitive), numbers or "
+"special symbols (~!@#$%^&*()[]{}\\|/?,.<>)"
+msgstr "Лозинка мора садржати слова алфабета (осетљива на величину слова), бројеве или специјалне карактере (~!@#$%^&*()[]{}\\|/?,.<>)"
+
+#: ../../accounts/checkers/username.go:60
+msgid "Username cannot be empty"
+msgstr "Корисничко име не може бити празно"
+
+#: ../../accounts/checkers/username.go:62
+msgid "Username must comprise a~z, 0~9, - or _"
+msgstr "Корисничко име мора бити састављено од a~z, 0~9, - или _"
+
+#: ../../accounts/checkers/username.go:64
+msgid "The first character must be in lower case"
+msgstr "Први карактер мора бити мало слово"
+
+#: ../../accounts/checkers/username.go:66
+msgid "The username exists"
+msgstr "Корисничко име већ постоји"
+
+#: ../../accounts/checkers/username.go:68
+msgid "The username has been used by system"
+msgstr "Корисничко име се већ користи"
+
+#: ../../accounts/checkers/username.go:70
+msgid "The username's length exceeds the limit"
+msgstr "Дужина корисничког имена прелази дозвољену границу"
+
+#: ../../appearance/scale.go:61
+msgid "Set successfully"
+msgstr "Успешно подешено"
+
+#: ../../appearance/scale.go:62
+msgid "Please log back in to view the changes"
+msgstr "Поново се пријавите да видите промене"
+
+#: ../../appearance/scale.go:66
+msgid "Display scaling"
+msgstr "Скалирање приказа"
+
+#: ../../appearance/scale.go:67
+msgid "Setting display scaling"
+msgstr "Подешавање салираног приказа"
+
+#: ../../bin/dde-authority/fprint_transaction.go:20
+msgid "Fingerprint verification failed"
+msgstr "Неуспешна верификација отиска прста"
+
+#: ../../bin/dde-authority/fprint_transaction.go:21
+msgid "Fingerprint verification timed out"
+msgstr "Време за верификацију отиска прста је истекло"
+
+#: ../../bluetooth/bluez_profile.go:29
+msgid "Serial port"
+msgstr "Серијски прикључак"
+
+#: ../../bluetooth/bluez_profile.go:30
+msgid "Dial-Up networking"
+msgstr "Умрежавање путем Тел-Линије"
+
+#: ../../bluetooth/bluez_profile.go:31
+msgid "Hands-Free device"
+msgstr "Безручни уређај"
+
+#: ../../bluetooth/bluez_profile.go:32
+msgid "Hands-Free voice gateway"
+msgstr "Безручни гласовни пролаз"
+
+#: ../../bluetooth/bluez_profile.go:33
+msgid "Headset voice gateway"
+msgstr "Гласовни пролаз за слушалице"
+
+#: ../../bluetooth/bluez_profile.go:34
+msgid "Object push"
+msgstr "Object push"
+
+#: ../../bluetooth/bluez_profile.go:35
+msgid "File transfer"
+msgstr "Пренос датотека"
+
+#: ../../bluetooth/bluez_profile.go:36
+msgid "Synchronization"
+msgstr "Синхронизација"
+
+#: ../../bluetooth/bluez_profile.go:37
+msgid "Phone book access"
+msgstr "Приступ именику"
+
+#: ../../bluetooth/bluez_profile.go:38
+msgid "Phone book access client"
+msgstr "Клијент за приступ именику"
+
+#: ../../bluetooth/bluez_profile.go:39
+msgid "Message access"
+msgstr "Приступ порукама"
+
+#: ../../bluetooth/bluez_profile.go:40
+msgid "Message notification"
+msgstr "Обавештење о пристиглим порукама"
+
+#: ../../bluetooth/utils_notify.go:52 ../../network/utils_notify.go:107
+msgid "Connected"
+msgstr "Повезани сте"
+
+#: ../../bluetooth/utils_notify.go:55 ../../network/utils_notify.go:80
+#: ../../network/utils_notify.go:84 ../../network/utils_notify.go:88
+#: ../../network/utils_notify.go:92 ../../network/utils_notify.go:110
+#: ../../network/utils_notify.go:113 ../../network/utils_notify.go:202
+msgid "Disconnected"
+msgstr "Нисте поевзани"
+
+#: ../../bluetooth/utils_notify.go:59
+msgid "Make sure %q is turned on and in range"
+msgstr "Проверите да ли је %q укључен и да је у опсегу"
+
+#: ../../bluetooth/utils_notify.go:64
+msgid "Failed to connect %q, pairing failed"
+msgstr "Неуспешно повезивање са %q, упаривање неуспешно"
+
+#: ../../bluetooth/utils_notify.go:69
+msgid "Bluetooth connection failed"
+msgstr "Блутут повезивање неуспешно"
+
+#: ../../dock/app_entry_menu.go:100
+msgid "_Open"
+msgstr "_Покрени"
+
+#: ../../dock/app_entry_menu.go:107
+msgid "_Close All"
+msgstr "_Затвори све"
+
+#: ../../dock/app_entry_menu.go:128
+msgid "_Force Quit"
+msgstr "_Принудно изађи"
+
+#: ../../dock/app_entry_menu.go:135
+msgid "_Dock"
+msgstr "_Закачи"
+
+#: ../../dock/app_entry_menu.go:142
+msgid "_Undock"
+msgstr "_Откачи"
+
+#: ../../dock/app_entry_menu.go:149
+msgid "_All windows"
+msgstr "_Сви прозори"
+
+#: ../../housekeeping/init.go:90
+msgid "Insufficient disk space, please clean up in time!"
+msgstr "Недовољно простора на диску, молимо чистите редовно!"
+
+#: ../../keybinding/shortcuts/id_name_map.go:28
+msgid "Launcher"
+msgstr "Покретач Програма"
+
+#: ../../keybinding/shortcuts/id_name_map.go:29
+msgid "Terminal"
+msgstr "Терминал"
+
+#: ../../keybinding/shortcuts/id_name_map.go:30
+msgid "Deepin Screen Recorder"
+msgstr "Дипин Снимач Екрана"
+
+#: ../../keybinding/shortcuts/id_name_map.go:31
+msgid "Lock screen"
+msgstr "Закључавање екрана"
+
+#: ../../keybinding/shortcuts/id_name_map.go:32
+msgid "Show/Hide the dock"
+msgstr "Прикажи/Сакриј док"
+
+#: ../../keybinding/shortcuts/id_name_map.go:33
+msgid "Shutdown interface"
+msgstr "Сучеље искључивања"
+
+#: ../../keybinding/shortcuts/id_name_map.go:34
+msgid "Terminal Quake Window"
+msgstr "Спуштајући терминал"
+
+#: ../../keybinding/shortcuts/id_name_map.go:35
+msgid "Screenshot"
+msgstr "Слика екрана"
+
+#: ../../keybinding/shortcuts/id_name_map.go:36
+msgid "Full screenshot"
+msgstr "Усликај цео екран"
+
+#: ../../keybinding/shortcuts/id_name_map.go:37
+msgid "Window screenshot"
+msgstr "Усликај прозор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:38
+msgid "Delay screenshot"
+msgstr "Одлагање усликавања"
+
+#: ../../keybinding/shortcuts/id_name_map.go:39
+msgid "File manager"
+msgstr "Управник података"
+
+#: ../../keybinding/shortcuts/id_name_map.go:40
+msgid "Disable Touchpad"
+msgstr "Онемогући додирну таблу"
+
+#: ../../keybinding/shortcuts/id_name_map.go:41
+msgid "Switch window effects"
+msgstr "Мењај ефекте прозора"
+
+#: ../../keybinding/shortcuts/id_name_map.go:42
+msgid "Fast Screen Off"
+msgstr "Брзо гашење екрана"
+
+#: ../../keybinding/shortcuts/id_name_map.go:43
+msgid "Deepin System Monitor"
+msgstr "Дипин Праћење Система"
+
+#: ../../keybinding/shortcuts/id_name_map.go:44
+msgid "Deepin Picker"
+msgstr "Дипин Пипета"
+
+#: ../../keybinding/shortcuts/id_name_map.go:51
+msgid "Switch Layout"
+msgstr "Промени распоред"
+
+#: ../../keybinding/shortcuts/id_name_map.go:70
+msgid "Switch to left workspace"
+msgstr "Премести се на леви радни простор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:71
+msgid "Switch to right workspace"
+msgstr "Премести се на десни радни простор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:72
+msgid "Switch to upper workspace"
+msgstr "Премести се на горњи радни простор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:73
+msgid "Switch to lower workspace"
+msgstr "Премести се на доњи радни простор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:75
+msgid "Switch similar windows"
+msgstr "Промена између прозора истог програма"
+
+#: ../../keybinding/shortcuts/id_name_map.go:76
+msgid "Switch similar windows in reverse"
+msgstr "Промена између прозора истог програма обрнутим редоследом"
+
+#: ../../keybinding/shortcuts/id_name_map.go:77
+msgid "Switch windows"
+msgstr "Промена прозора"
+
+#: ../../keybinding/shortcuts/id_name_map.go:78
+msgid "Switch windows in reverse"
+msgstr "Промена прозора обрнутим редоследом"
+
+#: ../../keybinding/shortcuts/id_name_map.go:89
+msgid "Show desktop"
+msgstr "Приказ радне површине"
+
+#: ../../keybinding/shortcuts/id_name_map.go:98
+msgid "Maximize window"
+msgstr "Максимализуј прозор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:99
+msgid "Restore window"
+msgstr "Врати прозор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:101
+msgid "Minimize window"
+msgstr "Минимализуј прозор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:102
+msgid "Close window"
+msgstr "Затвори прозор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:103
+msgid "Move window"
+msgstr "Помери прозор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:104
+msgid "Resize window"
+msgstr "Промени величину прозора"
+
+#: ../../keybinding/shortcuts/id_name_map.go:119
+msgid "Move to left workspace"
+msgstr "Премести на леви радни простор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:120
+msgid "Move to right workspace"
+msgstr "Премести на десни радни простор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:121
+msgid "Move to upper workspace"
+msgstr "Премести на горњи радни простор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:122
+msgid "Move to lower workspace"
+msgstr "Премести на доњи радни простор"
+
+#: ../../keybinding/shortcuts/id_name_map.go:144
+msgid "Display windows of all workspaces"
+msgstr "Приказ прозора свих радних површина"
+
+#: ../../keybinding/shortcuts/id_name_map.go:145
+msgid "Display windows of current workspace"
+msgstr "Приказ прозора тренутне радне површине"
+
+#: ../../keybinding/shortcuts/id_name_map.go:146
+msgid "Display workspace"
+msgstr "Приказ активности"
+
+#: ../../langselector/locale.go:61
+msgid "Authentication is required to switch language"
+msgstr "Аутентификација је неопходна за промену језика"
+
+#: ../../langselector/locale.go:354
+msgid "Failed to change system language, please try later"
+msgstr "Неуспешна промена језика система, молимо покушајте касније"
+
+#: ../../langselector/locale.go:378
+msgid ""
+"Changing system language and installing the required language packages, "
+"please wait..."
+msgstr "Промена језика система и инсталирање потребних језичких пакета, молимо сачекајте..."
+
+#: ../../langselector/locale.go:381
+msgid "Changing system language, please wait..."
+msgstr "Промена језика система, молимо сачекајте..."
+
+#: ../../langselector/locale.go:429
+msgid "System language changed, please log out and then log in"
+msgstr "Језик система је промењен, одјавите се и пријавите се поново"
+
+#: ../../lastore/check_source.go:51
+msgid "Restore"
+msgstr "Врати"
+
+#: ../../lastore/check_source.go:70 ../../lastore/lastore.go:248
+msgid "Cancel"
+msgstr "Откажи"
+
+#: ../../lastore/lastore.go:240
+msgid "Retry"
+msgstr "Поново"
+
+#: ../../lastore/notify.go:82
+msgid "%q installed successfully."
+msgstr "%q инсталација успешна."
+
+#: ../../lastore/notify.go:85
+msgid "%q failed to install."
+msgstr "%q инсталација неуспешна."
+
+#: ../../lastore/notify.go:93
+msgid "%q removed successfully."
+msgstr "%q уклањање успешно."
+
+#: ../../lastore/notify.go:95
+msgid "%q failed to remove."
+msgstr "%q уклањање неуспешно."
+
+#: ../../lastore/notify.go:102
+msgid ""
+"In order to prevent automatic shutdown, please plug in for normal update."
+msgstr "Прикључите пуњач да избегнете самостално искључивање."
+
+#: ../../lastore/notify.go:107
+msgid "Package cache wiped"
+msgstr "Кеш пакета уклоњен"
+
+#: ../../lastore/notify.go:112
+msgid ""
+"Your system source has been modified, please restore to official source for "
+"your normal use"
+msgstr "Извор система је промењен, молимо вратите се на званични извор за нормално коришћење."
+
+#: ../../launcher/manager_uninstall.go:69
+msgid "%q removed successfully"
+msgstr "%q уклањање успешно"
+
+#: ../../launcher/manager_uninstall.go:71
+msgid "Failed to uninstall %q"
+msgstr "Уклањање %q неуспешно"
+
+#: ../../network/manager_active_conn.go:318
+msgid "A (5 GHz)"
+msgstr "A (5 GHz)"
+
+#: ../../network/manager_active_conn.go:320
+msgid "BG (2.4 GHz)"
+msgstr "BG (2.4 GHz)"
+
+#: ../../network/manager_active_conn.go:322
+msgid "Automatic"
+msgstr "Аутоматски"
+
+#: ../../network/manager_active_conn.go:333
+#: ../../network/manager_active_conn.go:338
+msgid "None"
+msgstr "Ништа"
+
+#: ../../network/manager_active_conn.go:340
+msgid "WEP 40/128-bit Key"
+msgstr "ВЕП 40/128-bit Кључ"
+
+#: ../../network/manager_active_conn.go:342
+msgid "WPA/WPA2 Personal"
+msgstr "ВПА/ВПА2 Лично"
+
+#: ../../network/manager_active_conn.go:350
+msgid "TLS"
+msgstr "ТЛС"
+
+#: ../../network/manager_active_conn.go:352
+msgid "MD5"
+msgstr "МД5"
+
+#: ../../network/manager_active_conn.go:354
+msgid "LEAP"
+msgstr "ЛЕАП"
+
+#: ../../network/manager_active_conn.go:356
+msgid "FAST"
+msgstr "ФАСТ"
+
+#: ../../network/manager_active_conn.go:358
+msgid "Tunneled TLS"
+msgstr "Тунелни ТЛС"
+
+#: ../../network/manager_active_conn.go:360
+msgid "Protected EAP"
+msgstr "Заштићени ЕАП"
+
+#: ../../network/manager_connection.go:278 ../../network/nm_custom_type.go:225
+msgid "Wired Connection"
+msgstr "Жичана веза"
+
+#: ../../network/nm_custom_type.go:223
+msgid "Connection"
+msgstr "Веза"
+
+#: ../../network/nm_custom_type.go:227
+msgid "Wireless Connection"
+msgstr "Бежична веза"
+
+#: ../../network/nm_custom_type.go:229
+msgid "Wireless Ad-Hoc"
+msgstr "Бежични Ад-Хок"
+
+#: ../../network/nm_custom_type.go:231
+msgid "Wireless Ap-Hotspot"
+msgstr "Бежична АП-Врућа тачка"
+
+#: ../../network/nm_custom_type.go:233
+msgid "PPPoE Connection"
+msgstr "ПППоЕ Веза"
+
+#: ../../network/nm_custom_type.go:235
+msgid "Mobile Connection"
+msgstr "Мобилна веза"
+
+#: ../../network/nm_custom_type.go:237
+msgid "Mobile GSM Connection"
+msgstr "Мобилна ГСМ Веза"
+
+#: ../../network/nm_custom_type.go:239
+msgid "Mobile CDMA Connection"
+msgstr "Мобилна ЦДМА Веза"
+
+#: ../../network/nm_custom_type.go:241
+msgid "VPN Connection"
+msgstr "ВПН Веза"
+
+#: ../../network/nm_custom_type.go:243
+msgid "VPN L2TP"
+msgstr "ВПН"
+
+#: ../../network/nm_custom_type.go:245
+msgid "VPN OpenConnect"
+msgstr "ВПН OpenConnect"
+
+#: ../../network/nm_custom_type.go:247
+msgid "VPN OpenVPN"
+msgstr "ВПН ОтворенВПН"
+
+#: ../../network/nm_custom_type.go:249
+msgid "VPN PPTP"
+msgstr "ВПН ППТП"
+
+#: ../../network/nm_custom_type.go:251
+msgid "VPN StrongSwan"
+msgstr "ВПН СнажниЛабуд"
+
+#: ../../network/nm_custom_type.go:253
+msgid "VPN VPNC"
+msgstr "ВПН ВПНЦ"
+
+#: ../../network/state_handler.go:39
+msgid "Device state changed"
+msgstr "Стање уређаја је промењено"
+
+#: ../../network/state_handler.go:40
+msgid "Device state changed, reason unknown"
+msgstr "Стање уређаја је промењено, разлог непознат"
+
+#: ../../network/state_handler.go:41
+msgid "The device is now managed"
+msgstr "Уређајем се сада управља"
+
+#: ../../network/state_handler.go:42
+msgid "The device is no longer managed"
+msgstr "Уређајем се више не управља"
+
+#: ../../network/state_handler.go:43
+msgid "The device has not been ready for configuration"
+msgstr "Уређај није припремљен за конфигурацију"
+
+#: ../../network/state_handler.go:44
+msgid ""
+"IP configuration could not be reserved (no available address, timeout, etc)"
+msgstr "ИП конфигурација није могла бити резервисана (нема доступне адресе, време је истекло, итд.)"
+
+#: ../../network/state_handler.go:45
+msgid "The IP configuration is no longer valid"
+msgstr "ИП поставка више није важећа"
+
+#: ../../network/state_handler.go:46
+msgid "Passwords were required but not provided"
+msgstr "Лозинке су биле потребне, али нису приложене"
+
+#: ../../network/state_handler.go:47
+msgid ""
+"The 802.1X supplicant disconnected from the access point or authentication "
+"server"
+msgstr "802.1X предлагач је прекинуо везу са приступном тачком или са сервером за аутентификацију"
+
+#: ../../network/state_handler.go:48
+msgid "Configuration of the 802.1X supplicant failed"
+msgstr "Конфигурација 802.1X предлагача је неуспешна"
+
+#: ../../network/state_handler.go:49
+msgid "The 802.1X supplicant quitted or failed unexpectedly"
+msgstr "802.1X предлагач се зауставио или је неочекивано отказао"
+
+#: ../../network/state_handler.go:50
+msgid "The 802.1X supplicant took too long time to authenticate"
+msgstr "802.1X предлагачу је требало превише времена за аутентификацију"
+
+#: ../../network/state_handler.go:51
+msgid "The PPP service failed to start within the allowed time"
+msgstr "ППП услуга се није покренула у оквиру дозвољеног времена"
+
+#: ../../network/state_handler.go:52
+msgid "The PPP service disconnected unexpectedly"
+msgstr "ППП услуга је неочекивано прекинула везу"
+
+#: ../../network/state_handler.go:53
+msgid "The PPP service quitted or failed unexpectedly"
+msgstr "ППП услуга се зауставила или је неочекивано отказала"
+
+#: ../../network/state_handler.go:54
+msgid "The DHCP service failed to start within the allowed time"
+msgstr "ДХЦП услуга се није покренула у дозвољеном времену"
+
+#: ../../network/state_handler.go:55
+msgid "The DHCP service reported an unexpected error"
+msgstr "ДХЦП услуга је пријавила неочекивану грешку"
+
+#: ../../network/state_handler.go:56
+msgid "The DHCP service quitted or failed unexpectedly"
+msgstr "ДХЦП услуга се зауставила или је неочекивано отказала"
+
+#: ../../network/state_handler.go:57
+msgid "The shared connection service failed to start"
+msgstr "Услуга дељене везе се није покренула"
+
+#: ../../network/state_handler.go:58
+msgid "The shared connection service quitted or failed unexpectedly"
+msgstr "Дељена веза се зауставила или је неочекивано отказала"
+
+#: ../../network/state_handler.go:59
+msgid "The AutoIP service failed to start"
+msgstr "Услуга АутоИП се није покренула"
+
+#: ../../network/state_handler.go:60
+msgid "The AutoIP service reported an unexpected error"
+msgstr "АутоИП услуга је пријавила неочекивану грешку"
+
+#: ../../network/state_handler.go:61
+msgid "The AutoIP service quitted or failed unexpectedly"
+msgstr "АутоИП услуга се зауставила или је неочекивано отказала"
+
+#: ../../network/state_handler.go:62
+msgid "Dialing failed due to busy lines"
+msgstr "Позивање је неуспешно због заузетих линија"
+
+#: ../../network/state_handler.go:63
+msgid "Dialing failed due to no dial tone"
+msgstr "Позивање није упело јер нема тона позивања"
+
+#: ../../network/state_handler.go:64
+msgid "Dialing failed due to the carrier"
+msgstr "Позивање није успело због пружаоца услуге"
+
+#: ../../network/state_handler.go:65
+msgid "Dialing timed out"
+msgstr "Врме за позивање је истекло"
+
+#: ../../network/state_handler.go:66
+msgid "Dialing failed"
+msgstr "Неуспешно позивање"
+
+#: ../../network/state_handler.go:67
+msgid "Modem initialization failed"
+msgstr "Неуспела иницијација модема"
+
+#: ../../network/state_handler.go:68
+msgid "Failed to select the specified GSM APN"
+msgstr "Неуспело бирање наведене ГСМ АПН"
+
+#: ../../network/state_handler.go:69
+msgid "No networks searched"
+msgstr "Мреже нису претражене"
+
+#: ../../network/state_handler.go:70
+msgid "Network registration was denied"
+msgstr "Регистрација мреже одбијена"
+
+#: ../../network/state_handler.go:71
+msgid "Network registration timed out"
+msgstr "Време за регистрацију мреже истекло"
+
+#: ../../network/state_handler.go:72
+msgid "Failed to register to the requested GSM network"
+msgstr "Неуспешна регистрација на тражену ГСМ мрежу"
+
+#: ../../network/state_handler.go:73
+msgid "PIN check failed"
+msgstr "Провера ПИН-а није успела"
+
+#: ../../network/state_handler.go:74
+msgid "Necessary firmware for the device may be missed"
+msgstr "Неопходни фирмвер за уређај можда недостаје"
+
+#: ../../network/state_handler.go:75
+msgid "The device was removed"
+msgstr "Уређај је уклоњен"
+
+#: ../../network/state_handler.go:76
+msgid "NetworkManager went to sleep"
+msgstr "Управник Мреже је заспао"
+
+#: ../../network/state_handler.go:77
+msgid "The device's active connection was removed or disappeared"
+msgstr "Активна веза уређаја је уклоњена или је нестала"
+
+#: ../../network/state_handler.go:78
+msgid "A user or client requested to disconnect"
+msgstr "Корисник или клијент је затражио прекид везе"
+
+#: ../../network/state_handler.go:79
+msgid "The device's carrier/link changed"
+msgstr "The device's carrier/link changed"
+
+#: ../../network/state_handler.go:80
+msgid "The device's existing connection was assumed"
+msgstr "The device's existing connection was assumed"
+
+#: ../../network/state_handler.go:81
+msgid "The 802.1x supplicant is now available"
+msgstr "802.1x предлагач је сада доступан"
+
+#: ../../network/state_handler.go:82
+msgid "The modem could not be found"
+msgstr "Модем није пронађен"
+
+#: ../../network/state_handler.go:83
+msgid "The Bluetooth connection timed out or failed"
+msgstr "Блутут веза је истекла или је отказала"
+
+#: ../../network/state_handler.go:84
+msgid "GSM Modem's SIM Card was not inserted"
+msgstr "СИМ картица за ГСМ модем није убачена"
+
+#: ../../network/state_handler.go:85
+msgid "GSM Modem's SIM PIN required"
+msgstr "СИМ ПИН за ГСМ модем је неопходан"
+
+#: ../../network/state_handler.go:86
+msgid "GSM Modem's SIM PUK required"
+msgstr "СИМ ПУК за ГСМ модем је неопходан"
+
+#: ../../network/state_handler.go:87
+msgid "SIM card error in GSM Modem"
+msgstr "Грешка СИМ картице у ГСМ модему"
+
+#: ../../network/state_handler.go:88
+msgid "InfiniBand device does not support connected mode"
+msgstr "InfiniBand уређај не подржава повезани режим"
+
+#: ../../network/state_handler.go:89
+msgid "A dependency of the connection failed"
+msgstr "Зависност везе је отказала"
+
+#: ../../network/state_handler.go:90
+msgid "RFC 2684 Ethernet bridging error to ADSL"
+msgstr "RFC 2684 Ентернет грешка повезивања на ADSL"
+
+#: ../../network/state_handler.go:91
+msgid "ModemManager did not run or quitted unexpectedly"
+msgstr "УправникМодема се није покренуо или се неочекивано зауставио"
+
+#: ../../network/state_handler.go:92
+msgid "The 802.11 Wi-Fi network could not be found"
+msgstr "802.11 Wi-Fi мрежа није пронађена"
+
+#: ../../network/state_handler.go:93
+msgid "A secondary connection of the base connection failed"
+msgstr "Секундарна веза или основна веза су отказале"
+
+#: ../../network/state_handler.go:96
+msgid "DCB or FCoE setup failed"
+msgstr "DCB или FCoE поставка није успела"
+
+#: ../../network/state_handler.go:97
+msgid "Network teaming control failed"
+msgstr "Контрола мрежног повезивања није успела"
+
+#: ../../network/state_handler.go:98
+msgid "Modem failed to run or not available"
+msgstr "Модем није успео да се покрене или је недоступан"
+
+#: ../../network/state_handler.go:99
+msgid "Modem now ready and available"
+msgstr "Модем је сада спреман и доступан"
+
+#: ../../network/state_handler.go:100
+msgid "SIM PIN is incorrect"
+msgstr "СИМ ПИН је нетачан"
+
+#: ../../network/state_handler.go:101
+msgid "New connection activation is enqueuing"
+msgstr "Активирање нове везе у процесу"
+
+#: ../../network/state_handler.go:102
+msgid "Parent device changed"
+msgstr "Уређај родитељ је промењен"
+
+#: ../../network/state_handler.go:103
+msgid "Management status of parent device changed"
+msgstr "Управљачки статус уређаја родитеља је промењен"
+
+#: ../../network/state_handler.go:106
+msgid "Network cable is unplugged"
+msgstr "Мрежни кабл је ископчан"
+
+#: ../../network/state_handler.go:107
+msgid "Please make sure SIM card has been inserted with mobile network signal"
+msgstr "Уверите се да је СИМ картица убачена и да има активан мобилни сигнал"
+
+#: ../../network/state_handler.go:108
+msgid ""
+"Please make sure a correct plan was selected without arrearage of SIM card"
+msgstr "Please make sure a correct plan was selected without arrearage of SIM card"
+
+#: ../../network/state_handler.go:111
+msgid "Failed to activate VPN connection, reason unknown"
+msgstr "Активација ВПН везе није успела, разлог непознат"
+
+#: ../../network/state_handler.go:112
+msgid "Failed to activate VPN connection"
+msgstr "Активација ВПН везе није успела"
+
+#: ../../network/state_handler.go:113
+msgid "The VPN connection state changed due to being disconnected by users"
+msgstr "Стање ВПН везе је промењено због прекида везе од стране корисника"
+
+#: ../../network/state_handler.go:114
+msgid ""
+"The VPN connection state changed due to being disconnected from devices"
+msgstr "Стање ВПН везе је промењено због прекида везе са уређајима"
+
+#: ../../network/state_handler.go:115
+msgid "VPN service stopped"
+msgstr "ВПН услуга је заустављена"
+
+#: ../../network/state_handler.go:116
+msgid "The IP config of VPN connection was invalid"
+msgstr "ИП поставка ВПН-а је неважећа"
+
+#: ../../network/state_handler.go:117
+msgid "The connection attempt to VPN service timed out"
+msgstr "Време за покушај повезивања на ВПН услугу је истекло"
+
+#: ../../network/state_handler.go:118
+msgid "The VPN service start timed out"
+msgstr "Време за покретање ВПН услуге је истекло"
+
+#: ../../network/state_handler.go:119
+msgid "The VPN service failed to start"
+msgstr "The VPN service failed to start"
+
+#: ../../network/state_handler.go:120
+msgid "The VPN connection password was not provided"
+msgstr "Лозинка за ВПН везу није приложена"
+
+#: ../../network/state_handler.go:121
+msgid "Authentication to VPN server failed"
+msgstr "Аутентификација за ВПН сервер је неуспешна"
+
+#: ../../network/state_handler.go:122
+msgid "The connection was deleted from settings"
+msgstr "Веза је обрисана из подешавања"
+
+#: ../../network/state_handler.go:251
+msgid "Try enabling hotspot"
+msgstr "Покушајте укључивање вруће тачке"
+
+#: ../../network/state_handler.go:253
+msgid "Try connecting %q"
+msgstr "Повезивање %q"
+
+#: ../../network/state_handler.go:261
+msgid "Hotspot share enabled"
+msgstr "Дељење вруће тачке укључено"
+
+#: ../../network/state_handler.go:263
+msgid "%q connected"
+msgstr "%q повезани сте"
+
+#: ../../network/state_handler.go:274 ../../network/state_handler.go:325
+msgid "Hotspot share turned off"
+msgstr "Дељење вруће тачке искључено"
+
+#: ../../network/state_handler.go:327 ../../network/state_handler.go:343
+msgid "%q disconnected"
+msgstr "%q нисте поевзани"
+
+#: ../../network/state_handler.go:333
+msgid "Unable to share hotspot, please check dnsmasq settings"
+msgstr "Немогуће делити врућу тачку, проверите dnsmasq поставке"
+
+#: ../../network/state_handler.go:335
+msgid "Unable to connect %q, please keep closer to the wireless router"
+msgstr "Неуспешно повезивање на %q, будите ближе бежичном рутеру"
+
+#: ../../network/state_handler.go:337
+msgid "Unable to connect %q, please check your router or net cable."
+msgstr "Неуспешно повезивање на %q, проверите ваш рутер или мрежни кабл."
+
+#: ../../network/state_handler.go:340
+msgid "Connection failed, unable to connect %q, wrong password"
+msgstr "Неуспешно повезивање на %q, погрешна лозинка"
+
+#: ../../network/utils_dbus_nm.go:227
+msgid "Unknown"
+msgstr "Непознато"
+
+#: ../../network/utils_notify.go:80
+msgid "You are now offline."
+msgstr "Сада сте ван мреже."
+
+#: ../../network/utils_notify.go:84
+msgid "Airplane mode enabled."
+msgstr "Авионски режим укључен."
+
+#: ../../network/utils_notify.go:92
+msgid "Access Point mode is not supported by this device."
+msgstr "Режим приступне тачке није подржан на овом уређају."
+
+#: ../../network/utils_notify.go:96 ../../network/utils_notify.go:100
+#: ../../network/utils_notify.go:103
+msgid "Network"
+msgstr "Мрежа"
+
+#: ../../network/utils_notify.go:96
+msgid ""
+"The hardware switch of WLAN Card is off, please switch on as necessary."
+msgstr "Хардверски прекидач ВЛАН картице је искључен, молимо укључите по потреби."
+
+#: ../../network/utils_notify.go:100
+msgid "System proxy is set successfully."
+msgstr "Системски посредник успешно подешен."
+
+#: ../../network/utils_notify.go:103
+msgid "System proxy has been cancelled."
+msgstr "Системски посредник је отказан."
+
+#: ../../session/power/manager_events.go:133
+msgid "Battery Critically Low"
+msgstr "Батерија критично испражњена"
+
+#: ../../session/power/manager_events.go:134
+msgid "Computer will suspend very soon, please plug in now"
+msgstr "Рачунар ће обуставити рад ускоро, укључите пуњач одмах"
+
+#: ../../session/power/manager_events.go:157
+#: ../../session/power/manager_events.go:164
+msgid "Battery Low"
+msgstr "Батерија при крају"
+
+#: ../../session/power/manager_events.go:158
+msgid "Computer will suspend soon, please plug in"
+msgstr "Рачунар ће обуставити рад ускоро, укључите пуњач"
+
+#: ../../session/power/manager_events.go:165
+msgid "Battery low, please plug in"
+msgstr "Батерија при крају, прикључите пуњач"
+
+#: ../../timedate/manager_ifc.go:56
+msgid "Authentication is required to set the system time"
+msgstr "Аутентификација је неопходна за подешавање времена система"
+
+#: ../../timedate/manager_ifc.go:69
+msgid ""
+"Authentication is required to control whether network time synchronization "
+"shall be enabled"
+msgstr "Аутентификација је неопходна да контролишете да ли ће мрежна синхронизација времена бити омогућена"
+
+#: ../../timedate/manager_ifc.go:89
+msgid ""
+"Authentication is required to control whether the RTC stores the local or "
+"UTC time"
+msgstr "Аутентификација је неопходна да контролишете да ли RTC памти локално или UTC време"
+
+#: ../../timedate/manager_ifc.go:108
+msgid "Authentication is required to set the system timezone"
+msgstr "Аутентификација је неопходна за поставку временске зоне"

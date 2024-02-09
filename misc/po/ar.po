@@ -1,0 +1,960 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Abdullah Alnahdy <abdullahalnahdy@gmail.com>, 2018
+# ahmad nourallah <ahmadnurallah@gmail.com>, 2017
+# hamdy abd elfatah <hamdy.elzankly@gmail.com>, 2018
+# Khodr Abdallah <khodr000@gmail.com>, 2016
+# MUHAAB SHAAM <muhaab.org@gmail.com>, 2016-2018
+# أشرف بصرى <ashrafmn2008@gmail.com>, 2019
+# Abdellah Chadidi <chadidi97@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Deepin Desktop Environment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-19 15:46+0800\n"
+"PO-Revision-Date: 2019-05-20 22:21+0000\n"
+"Last-Translator: أشرف بصرى <ashrafmn2008@gmail.com>\n"
+"Language-Team: Arabic (http://www.transifex.com/linuxdeepin/deepin-desktop-environment/language/ar/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: ../../accounts/checkers/password.go:54
+msgid "Please enter a password not less than 8 characters"
+msgstr "يرجى إدخال كلمة مرور لا تقل عن 8 أحرف"
+
+#: ../../accounts/checkers/password.go:56
+msgid ""
+"The password must contain English letters (case-sensitive), numbers or "
+"special symbols (~!@#$%^&*()[]{}\\|/?,.<>)"
+msgstr "يجب أن تحتوي كلمة المرور على الحروف الإنكليزية (حساسة حسب الحالة) أو أرقام أو رموز خاصة (~!@#$%^&*()[]{}\\|/?,.<>)"
+
+#: ../../accounts/checkers/username.go:60
+msgid "Username cannot be empty"
+msgstr "اسم المستخدم لا يمكن أن يكون فارغاً"
+
+#: ../../accounts/checkers/username.go:62
+msgid "Username must comprise a~z, 0~9, - or _"
+msgstr "يجب أن يتكون اسم استخدم من المحارف التالية : a-z, 0-9, -, _ "
+
+#: ../../accounts/checkers/username.go:64
+msgid "The first character must be in lower case"
+msgstr "الحرف الأول يجب أن يكون صغيراً"
+
+#: ../../accounts/checkers/username.go:66
+msgid "The username exists"
+msgstr "اسم المستخدم موجود"
+
+#: ../../accounts/checkers/username.go:68
+msgid "The username has been used by system"
+msgstr "اسم المستخدم مستخدم من قبل النظام"
+
+#: ../../accounts/checkers/username.go:70
+msgid "The username's length exceeds the limit"
+msgstr "اسم المستخدم تجاوز طوله الحد الأقصى"
+
+#: ../../appearance/scale.go:61
+msgid "Set successfully"
+msgstr "تم اﻹعداد بنجاح"
+
+#: ../../appearance/scale.go:62
+msgid "Please log back in to view the changes"
+msgstr ""
+
+#: ../../appearance/scale.go:66
+msgid "Display scaling"
+msgstr "عرض الشاشة"
+
+#: ../../appearance/scale.go:67
+msgid "Setting display scaling"
+msgstr "إعدادات تحجيم العرض"
+
+#: ../../bin/dde-authority/fprint_transaction.go:20
+msgid "Fingerprint verification failed"
+msgstr "فشل التحقق من البصمة"
+
+#: ../../bin/dde-authority/fprint_transaction.go:21
+msgid "Fingerprint verification timed out"
+msgstr "نفذ وقت التحقق من البصمة"
+
+#: ../../bluetooth/bluez_profile.go:29
+msgid "Serial port"
+msgstr "منفذ تسلسلي"
+
+#: ../../bluetooth/bluez_profile.go:30
+msgid "Dial-Up networking"
+msgstr "شبكة الطلب الهاتفي"
+
+#: ../../bluetooth/bluez_profile.go:31
+msgid "Hands-Free device"
+msgstr "جهاز لاسكلي"
+
+#: ../../bluetooth/bluez_profile.go:32
+msgid "Hands-Free voice gateway"
+msgstr " بوابة صوتية لاسكلية"
+
+#: ../../bluetooth/bluez_profile.go:33
+msgid "Headset voice gateway"
+msgstr "بوابة صوت السماعة"
+
+#: ../../bluetooth/bluez_profile.go:34
+msgid "Object push"
+msgstr "نقل الكائن"
+
+#: ../../bluetooth/bluez_profile.go:35
+msgid "File transfer"
+msgstr "ناقل الملف"
+
+#: ../../bluetooth/bluez_profile.go:36
+msgid "Synchronization"
+msgstr "مزامنة"
+
+#: ../../bluetooth/bluez_profile.go:37
+msgid "Phone book access"
+msgstr "الوصول لعناوين الهاتف"
+
+#: ../../bluetooth/bluez_profile.go:38
+msgid "Phone book access client"
+msgstr "عميل الوصول لعناوين الهاتف"
+
+#: ../../bluetooth/bluez_profile.go:39
+msgid "Message access"
+msgstr "الوصول الى الرسائل"
+
+#: ../../bluetooth/bluez_profile.go:40
+msgid "Message notification"
+msgstr "إشعار الرسائل"
+
+#: ../../bluetooth/utils_notify.go:52 ../../network/utils_notify.go:107
+msgid "Connected"
+msgstr "متصل"
+
+#: ../../bluetooth/utils_notify.go:55 ../../network/utils_notify.go:80
+#: ../../network/utils_notify.go:84 ../../network/utils_notify.go:88
+#: ../../network/utils_notify.go:92 ../../network/utils_notify.go:110
+#: ../../network/utils_notify.go:113 ../../network/utils_notify.go:202
+msgid "Disconnected"
+msgstr "غير متصل"
+
+#: ../../bluetooth/utils_notify.go:59
+msgid "Make sure %q is turned on and in range"
+msgstr "تأكد أن %q مشغل و بالمدى نفسه"
+
+#: ../../bluetooth/utils_notify.go:64
+msgid "Failed to connect %q, pairing failed"
+msgstr "فشل الإتصال %q فشل الإقتران"
+
+#: ../../bluetooth/utils_notify.go:69
+msgid "Bluetooth connection failed"
+msgstr "فشل الاتصال بالبلوتوث"
+
+#: ../../dock/app_entry_menu.go:100
+msgid "_Open"
+msgstr "فتح"
+
+#: ../../dock/app_entry_menu.go:107
+msgid "_Close All"
+msgstr "إغلاق الكل"
+
+#: ../../dock/app_entry_menu.go:128
+msgid "_Force Quit"
+msgstr "_خروج بالقوة"
+
+#: ../../dock/app_entry_menu.go:135
+msgid "_Dock"
+msgstr "إرساء"
+
+#: ../../dock/app_entry_menu.go:142
+msgid "_Undock"
+msgstr "إلغاء الإرساء"
+
+#: ../../dock/app_entry_menu.go:149
+msgid "_All windows"
+msgstr "كل النوافذ"
+
+#: ../../housekeeping/init.go:90
+msgid "Insufficient disk space, please clean up in time!"
+msgstr "مساحة القرص غير كافية، يرجى التنظيف في الوقت المناسب"
+
+#: ../../keybinding/shortcuts/id_name_map.go:28
+msgid "Launcher"
+msgstr "المُطلق"
+
+#: ../../keybinding/shortcuts/id_name_map.go:29
+msgid "Terminal"
+msgstr "الطرفية"
+
+#: ../../keybinding/shortcuts/id_name_map.go:30
+msgid "Deepin Screen Recorder"
+msgstr "مسجل شاشة ديبين"
+
+#: ../../keybinding/shortcuts/id_name_map.go:31
+msgid "Lock screen"
+msgstr "قفل الشاشة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:32
+msgid "Show/Hide the dock"
+msgstr "إظهار /إخفاء الشريط"
+
+#: ../../keybinding/shortcuts/id_name_map.go:33
+msgid "Shutdown interface"
+msgstr "واجهة ايقاف التشغيل"
+
+#: ../../keybinding/shortcuts/id_name_map.go:34
+msgid "Terminal Quake Window"
+msgstr "نافذة طرفية عائمة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:35
+msgid "Screenshot"
+msgstr "لقطة للشاشة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:36
+msgid "Full screenshot"
+msgstr "لقطة شاشة كاملة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:37
+msgid "Window screenshot"
+msgstr "لقطة لنافذة من الشاشة "
+
+#: ../../keybinding/shortcuts/id_name_map.go:38
+msgid "Delay screenshot"
+msgstr "تأخير لقطة الشاشة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:39
+msgid "File manager"
+msgstr "مدير الملفات"
+
+#: ../../keybinding/shortcuts/id_name_map.go:40
+msgid "Disable Touchpad"
+msgstr "تعطيل لوحة اللمس"
+
+#: ../../keybinding/shortcuts/id_name_map.go:41
+msgid "Switch window effects"
+msgstr "تبديل مؤثرات النوافذ"
+
+#: ../../keybinding/shortcuts/id_name_map.go:42
+msgid "Fast Screen Off"
+msgstr "إغلاق سريع للشاشة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:43
+msgid "Deepin System Monitor"
+msgstr "مراقب نظام ديبين"
+
+#: ../../keybinding/shortcuts/id_name_map.go:44
+msgid "Deepin Picker"
+msgstr "لاقط ديبين"
+
+#: ../../keybinding/shortcuts/id_name_map.go:51
+msgid "Switch Layout"
+msgstr "تبديل التخطيط"
+
+#: ../../keybinding/shortcuts/id_name_map.go:70
+msgid "Switch to left workspace"
+msgstr "تبديل إلى مساحة العمل اليمنى"
+
+#: ../../keybinding/shortcuts/id_name_map.go:71
+msgid "Switch to right workspace"
+msgstr "تبديل إلى مساحة العمل اليسرى "
+
+#: ../../keybinding/shortcuts/id_name_map.go:72
+msgid "Switch to upper workspace"
+msgstr "تبديل إلى مساحة العمل العليا "
+
+#: ../../keybinding/shortcuts/id_name_map.go:73
+msgid "Switch to lower workspace"
+msgstr "تبديل إلى مساحة العمل السفلى"
+
+#: ../../keybinding/shortcuts/id_name_map.go:75
+msgid "Switch similar windows"
+msgstr "تبديل النوافذ مماثلةً"
+
+#: ../../keybinding/shortcuts/id_name_map.go:76
+msgid "Switch similar windows in reverse"
+msgstr "تبديل النوافذ مماثلة في الاتجاه المعاكس"
+
+#: ../../keybinding/shortcuts/id_name_map.go:77
+msgid "Switch windows"
+msgstr "تبديل النوافذ"
+
+#: ../../keybinding/shortcuts/id_name_map.go:78
+msgid "Switch windows in reverse"
+msgstr "تبديل النوافذ عكسياً"
+
+#: ../../keybinding/shortcuts/id_name_map.go:89
+msgid "Show desktop"
+msgstr "إظهار سطح المكتب"
+
+#: ../../keybinding/shortcuts/id_name_map.go:98
+msgid "Maximize window"
+msgstr "تكبير النافذة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:99
+msgid "Restore window"
+msgstr "استعادة النافذة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:101
+msgid "Minimize window"
+msgstr "تصغير النافذة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:102
+msgid "Close window"
+msgstr "إغلاق النافذة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:103
+msgid "Move window"
+msgstr "نقل النافذة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:104
+msgid "Resize window"
+msgstr "تغيير حجم النافذة"
+
+#: ../../keybinding/shortcuts/id_name_map.go:119
+msgid "Move to left workspace"
+msgstr "نقل إلى يسار منطقة العمل"
+
+#: ../../keybinding/shortcuts/id_name_map.go:120
+msgid "Move to right workspace"
+msgstr "نقل إلى يمين منطقة العمل"
+
+#: ../../keybinding/shortcuts/id_name_map.go:121
+msgid "Move to upper workspace"
+msgstr "نقل إلى أعلى منطقة العمل"
+
+#: ../../keybinding/shortcuts/id_name_map.go:122
+msgid "Move to lower workspace"
+msgstr "نقل إلى أسفل منطقة العمل"
+
+#: ../../keybinding/shortcuts/id_name_map.go:144
+msgid "Display windows of all workspaces"
+msgstr "عرض النوافذ لكافة مساحات العمل"
+
+#: ../../keybinding/shortcuts/id_name_map.go:145
+msgid "Display windows of current workspace"
+msgstr "عرض نوافذ مساحة العمل الحالية"
+
+#: ../../keybinding/shortcuts/id_name_map.go:146
+msgid "Display workspace"
+msgstr "عرض مساحة العمل"
+
+#: ../../langselector/locale.go:61
+msgid "Authentication is required to switch language"
+msgstr "المصادقة مطلوبة لتبديل اللغة"
+
+#: ../../langselector/locale.go:354
+msgid "Failed to change system language, please try later"
+msgstr "تعذر تغيير لغة النظام ، يرجى المحاولة لاحقاً."
+
+#: ../../langselector/locale.go:378
+msgid ""
+"Changing system language and installing the required language packages, "
+"please wait..."
+msgstr " يجري تعديل لغة النظام بتثبيت حزم اللغة الناقصة، الرجاء الانتظار ..."
+
+#: ../../langselector/locale.go:381
+msgid "Changing system language, please wait..."
+msgstr "جارى تغيير لغة النظام، يرجى الانتظار ..."
+
+#: ../../langselector/locale.go:429
+msgid "System language changed, please log out and then log in"
+msgstr "تم تغيير لغة النظام، يرجى تسجيل الخروج ثم تسجيل الدخول"
+
+#: ../../lastore/check_source.go:51
+msgid "Restore"
+msgstr "استعادة"
+
+#: ../../lastore/check_source.go:70 ../../lastore/lastore.go:248
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: ../../lastore/lastore.go:240
+msgid "Retry"
+msgstr "إعادة المحاولة"
+
+#: ../../lastore/notify.go:82
+msgid "%q installed successfully."
+msgstr " تم تثبيت  %q بنجاح"
+
+#: ../../lastore/notify.go:85
+msgid "%q failed to install."
+msgstr "تعذر تثبيت  %q"
+
+#: ../../lastore/notify.go:93
+msgid "%q removed successfully."
+msgstr "تمت إزالة %q بنجاح"
+
+#: ../../lastore/notify.go:95
+msgid "%q failed to remove."
+msgstr "تعذر إزالة %q"
+
+#: ../../lastore/notify.go:102
+msgid ""
+"In order to prevent automatic shutdown, please plug in for normal update."
+msgstr "من أجل منع إيقاف التشغيل التلقائي، يرجى وصل الطاقة  للتحديث بشكل طبيعي."
+
+#: ../../lastore/notify.go:107
+msgid "Package cache wiped"
+msgstr "تم مسح ذاكرة التخزين المؤقت للحزمة"
+
+#: ../../lastore/notify.go:112
+msgid ""
+"Your system source has been modified, please restore to official source for "
+"your normal use"
+msgstr "نظامك قد تم تعديله، يرجى الرجوع الى الضبط الأصلي للعمل بصورة صحيحة."
+
+#: ../../launcher/manager_uninstall.go:69
+msgid "%q removed successfully"
+msgstr "تمت إزالة %q بنجاح"
+
+#: ../../launcher/manager_uninstall.go:71
+msgid "Failed to uninstall %q"
+msgstr "تعذر إلغاء تثبيت %q "
+
+#: ../../network/manager_active_conn.go:318
+msgid "A (5 GHz)"
+msgstr "A (5 GHz)"
+
+#: ../../network/manager_active_conn.go:320
+msgid "BG (2.4 GHz)"
+msgstr "BG (2.4 GHz)"
+
+#: ../../network/manager_active_conn.go:322
+msgid "Automatic"
+msgstr "تلقائي"
+
+#: ../../network/manager_active_conn.go:333
+#: ../../network/manager_active_conn.go:338
+msgid "None"
+msgstr "لا شيء"
+
+#: ../../network/manager_active_conn.go:340
+msgid "WEP 40/128-bit Key"
+msgstr "WEP 40/128-bit Key"
+
+#: ../../network/manager_active_conn.go:342
+msgid "WPA/WPA2 Personal"
+msgstr "WPA/WPA2 Personal"
+
+#: ../../network/manager_active_conn.go:350
+msgid "TLS"
+msgstr "TLS"
+
+#: ../../network/manager_active_conn.go:352
+msgid "MD5"
+msgstr "MD5 "
+
+#: ../../network/manager_active_conn.go:354
+msgid "LEAP"
+msgstr "LEAP"
+
+#: ../../network/manager_active_conn.go:356
+msgid "FAST"
+msgstr "FAST"
+
+#: ../../network/manager_active_conn.go:358
+msgid "Tunneled TLS"
+msgstr "نفق TLS"
+
+#: ../../network/manager_active_conn.go:360
+msgid "Protected EAP"
+msgstr "EAP محمي"
+
+#: ../../network/manager_connection.go:278 ../../network/nm_custom_type.go:225
+msgid "Wired Connection"
+msgstr "اتصال سلكي"
+
+#: ../../network/nm_custom_type.go:223
+msgid "Connection"
+msgstr "إتصال"
+
+#: ../../network/nm_custom_type.go:227
+msgid "Wireless Connection"
+msgstr "اتصال لاسلكي"
+
+#: ../../network/nm_custom_type.go:229
+msgid "Wireless Ad-Hoc"
+msgstr "Wireless Ad-Hoc"
+
+#: ../../network/nm_custom_type.go:231
+msgid "Wireless Ap-Hotspot"
+msgstr "Wireless Ap-Hotspot"
+
+#: ../../network/nm_custom_type.go:233
+msgid "PPPoE Connection"
+msgstr "اتصالات PPPoE "
+
+#: ../../network/nm_custom_type.go:235
+msgid "Mobile Connection"
+msgstr "اتصال هاتف محمول"
+
+#: ../../network/nm_custom_type.go:237
+msgid "Mobile GSM Connection"
+msgstr "اتصال من بطاقة \"GSM\""
+
+#: ../../network/nm_custom_type.go:239
+msgid "Mobile CDMA Connection"
+msgstr "اتصال من بطاقة \"CDMA\""
+
+#: ../../network/nm_custom_type.go:241
+msgid "VPN Connection"
+msgstr "اتصالVPN "
+
+#: ../../network/nm_custom_type.go:243
+msgid "VPN L2TP"
+msgstr "VPN L2TP"
+
+#: ../../network/nm_custom_type.go:245
+msgid "VPN OpenConnect"
+msgstr "VPN OpenConnect"
+
+#: ../../network/nm_custom_type.go:247
+msgid "VPN OpenVPN"
+msgstr "VPN OpenVPN"
+
+#: ../../network/nm_custom_type.go:249
+msgid "VPN PPTP"
+msgstr "VPN PPTP"
+
+#: ../../network/nm_custom_type.go:251
+msgid "VPN StrongSwan"
+msgstr "VPN StrongSwan"
+
+#: ../../network/nm_custom_type.go:253
+msgid "VPN VPNC"
+msgstr "VPN VPNC"
+
+#: ../../network/state_handler.go:39
+msgid "Device state changed"
+msgstr "تم تغيير حالة الجهاز"
+
+#: ../../network/state_handler.go:40
+msgid "Device state changed, reason unknown"
+msgstr "تغيرت حالة الجهاز ،بسبب غير معروف"
+
+#: ../../network/state_handler.go:41
+msgid "The device is now managed"
+msgstr "الجهاز قيد الإدارة حالياً"
+
+#: ../../network/state_handler.go:42
+msgid "The device is no longer managed"
+msgstr "الجهاز لم يعد قيد الإدارة"
+
+#: ../../network/state_handler.go:43
+msgid "The device has not been ready for configuration"
+msgstr "الجهاز غير جاهز للإعداد"
+
+#: ../../network/state_handler.go:44
+msgid ""
+"IP configuration could not be reserved (no available address, timeout, etc)"
+msgstr " إعدادات IP لم تكن محفوظة (لا عناوين متاحة، خارج الخدمة ، الخ)"
+
+#: ../../network/state_handler.go:45
+msgid "The IP configuration is no longer valid"
+msgstr "تكوين IP لم يعد صالحاً."
+
+#: ../../network/state_handler.go:46
+msgid "Passwords were required but not provided"
+msgstr "كلمات المرور مطلوبة لكن لم تقدم"
+
+#: ../../network/state_handler.go:47
+msgid ""
+"The 802.1X supplicant disconnected from the access point or authentication "
+"server"
+msgstr "طلب الشبكة 802.1X تم قطعه من نقطة الوصول أو خادم المُصادقة ."
+
+#: ../../network/state_handler.go:48
+msgid "Configuration of the 802.1X supplicant failed"
+msgstr "تعذر تكوين طلب الشبكة  802.1X"
+
+#: ../../network/state_handler.go:49
+msgid "The 802.1X supplicant quitted or failed unexpectedly"
+msgstr "طلب الشبكة  802.1X تُرك أو أنه فشل فجأةً ."
+
+#: ../../network/state_handler.go:50
+msgid "The 802.1X supplicant took too long time to authenticate"
+msgstr "استغرق طلب الشبكة 802.1X وقتاً طويلاً للمصادقة ."
+
+#: ../../network/state_handler.go:51
+msgid "The PPP service failed to start within the allowed time"
+msgstr "فشلت بدء خدمة PPP ضمن الوقت المسموح به"
+
+#: ../../network/state_handler.go:52
+msgid "The PPP service disconnected unexpectedly"
+msgstr "خدمة ppp تم فصلها بشكل غير متوقع"
+
+#: ../../network/state_handler.go:53
+msgid "The PPP service quitted or failed unexpectedly"
+msgstr "خدمة PPP تركت أو فشلت بشكل غير متوقع"
+
+#: ../../network/state_handler.go:54
+msgid "The DHCP service failed to start within the allowed time"
+msgstr "فشلت بدء خدمة DHCP ضمن الوقت المسموح به"
+
+#: ../../network/state_handler.go:55
+msgid "The DHCP service reported an unexpected error"
+msgstr "خطأ غير متوقع في خدمة DHCP المذكورة ."
+
+#: ../../network/state_handler.go:56
+msgid "The DHCP service quitted or failed unexpectedly"
+msgstr " خدمة DHCP تركت او فشلت بشكل غير متوقع ."
+
+#: ../../network/state_handler.go:57
+msgid "The shared connection service failed to start"
+msgstr "تعذر بدء تشغيل خدمة الاتصال المشترك"
+
+#: ../../network/state_handler.go:58
+msgid "The shared connection service quitted or failed unexpectedly"
+msgstr "خدمة الاتصال المشترك تركت أو فشلت بشكل غير متوقع."
+
+#: ../../network/state_handler.go:59
+msgid "The AutoIP service failed to start"
+msgstr "تعذر تشغيل خدمة عنوان AutoIP"
+
+#: ../../network/state_handler.go:60
+msgid "The AutoIP service reported an unexpected error"
+msgstr "خطأ غير متوقع في خدمة \"autoIP\" المذكور ."
+
+#: ../../network/state_handler.go:61
+msgid "The AutoIP service quitted or failed unexpectedly"
+msgstr "خدمة عنوان آي بي التلقائي \"AutoIP\" تركت أو فشلت بشكل غير متوقع"
+
+#: ../../network/state_handler.go:62
+msgid "Dialing failed due to busy lines"
+msgstr "فشل الاتصال الهاتفي بسبب ازدحام الخطوط ."
+
+#: ../../network/state_handler.go:63
+msgid "Dialing failed due to no dial tone"
+msgstr "فشل الاتصال الهاتفي بسبب عدم الرنين ."
+
+#: ../../network/state_handler.go:64
+msgid "Dialing failed due to the carrier"
+msgstr "فشل الاتصال الهاتفي بسبب الناقل."
+
+#: ../../network/state_handler.go:65
+msgid "Dialing timed out"
+msgstr "انتهت مهلة الاتصال الهاتفي ."
+
+#: ../../network/state_handler.go:66
+msgid "Dialing failed"
+msgstr "فشل الاتصال الهاتفي"
+
+#: ../../network/state_handler.go:67
+msgid "Modem initialization failed"
+msgstr "تعذرت تهيئة المودم"
+
+#: ../../network/state_handler.go:68
+msgid "Failed to select the specified GSM APN"
+msgstr "لا يمكن تحديد نقطة الوصول المخصصة لـ GSM "
+
+#: ../../network/state_handler.go:69
+msgid "No networks searched"
+msgstr "لا توجد شبكات في البحث"
+
+#: ../../network/state_handler.go:70
+msgid "Network registration was denied"
+msgstr "تم رفض تسجيل الشبكة"
+
+#: ../../network/state_handler.go:71
+msgid "Network registration timed out"
+msgstr "انتهت مدة تسجيل الشبكة"
+
+#: ../../network/state_handler.go:72
+msgid "Failed to register to the requested GSM network"
+msgstr "تعذر التسجيل على شبكة GSM  المطلوبة ."
+
+#: ../../network/state_handler.go:73
+msgid "PIN check failed"
+msgstr "تعذر التحقق من رمز PIN"
+
+#: ../../network/state_handler.go:74
+msgid "Necessary firmware for the device may be missed"
+msgstr "البرامج الثابتة المطلوبة للجهاز قد تكون مفقودة"
+
+#: ../../network/state_handler.go:75
+msgid "The device was removed"
+msgstr "تم حذف الجهاز ."
+
+#: ../../network/state_handler.go:76
+msgid "NetworkManager went to sleep"
+msgstr "مدير الشبكات في وضع الخمول ."
+
+#: ../../network/state_handler.go:77
+msgid "The device's active connection was removed or disappeared"
+msgstr "اختفى أو تمت إزالة اتصال الجهاز النشط"
+
+#: ../../network/state_handler.go:78
+msgid "A user or client requested to disconnect"
+msgstr "طلب المستخدم أو العميل قطع الاتصال"
+
+#: ../../network/state_handler.go:79
+msgid "The device's carrier/link changed"
+msgstr "ناقل الجهاز أو الرابط قد تغير."
+
+#: ../../network/state_handler.go:80
+msgid "The device's existing connection was assumed"
+msgstr "تم تعيين اتصال موجود للجهاز."
+
+#: ../../network/state_handler.go:81
+msgid "The 802.1x supplicant is now available"
+msgstr "الطلب 802.1X متاح الآن"
+
+#: ../../network/state_handler.go:82
+msgid "The modem could not be found"
+msgstr "تعذر العثور على المودم"
+
+#: ../../network/state_handler.go:83
+msgid "The Bluetooth connection timed out or failed"
+msgstr "فشل الاتصال بالبلوتوث أو أنه انتهت المهلة ."
+
+#: ../../network/state_handler.go:84
+msgid "GSM Modem's SIM Card was not inserted"
+msgstr "لم تدرج البطاقة sim للمودم gsm "
+
+#: ../../network/state_handler.go:85
+msgid "GSM Modem's SIM PIN required"
+msgstr "يلزم إدخال رمز PIN لبطاقة SIM للمودم GSM."
+
+#: ../../network/state_handler.go:86
+msgid "GSM Modem's SIM PUK required"
+msgstr "مطلوب رمز   PUK للبطاقة SIM للمودم GSM."
+
+#: ../../network/state_handler.go:87
+msgid "SIM card error in GSM Modem"
+msgstr "خطأ في بطاقة الخط  المثبتة SIM في مودم الاتصال"
+
+#: ../../network/state_handler.go:88
+msgid "InfiniBand device does not support connected mode"
+msgstr "جهاز InfiniBand لا يدعم وضع الاتصال."
+
+#: ../../network/state_handler.go:89
+msgid "A dependency of the connection failed"
+msgstr ""
+
+#: ../../network/state_handler.go:90
+msgid "RFC 2684 Ethernet bridging error to ADSL"
+msgstr "خطأ في توصيل RFC 2684 الخاصة باﻹيثرنت إلى خط ADSL"
+
+#: ../../network/state_handler.go:91
+msgid "ModemManager did not run or quitted unexpectedly"
+msgstr "مدير المودم لا يعمل أو تُرك بشكل غير متوقع."
+
+#: ../../network/state_handler.go:92
+msgid "The 802.11 Wi-Fi network could not be found"
+msgstr "تعذر العثور على شبكة اللاسلكية 802.11."
+
+#: ../../network/state_handler.go:93
+msgid "A secondary connection of the base connection failed"
+msgstr "فشل الاتصال الثانوي من الاتصال اﻷساسي ."
+
+#: ../../network/state_handler.go:96
+msgid "DCB or FCoE setup failed"
+msgstr "تعذر تثبيت DCB أو FCoE "
+
+#: ../../network/state_handler.go:97
+msgid "Network teaming control failed"
+msgstr "فشل الانضمام إلى شبكة التحكم "
+
+#: ../../network/state_handler.go:98
+msgid "Modem failed to run or not available"
+msgstr "تعذر تشغيل المودم أو أنه غير متاح"
+
+#: ../../network/state_handler.go:99
+msgid "Modem now ready and available"
+msgstr "المودم أصبح جاهز الآن ومتاح ."
+
+#: ../../network/state_handler.go:100
+msgid "SIM PIN is incorrect"
+msgstr "رمز PIN لبطاقة الخط SIM غير صحيح "
+
+#: ../../network/state_handler.go:101
+msgid "New connection activation is enqueuing"
+msgstr "تفعيل الاتصال الجديد قيد اﻹدراج"
+
+#: ../../network/state_handler.go:102
+msgid "Parent device changed"
+msgstr "حالة الجهاز اﻷصلية قد تغيرت"
+
+#: ../../network/state_handler.go:103
+msgid "Management status of parent device changed"
+msgstr " حالة إدارة الجهاز الأصل قد تغيرت."
+
+#: ../../network/state_handler.go:106
+msgid "Network cable is unplugged"
+msgstr "كبل الشبكة غير موصول"
+
+#: ../../network/state_handler.go:107
+msgid "Please make sure SIM card has been inserted with mobile network signal"
+msgstr "الرجاء كن متأكداً من إدراج بطاقة SIM ، مع وجود إشارة شبكة الجوال"
+
+#: ../../network/state_handler.go:108
+msgid ""
+"Please make sure a correct plan was selected without arrearage of SIM card"
+msgstr "الرجاء التأكد  من الطريقة الصحيحة المحددة بدون تأخير دفع رصيد بطاقة SIM  "
+
+#: ../../network/state_handler.go:111
+msgid "Failed to activate VPN connection, reason unknown"
+msgstr "فشل تفعيل اتصال VPN  بسبب غير معروف"
+
+#: ../../network/state_handler.go:112
+msgid "Failed to activate VPN connection"
+msgstr "فشل تفعيل اتصال الشبكة الافتراضية VPN"
+
+#: ../../network/state_handler.go:113
+msgid "The VPN connection state changed due to being disconnected by users"
+msgstr "تغيرت حالة اتصال VPN بسبب انقطاع الاتصال بواسطة المستخدمين"
+
+#: ../../network/state_handler.go:114
+msgid ""
+"The VPN connection state changed due to being disconnected from devices"
+msgstr "تغيرت حالة اتصال VPN بسبب انقطاع الاتصال من الأجهزة"
+
+#: ../../network/state_handler.go:115
+msgid "VPN service stopped"
+msgstr "خدمة الشبكة الافتراضية الخاصة VPN توقفت"
+
+#: ../../network/state_handler.go:116
+msgid "The IP config of VPN connection was invalid"
+msgstr "تكوين IP للاتصال بـ VPN غير صالح"
+
+#: ../../network/state_handler.go:117
+msgid "The connection attempt to VPN service timed out"
+msgstr "انتهت المهلة لمحاولة الاتصال بخدمة VPN."
+
+#: ../../network/state_handler.go:118
+msgid "The VPN service start timed out"
+msgstr "انتهت المهلة لبدء تشغيل خدمة VPN "
+
+#: ../../network/state_handler.go:119
+msgid "The VPN service failed to start"
+msgstr "تعذر الاتصال بخدمة VPN للبدء"
+
+#: ../../network/state_handler.go:120
+msgid "The VPN connection password was not provided"
+msgstr "كلمة المروراتصال الـ VPN  لم تقدم بعد"
+
+#: ../../network/state_handler.go:121
+msgid "Authentication to VPN server failed"
+msgstr "فشلت المصادقة على خادم  vpn"
+
+#: ../../network/state_handler.go:122
+msgid "The connection was deleted from settings"
+msgstr "تم حذف الاتصال من اﻹعدادات"
+
+#: ../../network/state_handler.go:251
+msgid "Try enabling hotspot"
+msgstr "حاول تمكين نقطة الوصول"
+
+#: ../../network/state_handler.go:253
+msgid "Try connecting %q"
+msgstr "حاول الإتصال ب %q"
+
+#: ../../network/state_handler.go:261
+msgid "Hotspot share enabled"
+msgstr "تم تمكين مشاركة نقطة الاتصال"
+
+#: ../../network/state_handler.go:263
+msgid "%q connected"
+msgstr "%q متصل"
+
+#: ../../network/state_handler.go:274 ../../network/state_handler.go:325
+msgid "Hotspot share turned off"
+msgstr "تم إيقاف مشاركة نقطة الاتصال"
+
+#: ../../network/state_handler.go:327 ../../network/state_handler.go:343
+msgid "%q disconnected"
+msgstr "%q غير متصل"
+
+#: ../../network/state_handler.go:333
+msgid "Unable to share hotspot, please check dnsmasq settings"
+msgstr "لا يمكن مشاركة نقطة الإتصال, رجاءً تأكد من إعدادات dnsmasq"
+
+#: ../../network/state_handler.go:335
+msgid "Unable to connect %q, please keep closer to the wireless router"
+msgstr "غير قادر على الإتصال %q رجاءً أقترب أكثر من جهاز التوجيه اللاسلكي."
+
+#: ../../network/state_handler.go:337
+msgid "Unable to connect %q, please check your router or net cable."
+msgstr "غير قادر على الإتصال %q رجاءً تحقق من جهاز التوجيه أو قابس الإنترنت."
+
+#: ../../network/state_handler.go:340
+msgid "Connection failed, unable to connect %q, wrong password"
+msgstr "خطأ في الإتصال, لا يمكن الإتصال  %q, كلمة مرور خاطئة"
+
+#: ../../network/utils_dbus_nm.go:227
+msgid "Unknown"
+msgstr "غير معروف"
+
+#: ../../network/utils_notify.go:80
+msgid "You are now offline."
+msgstr "أنت اﻵن غير متصل"
+
+#: ../../network/utils_notify.go:84
+msgid "Airplane mode enabled."
+msgstr "تم تفعيل وضع الطيران"
+
+#: ../../network/utils_notify.go:92
+msgid "Access Point mode is not supported by this device."
+msgstr "نقطة الوصول غير معتمدة من طرف هذا الجهاز"
+
+#: ../../network/utils_notify.go:96 ../../network/utils_notify.go:100
+#: ../../network/utils_notify.go:103
+msgid "Network"
+msgstr "الشبكة"
+
+#: ../../network/utils_notify.go:96
+msgid ""
+"The hardware switch of WLAN Card is off, please switch on as necessary."
+msgstr "مبدل الجهاز لبطاقة الشبكة \"متوقف\" ، يرجى التبديل على حسب الضرورة ."
+
+#: ../../network/utils_notify.go:100
+msgid "System proxy is set successfully."
+msgstr "تم تعيين وكيل النظام بنجاح"
+
+#: ../../network/utils_notify.go:103
+msgid "System proxy has been cancelled."
+msgstr "تم إلغاء وكيل النظام"
+
+#: ../../session/power/manager_events.go:133
+msgid "Battery Critically Low"
+msgstr "البطارية منخفضة جداً"
+
+#: ../../session/power/manager_events.go:134
+msgid "Computer will suspend very soon, please plug in now"
+msgstr "الكمبيوتر سيتوقف قريباً جداً، رجاءً اشبك السلك الكهربائي الآن"
+
+#: ../../session/power/manager_events.go:157
+#: ../../session/power/manager_events.go:164
+msgid "Battery Low"
+msgstr "طاقة البطارية منخفضة"
+
+#: ../../session/power/manager_events.go:158
+msgid "Computer will suspend soon, please plug in"
+msgstr "الكمبيوتر سيتوقف قريباً جداً، رجاءً اشبك السلك الكهربائي"
+
+#: ../../session/power/manager_events.go:165
+msgid "Battery low, please plug in"
+msgstr "البطارية منخفضة، رجاءً اشبك السلك الكهربائي"
+
+#: ../../timedate/manager_ifc.go:56
+msgid "Authentication is required to set the system time"
+msgstr "المصادقة مطلوبة لضبط وقت النظام"
+
+#: ../../timedate/manager_ifc.go:69
+msgid ""
+"Authentication is required to control whether network time synchronization "
+"shall be enabled"
+msgstr "المصادقة مطلوبة للتحكم بما إذا كان سيتم تمكين تزامن وقت الشبكة"
+
+#: ../../timedate/manager_ifc.go:89
+msgid ""
+"Authentication is required to control whether the RTC stores the local or "
+"UTC time"
+msgstr "المصادقة مطلوبة للتحكم بما إذا كان RTC  يحتوي على توقيت محلي أو على توقيت عالمي منسق"
+
+#: ../../timedate/manager_ifc.go:108
+msgid "Authentication is required to set the system timezone"
+msgstr "المصادقة مطلوبة لضبط المنطقة الزمنية للنظام"

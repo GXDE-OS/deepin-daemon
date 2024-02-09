@@ -1,0 +1,956 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# op6464 <op64@seznam.cz>, 2016
+# fri, 2016-2019
+# Tomáš Kratochvíl <kratochvil.tomas.dev@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Deepin Desktop Environment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-19 15:46+0800\n"
+"PO-Revision-Date: 2019-05-13 09:07+0000\n"
+"Last-Translator: fri\n"
+"Language-Team: Czech (http://www.transifex.com/linuxdeepin/deepin-desktop-environment/language/cs/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+#: ../../accounts/checkers/password.go:54
+msgid "Please enter a password not less than 8 characters"
+msgstr "Zadejte, prosím, heslo ne kratší než 8 znaků"
+
+#: ../../accounts/checkers/password.go:56
+msgid ""
+"The password must contain English letters (case-sensitive), numbers or "
+"special symbols (~!@#$%^&*()[]{}\\|/?,.<>)"
+msgstr "Heslo musí obsahovat anglická písmena (rozlišuje se velikost písmen), čísla nebo zvláštní symboly (~!@#$%^&*()[]{}\\|/?,.<>)"
+
+#: ../../accounts/checkers/username.go:60
+msgid "Username cannot be empty"
+msgstr "Uživatelské jméno nemůže být prázdné"
+
+#: ../../accounts/checkers/username.go:62
+msgid "Username must comprise a~z, 0~9, - or _"
+msgstr "Uživatelské jméno musí obsahovat a~z, 0~9, - nebo _"
+
+#: ../../accounts/checkers/username.go:64
+msgid "The first character must be in lower case"
+msgstr "První písmeno musí být malé"
+
+#: ../../accounts/checkers/username.go:66
+msgid "The username exists"
+msgstr "Uživatelské jméno už existuje. "
+
+#: ../../accounts/checkers/username.go:68
+msgid "The username has been used by system"
+msgstr "Uživatelské jméno bylo použito systémem."
+
+#: ../../accounts/checkers/username.go:70
+msgid "The username's length exceeds the limit"
+msgstr "Délka uživatelského jména překračuje omezení"
+
+#: ../../appearance/scale.go:61
+msgid "Set successfully"
+msgstr "Nastaveno úspěšně"
+
+#: ../../appearance/scale.go:62
+msgid "Please log back in to view the changes"
+msgstr "Přihlašte se, prosím, zpět, abyste viděli změny"
+
+#: ../../appearance/scale.go:66
+msgid "Display scaling"
+msgstr "Měřítko zobrazení"
+
+#: ../../appearance/scale.go:67
+msgid "Setting display scaling"
+msgstr "Nastavení měřítka zobrazení"
+
+#: ../../bin/dde-authority/fprint_transaction.go:20
+msgid "Fingerprint verification failed"
+msgstr "Ověření otiskem prstu selhalo"
+
+#: ../../bin/dde-authority/fprint_transaction.go:21
+msgid "Fingerprint verification timed out"
+msgstr "Ověření otiskem prstu vypršelo"
+
+#: ../../bluetooth/bluez_profile.go:29
+msgid "Serial port"
+msgstr "Sériová přípojka"
+
+#: ../../bluetooth/bluez_profile.go:30
+msgid "Dial-Up networking"
+msgstr "Vytáčené připojení"
+
+#: ../../bluetooth/bluez_profile.go:31
+msgid "Hands-Free device"
+msgstr "Zařízení umožňující používat mobilní zařízení bez rukou"
+
+#: ../../bluetooth/bluez_profile.go:32
+msgid "Hands-Free voice gateway"
+msgstr "Nastavení používání mobilního zařízení bez rukou"
+
+#: ../../bluetooth/bluez_profile.go:33
+msgid "Headset voice gateway"
+msgstr "Hlasová brána sluchátky"
+
+#: ../../bluetooth/bluez_profile.go:34
+msgid "Object push"
+msgstr "Zatlačení předmětu"
+
+#: ../../bluetooth/bluez_profile.go:35
+msgid "File transfer"
+msgstr "Přenos souborů"
+
+#: ../../bluetooth/bluez_profile.go:36
+msgid "Synchronization"
+msgstr "Synchronizace"
+
+#: ../../bluetooth/bluez_profile.go:37
+msgid "Phone book access"
+msgstr "Přístup k adresáři"
+
+#: ../../bluetooth/bluez_profile.go:38
+msgid "Phone book access client"
+msgstr "Klienta pro přístup k adresáři"
+
+#: ../../bluetooth/bluez_profile.go:39
+msgid "Message access"
+msgstr "Přístup ke zprávám"
+
+#: ../../bluetooth/bluez_profile.go:40
+msgid "Message notification"
+msgstr "Upozornění na zprávy"
+
+#: ../../bluetooth/utils_notify.go:52 ../../network/utils_notify.go:107
+msgid "Connected"
+msgstr "Připojeno"
+
+#: ../../bluetooth/utils_notify.go:55 ../../network/utils_notify.go:80
+#: ../../network/utils_notify.go:84 ../../network/utils_notify.go:88
+#: ../../network/utils_notify.go:92 ../../network/utils_notify.go:110
+#: ../../network/utils_notify.go:113 ../../network/utils_notify.go:202
+msgid "Disconnected"
+msgstr "Odpojeno"
+
+#: ../../bluetooth/utils_notify.go:59
+msgid "Make sure %q is turned on and in range"
+msgstr "Ujistěte se, že zařízení %q je zapnuto a v dosahu."
+
+#: ../../bluetooth/utils_notify.go:64
+msgid "Failed to connect %q, pairing failed"
+msgstr "Nelze se připojit k: %q, párování selhalo"
+
+#: ../../bluetooth/utils_notify.go:69
+msgid "Bluetooth connection failed"
+msgstr "Připojení rozhraní Bluetooth se nezdařilo."
+
+#: ../../dock/app_entry_menu.go:100
+msgid "_Open"
+msgstr "_Otevřít"
+
+#: ../../dock/app_entry_menu.go:107
+msgid "_Close All"
+msgstr "_Zavřít vše"
+
+#: ../../dock/app_entry_menu.go:128
+msgid "_Force Quit"
+msgstr "_Vynutit ukončení"
+
+#: ../../dock/app_entry_menu.go:135
+msgid "_Dock"
+msgstr "_Panel"
+
+#: ../../dock/app_entry_menu.go:142
+msgid "_Undock"
+msgstr "_Uvolnit z panelu"
+
+#: ../../dock/app_entry_menu.go:149
+msgid "_All windows"
+msgstr "_Všechna okna"
+
+#: ../../housekeeping/init.go:90
+msgid "Insufficient disk space, please clean up in time!"
+msgstr "Nedostatek místa na disku: Uvolněte, prosím, dostatek místa včas!"
+
+#: ../../keybinding/shortcuts/id_name_map.go:28
+msgid "Launcher"
+msgstr "Spouštěč"
+
+#: ../../keybinding/shortcuts/id_name_map.go:29
+msgid "Terminal"
+msgstr "Terminál"
+
+#: ../../keybinding/shortcuts/id_name_map.go:30
+msgid "Deepin Screen Recorder"
+msgstr "Nahrávač obrazovky"
+
+#: ../../keybinding/shortcuts/id_name_map.go:31
+msgid "Lock screen"
+msgstr "Uzamknout obrazovku"
+
+#: ../../keybinding/shortcuts/id_name_map.go:32
+msgid "Show/Hide the dock"
+msgstr "Zobrazit/Skrýt panel"
+
+#: ../../keybinding/shortcuts/id_name_map.go:33
+msgid "Shutdown interface"
+msgstr "Rozhraní pro vypnutí"
+
+#: ../../keybinding/shortcuts/id_name_map.go:34
+msgid "Terminal Quake Window"
+msgstr "Okno terminálu Quake"
+
+#: ../../keybinding/shortcuts/id_name_map.go:35
+msgid "Screenshot"
+msgstr "Snímek obrazovky"
+
+#: ../../keybinding/shortcuts/id_name_map.go:36
+msgid "Full screenshot"
+msgstr "Plný snímek obrazovky"
+
+#: ../../keybinding/shortcuts/id_name_map.go:37
+msgid "Window screenshot"
+msgstr "Snímek obrazovky"
+
+#: ../../keybinding/shortcuts/id_name_map.go:38
+msgid "Delay screenshot"
+msgstr "Zpozdit snímek obrazovky"
+
+#: ../../keybinding/shortcuts/id_name_map.go:39
+msgid "File manager"
+msgstr "Správce souborů"
+
+#: ../../keybinding/shortcuts/id_name_map.go:40
+msgid "Disable Touchpad"
+msgstr "Dotyková plocha zakázána"
+
+#: ../../keybinding/shortcuts/id_name_map.go:41
+msgid "Switch window effects"
+msgstr "Přepnout efekty oken"
+
+#: ../../keybinding/shortcuts/id_name_map.go:42
+msgid "Fast Screen Off"
+msgstr "Rychlá obrazovka vypnuta"
+
+#: ../../keybinding/shortcuts/id_name_map.go:43
+msgid "Deepin System Monitor"
+msgstr "Sledování systému"
+
+#: ../../keybinding/shortcuts/id_name_map.go:44
+msgid "Deepin Picker"
+msgstr "Sběrač barev"
+
+#: ../../keybinding/shortcuts/id_name_map.go:51
+msgid "Switch Layout"
+msgstr "Přepnout rozvržení"
+
+#: ../../keybinding/shortcuts/id_name_map.go:70
+msgid "Switch to left workspace"
+msgstr "Přepnout vlevo na pracovní plochu"
+
+#: ../../keybinding/shortcuts/id_name_map.go:71
+msgid "Switch to right workspace"
+msgstr "Přepnout vpravo na pracovní plochu"
+
+#: ../../keybinding/shortcuts/id_name_map.go:72
+msgid "Switch to upper workspace"
+msgstr "Přepnout  na horní pracovní plochu"
+
+#: ../../keybinding/shortcuts/id_name_map.go:73
+msgid "Switch to lower workspace"
+msgstr "Přepnout na spodní pracovní plochu"
+
+#: ../../keybinding/shortcuts/id_name_map.go:75
+msgid "Switch similar windows"
+msgstr "Přepnout podobná okna"
+
+#: ../../keybinding/shortcuts/id_name_map.go:76
+msgid "Switch similar windows in reverse"
+msgstr "Přepínání podobných oken v opačném směru"
+
+#: ../../keybinding/shortcuts/id_name_map.go:77
+msgid "Switch windows"
+msgstr "Přepnout okna"
+
+#: ../../keybinding/shortcuts/id_name_map.go:78
+msgid "Switch windows in reverse"
+msgstr "Přepínání oken v opačném směru"
+
+#: ../../keybinding/shortcuts/id_name_map.go:89
+msgid "Show desktop"
+msgstr "Ukázat pracovní plochu"
+
+#: ../../keybinding/shortcuts/id_name_map.go:98
+msgid "Maximize window"
+msgstr "Zvětšit okno"
+
+#: ../../keybinding/shortcuts/id_name_map.go:99
+msgid "Restore window"
+msgstr "Obnovit okno"
+
+#: ../../keybinding/shortcuts/id_name_map.go:101
+msgid "Minimize window"
+msgstr "Zmenšit okno"
+
+#: ../../keybinding/shortcuts/id_name_map.go:102
+msgid "Close window"
+msgstr "Zavřít okno"
+
+#: ../../keybinding/shortcuts/id_name_map.go:103
+msgid "Move window"
+msgstr "Přesunout okno"
+
+#: ../../keybinding/shortcuts/id_name_map.go:104
+msgid "Resize window"
+msgstr "Změnit velikost okna"
+
+#: ../../keybinding/shortcuts/id_name_map.go:119
+msgid "Move to left workspace"
+msgstr "Přesunout vlevo na pracovní plochu"
+
+#: ../../keybinding/shortcuts/id_name_map.go:120
+msgid "Move to right workspace"
+msgstr "Přesunout vpravo na pracovní plochu"
+
+#: ../../keybinding/shortcuts/id_name_map.go:121
+msgid "Move to upper workspace"
+msgstr "Přesunout na horní pracovní plochu"
+
+#: ../../keybinding/shortcuts/id_name_map.go:122
+msgid "Move to lower workspace"
+msgstr "Přesunout na spodní pracovní plochu"
+
+#: ../../keybinding/shortcuts/id_name_map.go:144
+msgid "Display windows of all workspaces"
+msgstr "Zobrazit okna ze všech pracovních prostředí"
+
+#: ../../keybinding/shortcuts/id_name_map.go:145
+msgid "Display windows of current workspace"
+msgstr "Zobrazit okna z nynějšího pracovního prostředí"
+
+#: ../../keybinding/shortcuts/id_name_map.go:146
+msgid "Display workspace"
+msgstr "Zobrazit pracovní prostředí"
+
+#: ../../langselector/locale.go:61
+msgid "Authentication is required to switch language"
+msgstr "Pro přepnutí jazyka je požadováno ověření pravosti"
+
+#: ../../langselector/locale.go:354
+msgid "Failed to change system language, please try later"
+msgstr "Nepodařilo se změnit jazyk systému, zkuste to znovu později"
+
+#: ../../langselector/locale.go:378
+msgid ""
+"Changing system language and installing the required language packages, "
+"please wait..."
+msgstr "Mění se jazyk systému a instalují se požadované jazykové balíky, prosím, čekejte..."
+
+#: ../../langselector/locale.go:381
+msgid "Changing system language, please wait..."
+msgstr "Mění se jazyk systému, prosím, čekejte..."
+
+#: ../../langselector/locale.go:429
+msgid "System language changed, please log out and then log in"
+msgstr "Systémový jazyk byl změněn, prosím, odhlaste se, a potom se přihlašte  znovu"
+
+#: ../../lastore/check_source.go:51
+msgid "Restore"
+msgstr "Obnovit"
+
+#: ../../lastore/check_source.go:70 ../../lastore/lastore.go:248
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: ../../lastore/lastore.go:240
+msgid "Retry"
+msgstr "Zkusit znovu"
+
+#: ../../lastore/notify.go:82
+msgid "%q installed successfully."
+msgstr "%q nainstalováno úspěšně."
+
+#: ../../lastore/notify.go:85
+msgid "%q failed to install."
+msgstr "%q se nepodařilo nainstalovat."
+
+#: ../../lastore/notify.go:93
+msgid "%q removed successfully."
+msgstr "%q odstraněno úspěšně."
+
+#: ../../lastore/notify.go:95
+msgid "%q failed to remove."
+msgstr "%q se nepodařilo odstranit."
+
+#: ../../lastore/notify.go:102
+msgid ""
+"In order to prevent automatic shutdown, please plug in for normal update."
+msgstr "Kvůli zabránění automatického vypnutí zapněte, prosím, normální aktualizaci."
+
+#: ../../lastore/notify.go:107
+msgid "Package cache wiped"
+msgstr "Vymazání balíčku v mezipaměti"
+
+#: ../../lastore/notify.go:112
+msgid ""
+"Your system source has been modified, please restore to official source for "
+"your normal use"
+msgstr "Váš systémový zdroj byl upraven, obnovte prosím oficiální zdroj pro vaše normální použití"
+
+#: ../../launcher/manager_uninstall.go:69
+msgid "%q removed successfully"
+msgstr "%q odstraněno úspěšně"
+
+#: ../../launcher/manager_uninstall.go:71
+msgid "Failed to uninstall %q"
+msgstr "Nepodařilo se nainstalovat %q"
+
+#: ../../network/manager_active_conn.go:318
+msgid "A (5 GHz)"
+msgstr "A (5 GHz)"
+
+#: ../../network/manager_active_conn.go:320
+msgid "BG (2.4 GHz)"
+msgstr "BG (2.4 GHz)"
+
+#: ../../network/manager_active_conn.go:322
+msgid "Automatic"
+msgstr "Automaticky"
+
+#: ../../network/manager_active_conn.go:333
+#: ../../network/manager_active_conn.go:338
+msgid "None"
+msgstr "Žádný"
+
+#: ../../network/manager_active_conn.go:340
+msgid "WEP 40/128-bit Key"
+msgstr "Klíč WEP 40/128-bitů"
+
+#: ../../network/manager_active_conn.go:342
+msgid "WPA/WPA2 Personal"
+msgstr "WPA/WPA2 Personal"
+
+#: ../../network/manager_active_conn.go:350
+msgid "TLS"
+msgstr "TLS"
+
+#: ../../network/manager_active_conn.go:352
+msgid "MD5"
+msgstr "MD5"
+
+#: ../../network/manager_active_conn.go:354
+msgid "LEAP"
+msgstr "LEAP"
+
+#: ../../network/manager_active_conn.go:356
+msgid "FAST"
+msgstr "FAST"
+
+#: ../../network/manager_active_conn.go:358
+msgid "Tunneled TLS"
+msgstr "TLS"
+
+#: ../../network/manager_active_conn.go:360
+msgid "Protected EAP"
+msgstr "Chráněné EAP"
+
+#: ../../network/manager_connection.go:278 ../../network/nm_custom_type.go:225
+msgid "Wired Connection"
+msgstr "Drátové připojení"
+
+#: ../../network/nm_custom_type.go:223
+msgid "Connection"
+msgstr "Spojení"
+
+#: ../../network/nm_custom_type.go:227
+msgid "Wireless Connection"
+msgstr "Bezdrátové připojení"
+
+#: ../../network/nm_custom_type.go:229
+msgid "Wireless Ad-Hoc"
+msgstr "Bezdrátové Ad-Hoc"
+
+#: ../../network/nm_custom_type.go:231
+msgid "Wireless Ap-Hotspot"
+msgstr "Bezdrátový Ap-Hotspot"
+
+#: ../../network/nm_custom_type.go:233
+msgid "PPPoE Connection"
+msgstr "PPPoE připojení"
+
+#: ../../network/nm_custom_type.go:235
+msgid "Mobile Connection"
+msgstr "Mobilní připojení"
+
+#: ../../network/nm_custom_type.go:237
+msgid "Mobile GSM Connection"
+msgstr "Mobilní GSM připojení"
+
+#: ../../network/nm_custom_type.go:239
+msgid "Mobile CDMA Connection"
+msgstr "Mobilní CDMA připojení"
+
+#: ../../network/nm_custom_type.go:241
+msgid "VPN Connection"
+msgstr "Spojení VPN"
+
+#: ../../network/nm_custom_type.go:243
+msgid "VPN L2TP"
+msgstr "VPN L2TP"
+
+#: ../../network/nm_custom_type.go:245
+msgid "VPN OpenConnect"
+msgstr "VPN OpenConnect"
+
+#: ../../network/nm_custom_type.go:247
+msgid "VPN OpenVPN"
+msgstr "VPN OpenVPN"
+
+#: ../../network/nm_custom_type.go:249
+msgid "VPN PPTP"
+msgstr "VPN PPTP"
+
+#: ../../network/nm_custom_type.go:251
+msgid "VPN StrongSwan"
+msgstr "VPN StrongSwan"
+
+#: ../../network/nm_custom_type.go:253
+msgid "VPN VPNC"
+msgstr "VPN VPNC"
+
+#: ../../network/state_handler.go:39
+msgid "Device state changed"
+msgstr "Stav zařízení se změnil"
+
+#: ../../network/state_handler.go:40
+msgid "Device state changed, reason unknown"
+msgstr "Stav zařízení se změnil, důvod neznámý"
+
+#: ../../network/state_handler.go:41
+msgid "The device is now managed"
+msgstr "Zařízení je nyní spravováno"
+
+#: ../../network/state_handler.go:42
+msgid "The device is no longer managed"
+msgstr "Zařízení už není spravováno"
+
+#: ../../network/state_handler.go:43
+msgid "The device has not been ready for configuration"
+msgstr "Zařízení není připraveno pro nastavení"
+
+#: ../../network/state_handler.go:44
+msgid ""
+"IP configuration could not be reserved (no available address, timeout, etc)"
+msgstr "Nastavení IP nemohlo být zamluveno (žádná dostupná adresa, překročení času, atd.)"
+
+#: ../../network/state_handler.go:45
+msgid "The IP configuration is no longer valid"
+msgstr "Nastavení IP už není platné"
+
+#: ../../network/state_handler.go:46
+msgid "Passwords were required but not provided"
+msgstr "Hesly byla požadována, ale nebyla poskytnuta"
+
+#: ../../network/state_handler.go:47
+msgid ""
+"The 802.1X supplicant disconnected from the access point or authentication "
+"server"
+msgstr "802.1X žádost byla odepřena přístupovým bodem nebo autentizačním serverem"
+
+#: ../../network/state_handler.go:48
+msgid "Configuration of the 802.1X supplicant failed"
+msgstr "Nastavení 802.1X selhalo"
+
+#: ../../network/state_handler.go:49
+msgid "The 802.1X supplicant quitted or failed unexpectedly"
+msgstr "802.1X žádost neočekávaně skončila nebo selhala"
+
+#: ../../network/state_handler.go:50
+msgid "The 802.1X supplicant took too long time to authenticate"
+msgstr "802.1X autentizace trvala příliš dlouho."
+
+#: ../../network/state_handler.go:51
+msgid "The PPP service failed to start within the allowed time"
+msgstr "PPP služba selhala při spuštění v rámci povoleného času"
+
+#: ../../network/state_handler.go:52
+msgid "The PPP service disconnected unexpectedly"
+msgstr "PPP služba byla neočakávaně odpojena"
+
+#: ../../network/state_handler.go:53
+msgid "The PPP service quitted or failed unexpectedly"
+msgstr "PPP služba neočekávaně skončila nebo selhala"
+
+#: ../../network/state_handler.go:54
+msgid "The DHCP service failed to start within the allowed time"
+msgstr "DHCP službaselhala při spuštění v rámci povoleného času"
+
+#: ../../network/state_handler.go:55
+msgid "The DHCP service reported an unexpected error"
+msgstr "DHCP služba ohlásila neočekávanou chybu"
+
+#: ../../network/state_handler.go:56
+msgid "The DHCP service quitted or failed unexpectedly"
+msgstr "DHCP služba neočekávaně skončila nebo selhala"
+
+#: ../../network/state_handler.go:57
+msgid "The shared connection service failed to start"
+msgstr "Služba sdíleného spojení selhala při spuštění"
+
+#: ../../network/state_handler.go:58
+msgid "The shared connection service quitted or failed unexpectedly"
+msgstr "Služba sdíleného spojení neočekávaně selhala nebo selhala"
+
+#: ../../network/state_handler.go:59
+msgid "The AutoIP service failed to start"
+msgstr "Služba AutoIP selhala při spuštění"
+
+#: ../../network/state_handler.go:60
+msgid "The AutoIP service reported an unexpected error"
+msgstr "Služba AutoIP ohlásila neočekávanou chybu"
+
+#: ../../network/state_handler.go:61
+msgid "The AutoIP service quitted or failed unexpectedly"
+msgstr "Služba AutoIP neočekávaně skončila nebo selhala"
+
+#: ../../network/state_handler.go:62
+msgid "Dialing failed due to busy lines"
+msgstr "Spojení selhalo kvůli zaneprázdněnosti linek"
+
+#: ../../network/state_handler.go:63
+msgid "Dialing failed due to no dial tone"
+msgstr "Spojení selhalo kvůli nedostupnému spojovacímu tónu"
+
+#: ../../network/state_handler.go:64
+msgid "Dialing failed due to the carrier"
+msgstr "Spojení selhalo kvůli poskytovateli"
+
+#: ../../network/state_handler.go:65
+msgid "Dialing timed out"
+msgstr "Spojení vypršelo"
+
+#: ../../network/state_handler.go:66
+msgid "Dialing failed"
+msgstr "Spojení selhalo"
+
+#: ../../network/state_handler.go:67
+msgid "Modem initialization failed"
+msgstr "Inicializace modemu selhala"
+
+#: ../../network/state_handler.go:68
+msgid "Failed to select the specified GSM APN"
+msgstr "Selhala volba stanoveného GSM APN"
+
+#: ../../network/state_handler.go:69
+msgid "No networks searched"
+msgstr "Připojení nenalezeno"
+
+#: ../../network/state_handler.go:70
+msgid "Network registration was denied"
+msgstr "Registrace sítě byla odmítnuta"
+
+#: ../../network/state_handler.go:71
+msgid "Network registration timed out"
+msgstr "Registrace sítě vypršela"
+
+#: ../../network/state_handler.go:72
+msgid "Failed to register to the requested GSM network"
+msgstr "Nepodařilo se zaregistrovat do požadované sítě GSM"
+
+#: ../../network/state_handler.go:73
+msgid "PIN check failed"
+msgstr "PIN kontrola selhala"
+
+#: ../../network/state_handler.go:74
+msgid "Necessary firmware for the device may be missed"
+msgstr "Potřebný firmware pro zařízení asi chybí"
+
+#: ../../network/state_handler.go:75
+msgid "The device was removed"
+msgstr "Zařízení bylo odstraněno"
+
+#: ../../network/state_handler.go:76
+msgid "NetworkManager went to sleep"
+msgstr "NetworkManager je v režimu spánku"
+
+#: ../../network/state_handler.go:77
+msgid "The device's active connection was removed or disappeared"
+msgstr "Aktivní spojení zařízení bylo odstraněno nebo zmizelo"
+
+#: ../../network/state_handler.go:78
+msgid "A user or client requested to disconnect"
+msgstr "Uživatel nebo klient žádal o odpojení"
+
+#: ../../network/state_handler.go:79
+msgid "The device's carrier/link changed"
+msgstr "Linka/Přenašeč zařízení byl změněn"
+
+#: ../../network/state_handler.go:80
+msgid "The device's existing connection was assumed"
+msgstr "Stávající spojení zařízení bylo předpokládáno"
+
+#: ../../network/state_handler.go:81
+msgid "The 802.1x supplicant is now available"
+msgstr "802.1X je nyní dostupné"
+
+#: ../../network/state_handler.go:82
+msgid "The modem could not be found"
+msgstr "Modem nebyl nalezen"
+
+#: ../../network/state_handler.go:83
+msgid "The Bluetooth connection timed out or failed"
+msgstr "Bluetooth spojení vypršelo nebo selhalo"
+
+#: ../../network/state_handler.go:84
+msgid "GSM Modem's SIM Card was not inserted"
+msgstr "SIM karta GSM modemu nebyla vložena"
+
+#: ../../network/state_handler.go:85
+msgid "GSM Modem's SIM PIN required"
+msgstr "Je požadován PIN pro SIM modemu GSM"
+
+#: ../../network/state_handler.go:86
+msgid "GSM Modem's SIM PUK required"
+msgstr "Je požadován PUK pro SIM modemu GSM"
+
+#: ../../network/state_handler.go:87
+msgid "SIM card error in GSM Modem"
+msgstr "Chyba karty SIM v modemu GSM"
+
+#: ../../network/state_handler.go:88
+msgid "InfiniBand device does not support connected mode"
+msgstr "InfiniBand zařízení nepodporuje spojený režim"
+
+#: ../../network/state_handler.go:89
+msgid "A dependency of the connection failed"
+msgstr "Závislost spojení selhala"
+
+#: ../../network/state_handler.go:90
+msgid "RFC 2684 Ethernet bridging error to ADSL"
+msgstr "Chyba přemostění sítě Ethernet RFC 2684 do služby ADSL"
+
+#: ../../network/state_handler.go:91
+msgid "ModemManager did not run or quitted unexpectedly"
+msgstr "ModemManager není spuštěn nebo neočekávaně skončil"
+
+#: ../../network/state_handler.go:92
+msgid "The 802.11 Wi-Fi network could not be found"
+msgstr "802.11 Wi-Fi síť nebyla nalezena"
+
+#: ../../network/state_handler.go:93
+msgid "A secondary connection of the base connection failed"
+msgstr "Sekundární spojení základního spojení selhalo"
+
+#: ../../network/state_handler.go:96
+msgid "DCB or FCoE setup failed"
+msgstr "Nastavení technologie DCB nebo FCoE se nezdařilo"
+
+#: ../../network/state_handler.go:97
+msgid "Network teaming control failed"
+msgstr "Řízení funkce Vytváření týmů v síti (Network Teaming) se nezdařilo."
+
+#: ../../network/state_handler.go:98
+msgid "Modem failed to run or not available"
+msgstr "Modem se nepodařilo spustit nebo není dostupný"
+
+#: ../../network/state_handler.go:99
+msgid "Modem now ready and available"
+msgstr "Modem je nyní připraven a dostupný"
+
+#: ../../network/state_handler.go:100
+msgid "SIM PIN is incorrect"
+msgstr "Kód PIN karty SIM je nesprávný"
+
+#: ../../network/state_handler.go:101
+msgid "New connection activation is enqueuing"
+msgstr "Zapnutí nového připojení bylo zařazeno do řady"
+
+#: ../../network/state_handler.go:102
+msgid "Parent device changed"
+msgstr "Nadřazené zařízení se změnilo"
+
+#: ../../network/state_handler.go:103
+msgid "Management status of parent device changed"
+msgstr "Stav správy nadřazeného zařízení se změnil"
+
+#: ../../network/state_handler.go:106
+msgid "Network cable is unplugged"
+msgstr "Síťový kabel je odpojen"
+
+#: ../../network/state_handler.go:107
+msgid "Please make sure SIM card has been inserted with mobile network signal"
+msgstr "Ujistěte se, zda má vložená SIM karta signál mobilní sítě"
+
+#: ../../network/state_handler.go:108
+msgid ""
+"Please make sure a correct plan was selected without arrearage of SIM card"
+msgstr "Ujistěte se, že byl pro SIM kartu vybrán správný tarif (plán)"
+
+#: ../../network/state_handler.go:111
+msgid "Failed to activate VPN connection, reason unknown"
+msgstr "Nepodařilo se zapnout spojení VPN, důvod neznámý"
+
+#: ../../network/state_handler.go:112
+msgid "Failed to activate VPN connection"
+msgstr "Nepodařilo se zapnout spojení VPN"
+
+#: ../../network/state_handler.go:113
+msgid "The VPN connection state changed due to being disconnected by users"
+msgstr "Stav spojení VPN se změnil kvůli odpojení uživateli"
+
+#: ../../network/state_handler.go:114
+msgid ""
+"The VPN connection state changed due to being disconnected from devices"
+msgstr "Stav spojení VPN se změnil kvůli odpojení od zařízení"
+
+#: ../../network/state_handler.go:115
+msgid "VPN service stopped"
+msgstr "Služba VPN zastavena"
+
+#: ../../network/state_handler.go:116
+msgid "The IP config of VPN connection was invalid"
+msgstr "Nastavení IP VPN spojení byla neplatná"
+
+#: ../../network/state_handler.go:117
+msgid "The connection attempt to VPN service timed out"
+msgstr "Pokus o spojení k VPN službě vypršel"
+
+#: ../../network/state_handler.go:118
+msgid "The VPN service start timed out"
+msgstr "Vypršel čas na spuštění služby VPN"
+
+#: ../../network/state_handler.go:119
+msgid "The VPN service failed to start"
+msgstr "Služba VPN selhala při spuštění"
+
+#: ../../network/state_handler.go:120
+msgid "The VPN connection password was not provided"
+msgstr "Heslo pro spojení VPN nebylo poskytnuto"
+
+#: ../../network/state_handler.go:121
+msgid "Authentication to VPN server failed"
+msgstr "Ověření k serveru VPN se nezdařilo"
+
+#: ../../network/state_handler.go:122
+msgid "The connection was deleted from settings"
+msgstr "Spojení bylo odstraněno z nastavení"
+
+#: ../../network/state_handler.go:251
+msgid "Try enabling hotspot"
+msgstr "Zkusit povolit činný bod"
+
+#: ../../network/state_handler.go:253
+msgid "Try connecting %q"
+msgstr "Zkusit připojení %q"
+
+#: ../../network/state_handler.go:261
+msgid "Hotspot share enabled"
+msgstr "Sdílení činného bodu povoleno"
+
+#: ../../network/state_handler.go:263
+msgid "%q connected"
+msgstr " %q připojeno"
+
+#: ../../network/state_handler.go:274 ../../network/state_handler.go:325
+msgid "Hotspot share turned off"
+msgstr "Sdílení činného bodu vypnuto"
+
+#: ../../network/state_handler.go:327 ../../network/state_handler.go:343
+msgid "%q disconnected"
+msgstr " %q odpojeno"
+
+#: ../../network/state_handler.go:333
+msgid "Unable to share hotspot, please check dnsmasq settings"
+msgstr "Nelze sdílet činný bod. Prověřte, prosím, nastavení dnsmasq"
+
+#: ../../network/state_handler.go:335
+msgid "Unable to connect %q, please keep closer to the wireless router"
+msgstr "Nelze připojit %q. Zdržujte se, prosím, blížeji u bezdrátového směrovače"
+
+#: ../../network/state_handler.go:337
+msgid "Unable to connect %q, please check your router or net cable."
+msgstr "Nelze připojit %q. Zkontrolujte, prosím, směrovač nebo síťový kabel (internet)."
+
+#: ../../network/state_handler.go:340
+msgid "Connection failed, unable to connect %q, wrong password"
+msgstr "Připojení selhalo. Nelze připojit %q. Špatné heslo"
+
+#: ../../network/utils_dbus_nm.go:227
+msgid "Unknown"
+msgstr "Neznámý"
+
+#: ../../network/utils_notify.go:80
+msgid "You are now offline."
+msgstr "Nyní jste ve stavu bez připojení. "
+
+#: ../../network/utils_notify.go:84
+msgid "Airplane mode enabled."
+msgstr "Režim letadla povolen."
+
+#: ../../network/utils_notify.go:92
+msgid "Access Point mode is not supported by this device."
+msgstr "Přístupový bod není podporován tímto zařízením."
+
+#: ../../network/utils_notify.go:96 ../../network/utils_notify.go:100
+#: ../../network/utils_notify.go:103
+msgid "Network"
+msgstr "Síť"
+
+#: ../../network/utils_notify.go:96
+msgid ""
+"The hardware switch of WLAN Card is off, please switch on as necessary."
+msgstr "Hardwarový vypínač WLAN karty je vypnut, prosím, zapněte jej."
+
+#: ../../network/utils_notify.go:100
+msgid "System proxy is set successfully."
+msgstr "System proxy úspěšně nastaveno."
+
+#: ../../network/utils_notify.go:103
+msgid "System proxy has been cancelled."
+msgstr "System proxy bylo zrušeno."
+
+#: ../../session/power/manager_events.go:133
+msgid "Battery Critically Low"
+msgstr "Baterie velmi vybitá"
+
+#: ../../session/power/manager_events.go:134
+msgid "Computer will suspend very soon, please plug in now"
+msgstr "Počítač velice brzy přejde do úsporného režimu, prosím, ihned připojte kabel napájení"
+
+#: ../../session/power/manager_events.go:157
+#: ../../session/power/manager_events.go:164
+msgid "Battery Low"
+msgstr "Vybitá baterie"
+
+#: ../../session/power/manager_events.go:158
+msgid "Computer will suspend soon, please plug in"
+msgstr "Počítač brzy přejde do úsporného režimu, prosím, připojte kabel napájení"
+
+#: ../../session/power/manager_events.go:165
+msgid "Battery low, please plug in"
+msgstr "Nízký stav baterie. Připojte, prosím, počítač k síti. Připojte kabel napájení"
+
+#: ../../timedate/manager_ifc.go:56
+msgid "Authentication is required to set the system time"
+msgstr "Pro nastavení systémového času je požadováno ověření pravosti"
+
+#: ../../timedate/manager_ifc.go:69
+msgid ""
+"Authentication is required to control whether network time synchronization "
+"shall be enabled"
+msgstr "Pro řízení toho, zda se má povolit seřízení se síťovým časem, je požadováno ověření pravosti"
+
+#: ../../timedate/manager_ifc.go:89
+msgid ""
+"Authentication is required to control whether the RTC stores the local or "
+"UTC time"
+msgstr "Pro řízení toho, zda RTC ukládá místní nebo světový čas (UTC), je požadováno ověření pravosti"
+
+#: ../../timedate/manager_ifc.go:108
+msgid "Authentication is required to set the system timezone"
+msgstr "Pro nastavení časového pásma systému je požadováno ověření pravosti"
