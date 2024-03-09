@@ -305,9 +305,11 @@ handle_gesture_events(struct libinput_event *ev, int type)
         }
         raw_event_reset(raw);
         break;
-    case LIBINPUT_EVENT_GESTURE_TAP_BEGIN:
+    //case LIBINPUT_EVENT_GESTURE_TAP_BEGIN:
+    case LIBINPUT_EVENT_GESTURE_HOLD_BEGIN:
         break;
-    case LIBINPUT_EVENT_GESTURE_TAP_END:
+    //case LIBINPUT_EVENT_GESTURE_TAP_END:
+    case LIBINPUT_EVENT_GESTURE_HOLD_END:
         if (libinput_event_gesture_get_cancelled(gesture)) {
 			break;
         }
@@ -432,10 +434,14 @@ handle_events(struct libinput *li)
         case LIBINPUT_EVENT_GESTURE_PINCH_END:
         case LIBINPUT_EVENT_GESTURE_SWIPE_BEGIN:
         case LIBINPUT_EVENT_GESTURE_SWIPE_UPDATE:
-        case LIBINPUT_EVENT_GESTURE_SWIPE_END:
-        case LIBINPUT_EVENT_GESTURE_TAP_BEGIN:
-        case LIBINPUT_EVENT_GESTURE_TAP_UPDATE:
-        case LIBINPUT_EVENT_GESTURE_TAP_END:{
+        //case LIBINPUT_EVENT_GESTURE_SWIPE_END:
+	//case LIBINPUT_EVENT_GESTURE_TAP_END:
+	//case LIBINPUT_EVENT_GESTURE_HOLD_END:
+        //case LIBINPUT_EVENT_GESTURE_TAP_BEGIN:
+	case LIBINPUT_EVENT_GESTURE_HOLD_BEGIN:
+        //case LIBINPUT_EVENT_GESTURE_TAP_UPDATE:
+        //case LIBINPUT_EVENT_GESTURE_TAP_END:{
+	case LIBINPUT_EVENT_GESTURE_HOLD_END:{
             handle_gesture_events(ev, type);
             break;
         }
