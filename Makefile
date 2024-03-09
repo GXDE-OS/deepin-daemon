@@ -1,3 +1,4 @@
+GO111MODULE = off
 PREFIX = /usr
 GOPATH_DIR = gopath
 GOPKG_PREFIX = pkg.deepin.io/dde/daemon
