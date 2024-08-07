@@ -249,6 +249,14 @@ msgstr "深度系统监视器"
 msgid "Deepin Picker"
 msgstr "深度取色器"
 
+#: ../../keybinding/shortcuts/id_name_map.go:47
+msgid "Clipboard"
+msgid "剪切板"
+
+#: ../../keybinding/shortcuts/id_name_map.go:48
+msgid "Grand Search"
+msgid "全局搜索"
+
 #: ../../keybinding/shortcuts/id_name_map.go:51
 msgid "Switch Layout"
 msgstr "切换键盘布局"
