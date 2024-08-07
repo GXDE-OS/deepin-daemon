@@ -119,6 +119,7 @@ install-pam-module:
 install-dde-data:
 	mkdir -pv ${DESTDIR}${PREFIX}/share/dde/
 	cp -r misc/data ${DESTDIR}${PREFIX}/share/dde/
+	cp -r misc/libexec ${DESTDIR}${PREFIX}
 
 install-icons:
 	python3 misc/icons/install_to_hicolor.py -d status -o out/icons misc/icons/status
