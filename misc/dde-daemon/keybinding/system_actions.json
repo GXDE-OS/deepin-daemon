@@ -49,6 +49,10 @@
             "Key": "screenshot-delayed"
         },
         {
+            "Action": "dbus-send --print-reply --dest=com.deepin.Screenshot /com/deepin/Screenshot com.deepin.Screenshot.OcrScreenshot",
+            "Key": "screenshot-ocr"
+        },
+        {
             "Action": "/usr/lib/deepin-daemon/default-file-manager",
             "Key": "file-manager"
         },
@@ -65,8 +69,16 @@
             "Key": "turn-off-screen"
         },
         {
+            "Key": "notification-center",
+            "Action": "dbus-send --print-reply --dest=org.deepin.dde.Widgets1 /org/deepin/dde/Widgets1 org.deepin.dde.Widgets1.Toggle"
+        },
+	    {
+            "Key": "clipboard",
+            "Action": "dbus-send --print-reply --dest=org.deepin.dde.Clipboard1 /org/deepin/dde/Clipboard1 org.deepin.dde.Clipboard1.Toggle",
+        },
+	    {
+            "Key": "global-search",
             "Action": "/usr/libexec/dde-daemon/keybinding/shortcut-dde-grand-search.sh",
-            "Key": "global-search"
         }
     ]
 }
