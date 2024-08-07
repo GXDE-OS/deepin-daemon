@@ -63,6 +63,10 @@
         {
             "Action": "sleep 0.5; xset dpms force off",
             "Key": "turn-off-screen"
+        },
+        {
+            "Action": "/usr/libexec/dde-daemon/keybinding/shortcut-dde-grand-search.sh",
+            "Key": "global-search"
         }
     ]
 }

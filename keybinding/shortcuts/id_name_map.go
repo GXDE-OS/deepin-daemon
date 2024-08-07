@@ -42,6 +42,7 @@ func getSystemIdNameMap() map[string]string {
 		"turn-off-screen":        gettext.Tr("Fast Screen Off"),
 		"system-monitor":         gettext.Tr("Deepin System Monitor"),
 		"color-picker":           gettext.Tr("Deepin Picker"),
+		"global-search":          gettext.Tr("Grand Search"),
 	}
 	return idNameMap
 }
