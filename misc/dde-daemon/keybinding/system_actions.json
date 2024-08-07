@@ -74,7 +74,7 @@
         },
 	    {
             "Key": "clipboard",
-            "Action": "dbus-send --print-reply --dest=org.deepin.dde.Clipboard1 /org/deepin/dde/Clipboard1 org.deepin.dde.Clipboard1.Toggle"
+            "Action": "/usr/libexec/dde-daemon/keybinding/shortcut-clipboard.sh"
         },
 	    {
             "Key": "global-search",

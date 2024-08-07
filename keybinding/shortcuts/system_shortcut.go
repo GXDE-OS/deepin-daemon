@@ -109,7 +109,7 @@ var defaultSysActionCmdMap = map[string]string{
 	"wm-switcher":           "dbus-send --type=method_call --dest=com.deepin.WMSwitcher /com/deepin/WMSwitcher com.deepin.WMSwitcher.RequestSwitchWM",
 	"turn-off-screen":       "sleep 0.5; xset dpms force off",
 	"notification-center":   "dbus-send --print-reply --dest=org.deepin.dde.Widgets1 /org/deepin/dde/Widgets1 org.deepin.dde.Widgets1.Toggle",
-	"clipboard":             "dbus-send --print-reply --dest=org.deepin.dde.Clipboard1 /org/deepin/dde/Clipboard1 org.deepin.dde.Clipboard1.Toggle",
+	"clipboard":             "/usr/libexec/dde-daemon/keybinding/shortcut-clipboard.sh",
 	"global-search":         "/usr/libexec/dde-daemon/keybinding/shortcut-dde-grand-search.sh",
 }
 
