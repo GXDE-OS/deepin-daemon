@@ -251,11 +251,11 @@ msgstr "深度取色器"
 
 #: ../../keybinding/shortcuts/id_name_map.go:47
 msgid "Clipboard"
-msgid "剪切板"
+msgstr "剪切板"
 
 #: ../../keybinding/shortcuts/id_name_map.go:48
 msgid "Grand Search"
-msgid "全局搜索"
+msgstr "全局搜索"
 
 #: ../../keybinding/shortcuts/id_name_map.go:51
 msgid "Switch Layout"
