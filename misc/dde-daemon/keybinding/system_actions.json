@@ -74,11 +74,11 @@
         },
 	    {
             "Key": "clipboard",
-            "Action": "dbus-send --print-reply --dest=org.deepin.dde.Clipboard1 /org/deepin/dde/Clipboard1 org.deepin.dde.Clipboard1.Toggle",
+            "Action": "dbus-send --print-reply --dest=org.deepin.dde.Clipboard1 /org/deepin/dde/Clipboard1 org.deepin.dde.Clipboard1.Toggle"
         },
 	    {
             "Key": "global-search",
-            "Action": "/usr/libexec/dde-daemon/keybinding/shortcut-dde-grand-search.sh",
+            "Action": "/usr/libexec/dde-daemon/keybinding/shortcut-dde-grand-search.sh"
         }
     ]
 }
