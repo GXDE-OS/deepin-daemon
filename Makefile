@@ -3,7 +3,7 @@ PREFIX = /usr
 GOPATH_DIR = gopath
 GOPKG_PREFIX = pkg.deepin.io/dde/daemon
 GOBUILD = go build
-
+GOPATH="/usr/share/gocode-gxde/:/usr/share/gocode/:${CURDIR}/${GOPATH_DIR}"
 BINARIES =  \
 	    dde-session-daemon \
 	    dde-system-daemon \
@@ -30,7 +30,7 @@ prepare:
 		fi
 
 out/bin/%: prepare
-	env GOPATH="${CURDIR}/${GOPATH_DIR}:${GOPATH}:/usr/share/gocode-gxde/" ${GOBUILD} -o $@  ${GOPKG_PREFIX}/bin/${@F}
+	env GOPATH="/usr/share/gocode-gxde/:${CURDIR}/${GOPATH_DIR}:${GOPATH}" ${GOBUILD} -o $@  ${GOPKG_PREFIX}/bin/${@F}
 
 out/bin/default-file-manager: bin/default-file-manager/main.c
 	gcc $^ $(shell pkg-config --cflags --libs gio-unix-2.0) -o $@

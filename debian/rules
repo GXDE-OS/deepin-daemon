@@ -14,7 +14,7 @@ override_dh_gencontrol:
 endif
 
 %:
-	dh $@ --with systemd
+	true
 
 ifeq ($(DEB_BUILD_ARCH), sw_64)
 override_dh_strip:
