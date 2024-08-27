@@ -65,7 +65,7 @@ var execArgMap = map[string]string{
 	"terminator":     "-x",
 	"xfce4-terminal": "-x",
 
-	//"deepin-terminal": "-e",
+	//"gxde-terminal": "-e",
 	//"xterm":  "-e",
 	//"pterm":  "-e",
 	//"uxterm": "-e",

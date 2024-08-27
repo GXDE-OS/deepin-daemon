@@ -92,7 +92,7 @@ func getSystemActionCmd(id string) string {
 var defaultSysActionCmdMap = map[string]string{
 	"launcher":               "dbus-send --print-reply --dest=com.deepin.dde.Launcher /com/deepin/dde/Launcher com.deepin.dde.Launcher.Toggle",
 	"terminal":               "/usr/lib/deepin-daemon/default-terminal",
-	"terminal-quake":         "deepin-terminal --quake-mode",
+	"terminal-quake":         "gxde-terminal --quake-mode",
 	"lock-screen":            "dbus-send --print-reply --dest=com.deepin.dde.lockFront /com/deepin/dde/lockFront com.deepin.dde.lockFront.Show",
 	"logout":                 "dbus-send --print-reply --dest=com.deepin.dde.shutdownFront /com/deepin/dde/shutdownFront com.deepin.dde.shutdownFront.Show",
 	"deepin-screen-recorder": "dbus-send --print-reply --dest=com.deepin.ScreenRecorder /com/deepin/ScreenRecorder com.deepin.ScreenRecorder.stopRecord",

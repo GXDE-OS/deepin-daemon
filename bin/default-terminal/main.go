@@ -93,6 +93,7 @@ func runFallbackTerm() {
 }
 
 var terms = []string{
+	"gxde-terminal",
 	"deepin-terminal",
 	"gnome-terminal",
 	"terminator",
