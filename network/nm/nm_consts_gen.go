@@ -342,6 +342,8 @@ const (
 	NM_DEVICE_TYPE_WIREGUARD     = 29
 	NM_DEVICE_TYPE_WIFI_P2P      = 30
 	NM_DEVICE_TYPE_VRF           = 31
+	NM_DEVICE_TYPE_LOOPBACK      = 32
+	NM_DEVICE_TYPE_HSR           = 33
 )
 
 // Enum IPTunnelMode
