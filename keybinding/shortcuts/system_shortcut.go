@@ -111,6 +111,7 @@ var defaultSysActionCmdMap = map[string]string{
 	"notification-center":   "dbus-send --print-reply --dest=org.deepin.dde.Widgets1 /org/deepin/dde/Widgets1 org.deepin.dde.Widgets1.Toggle",
 	"clipboard":             "/usr/libexec/dde-daemon/keybinding/shortcut-clipboard.sh",
 	"global-search":         "/usr/libexec/dde-daemon/keybinding/shortcut-dde-grand-search.sh",
+	"gxde-picker":           "gxde-picker",
 }
 
 type actionHandler struct {

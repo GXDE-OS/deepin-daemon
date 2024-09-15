@@ -79,6 +79,10 @@
 	    {
             "Key": "global-search",
             "Action": "/usr/libexec/dde-daemon/keybinding/shortcut-dde-grand-search.sh"
+        },
+        {
+            "Key": "gxde-picker",
+            "Action": "gxde-picker"
         }
     ]
 }

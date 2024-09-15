@@ -46,6 +46,7 @@ func getSystemIdNameMap() map[string]string {
 		"notification-center":    gettext.Tr("Notification Center"),
 		"clipboard":              gettext.Tr("Clipboard"),
 		"global-search":          gettext.Tr("Grand Search"),
+		"gxde-picker":          gettext.Tr("Color Picker"),
 	}
 	return idNameMap
 }
