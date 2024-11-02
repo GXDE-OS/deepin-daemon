@@ -1,8 +1,9 @@
-dde-daemon (3.28.3) UNRELEASED; urgency=medium
+dde-daemon (3.28.4) UNRELEASED; urgency=medium
 
   * Repair WIFI Connect Problem
+  * Replace deepin-installer-timezones => gxde-installer-timezones
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 15 Sep 2024 07:39:48 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sat, 02 Nov 2024 20:06:40 +0800
 
 dde-daemon (3.28.1gxde1) unstable; urgency=medium
 
