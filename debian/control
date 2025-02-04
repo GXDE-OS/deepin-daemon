@@ -39,7 +39,8 @@ Build-Depends: debhelper (>= 9), golang-go,
  deepin-desktop-schemas,
  python3,
  librsvg2-bin,
- golang-gxde-dev
+ golang-gxde-dev,
+ libgdk-pixbuf-xlib-2.0-dev
 Standards-Version: 3.9.8
 Homepage: http://www.deepin.org
 
