@@ -1,10 +1,11 @@
-dde-daemon (3.28.5) UNRELEASED; urgency=medium
+dde-daemon (3.29) UNRELEASED; urgency=medium
 
   * Repair WIFI Connect Problem
   * Replace deepin-installer-timezones => gxde-installer-timezones
   * 非强制依赖 dde-grand-search
+  * 修复无法正常设置 WIFI 密码的问题
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 01 Dec 2024 14:51:54 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 30 Mar 2025 08:34:59 +0800
 
 dde-daemon (3.28.1gxde1) unstable; urgency=medium
 

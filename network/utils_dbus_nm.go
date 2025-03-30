@@ -179,7 +179,7 @@ func nmGeneralGetDeviceHwAddr(devPath dbus.ObjectPath, perm bool) (hwAddr string
 	case nm.NM_DEVICE_TYPE_TEAM:
 		devTeam := dev.Team()
 		hwAddr, _ = devTeam.HwAddress().Get(0)
-	case nm.NM_DEVICE_TYPE_MODEM, nm.NM_DEVICE_TYPE_ADSL, nm.NM_DEVICE_TYPE_TUN, nm.NM_DEVICE_TYPE_IP_TUNNEL, nm.NM_DEVICE_TYPE_MACVLAN, nm.NM_DEVICE_TYPE_VXLAN, nm.NM_DEVICE_TYPE_VETH:
+	case nm.NM_DEVICE_TYPE_MODEM, nm.NM_DEVICE_TYPE_ADSL, nm.NM_DEVICE_TYPE_TUN, nm.NM_DEVICE_TYPE_IP_TUNNEL, nm.NM_DEVICE_TYPE_MACVLAN, nm.NM_DEVICE_TYPE_VXLAN, nm.NM_DEVICE_TYPE_VETH, nm.NM_DEVICE_TYPE_LOOPBACK, nm.NM_DEVICE_TYPE_HSR:
 		// there is no hardware address for such devices
 		err = fmt.Errorf("there is no hardware address for device modem, adsl, tun")
 	default:

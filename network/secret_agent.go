@@ -10,6 +10,7 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+	"regexp"
 
 	"github.com/linuxdeepin/go-dbus-factory/org.freedesktop.secrets"
 	"pkg.deepin.io/dde/daemon/network/nm"
@@ -314,6 +315,7 @@ func (sa *SecretAgent) askPasswords(connPath dbus.ObjectPath,
 	req.VpnService = vpnService
 	req.SettingName = settingName
 	req.Secrets = settingKeys
+	logger.Warning(req)
 	reqJSON, err := json.Marshal(&req)
 	if err != nil {
 		return nil, err
@@ -333,8 +335,31 @@ func (sa *SecretAgent) askPasswords(connPath dbus.ObjectPath,
 	if err != nil {
 		return nil, err
 	}
+
+	// ---------- 使用正则提取JSON ----------
+	// 以避免因如下输出导致无法正常解析 json 从而无法正确设置密码的问题
+	// 2025-03-30, 08:07:07.421 [Debug] [main.cpp             main                                64] read json data from STDIN
+    rawOutput := cmdOutBuf.Bytes()
+    
+    // 匹配最外层完整的JSON对象（支持多行）
+    jsonRegex := regexp.MustCompile(`(?s)\{.*\}`)
+    jsonMatch := jsonRegex.Find(rawOutput)
+    if jsonMatch == nil {
+        logger.Errorf("未找到有效的JSON数据，原始输出:\n%s", rawOutput)
+        return nil, fmt.Errorf("无效的JSON响应")
+    }
+
+    // 清理可能的尾随非JSON字符（如调试信息）
+    cleanedJSON := bytes.TrimSpace(jsonMatch)
+    logger.Debugf("提取的JSON内容:\n%s", cleanedJSON)
+
+    // ---------- 解析JSON ----------
+
 	var reply getSecretsReply
-	err = json.Unmarshal(cmdOutBuf.Bytes(), &reply)
+	logger.Warning(cmdOutBuf)
+	logger.Warning(reply)
+	
+	err = json.Unmarshal(cleanedJSON, &reply)
 	if err != nil {
 		return nil, err
 	}
