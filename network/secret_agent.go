@@ -356,8 +356,6 @@ func (sa *SecretAgent) askPasswords(connPath dbus.ObjectPath,
     // ---------- 解析JSON ----------
 
 	var reply getSecretsReply
-	logger.Warning(cmdOutBuf)
-	logger.Warning(reply)
 	
 	err = json.Unmarshal(cleanedJSON, &reply)
 	if err != nil {
