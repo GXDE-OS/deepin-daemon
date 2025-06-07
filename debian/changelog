@@ -5,6 +5,7 @@ dde-daemon (3.30) UNRELEASED; urgency=medium
   * 非强制依赖 dde-grand-search
   * 修复无法正常设置 WIFI 密码的问题
   * 修改 deepin-desktop-schemas 为 gxde-desktop-schemas 
+  * 转为依赖 gxde-sound-theme
 
  -- gfdgd_xi <3025613752@qq.com>  Sat, 07 Jun 2025 22:06:51 +0800
 
