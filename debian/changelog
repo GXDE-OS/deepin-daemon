@@ -1,4 +1,4 @@
-dde-daemon (3.31) UNRELEASED; urgency=medium
+deepin-daemon (4.0.0) UNRELEASED; urgency=medium
 
   * Repair WIFI Connect Problem
   * Replace deepin-installer-timezones => gxde-installer-timezones
@@ -7,17 +7,18 @@ dde-daemon (3.31) UNRELEASED; urgency=medium
   * 修改 deepin-desktop-schemas 为 gxde-desktop-schemas 
   * 转为依赖 gxde-sound-theme
   * dde-api=>gxde-api
+  * dde-daemon=>gxde-daemon
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 08 Jun 2025 11:24:00 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 08 Jun 2025 12:21:05 +0800
 
-dde-daemon (3.28.1gxde1) unstable; urgency=medium
+deepin-daemon (3.28.1gxde1) unstable; urgency=medium
 
   * Non-maintainer upload.
   * 
 
  -- gfdgd_xi <3025613752@qq.com>  Wed, 07 Aug 2024 15:32:32 +0800
 
-dde-daemon (3.28.0+c1-1+comsta) unstable; urgency=low
+deepin-daemon (3.28.0+c1-1+comsta) unstable; urgency=low
 
   * ['Autobuild release-candidate: fc8596a9a639dc967eaa52222bd17e7db676d105']
 

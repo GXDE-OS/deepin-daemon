@@ -1,4 +1,4 @@
-Source: dde-daemon
+Source: deepin-daemon
 Section: devel
 Priority: extra
 Maintainer: gfdgd xi <3025613752@qq.com>
@@ -44,7 +44,7 @@ Build-Depends: debhelper (>= 9), golang-go,
 Standards-Version: 3.9.8
 Homepage: http://www.deepin.org
 
-Package: dde-daemon
+Package: deepin-daemon
 Architecture: any
 Depends: ${shlibs:Depends},
  ${misc:Depends},
@@ -76,9 +76,9 @@ Depends: ${shlibs:Depends},
  hwinfo,
  dde-clipboard, 
 Breaks: dde-daemon(<< 2.92.2), dde-workspace, lastore-daemon(<< 0.9.64)
-Replaces: lastore-daemon(<< 0.9.64)
-Conflicts: dde-workspace, lastore-daemon-migration
-Provides: lastore-daemon-migration
+Replaces: lastore-daemon(<< 0.9.64), dde-daemon
+Conflicts: dde-workspace, lastore-daemon-migration, dde-daemon
+Provides: lastore-daemon-migration, dde-daemon
 Recommends: 
  proxychains4, 
  flatpak, 
