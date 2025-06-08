@@ -3,7 +3,8 @@ Section: devel
 Priority: extra
 Maintainer: gfdgd xi <3025613752@qq.com>
 Build-Depends: debhelper (>= 9), golang-go,
- golang-dlib-dev(>> 1.10.1+), golang-gir-gobject-2.0-dev (>> 1.2.0+),
+ golang-dlib-dev(>> 1.10.1+) | golang-github-linuxdeepin-go-lib-dev,
+ golang-gir-gobject-2.0-dev (>> 1.2.0+),
  golang-gir-gio-2.0-dev (>> 1.2.0+), golang-gir-glib-2.0-dev (>> 1.2.0+),
  golang-gir-gudev-1.0-dev (>> 1.2.0+),
  golang-github-mattn-go-sqlite3-dev,
