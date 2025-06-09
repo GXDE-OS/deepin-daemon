@@ -75,7 +75,6 @@ Depends: ${shlibs:Depends},
  gxde-api (>> 3.17.1+),
  libpam-runtime (>= 1.1.3-2~),
  hwinfo,
- dde-clipboard, 
 Breaks: dde-daemon(<< 2.92.2), dde-workspace, lastore-daemon(<< 0.9.64)
 Replaces: lastore-daemon(<< 0.9.64), dde-daemon
 Conflicts: dde-workspace, lastore-daemon-migration, dde-daemon
@@ -86,6 +85,7 @@ Recommends:
  laptop-mode-tools, 
  iio-sensor-proxy,
  dde-grand-search,
+ dde-clipboard, 
  orca
 Suggests:
  bluez (>=5.4),
