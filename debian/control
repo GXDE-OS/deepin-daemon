@@ -77,7 +77,7 @@ Depends: ${shlibs:Depends},
  hwinfo,
 Breaks: dde-daemon(<< 2.92.2), dde-workspace, lastore-daemon(<< 0.9.64)
 Replaces: lastore-daemon(<< 0.9.64), dde-daemon
-Conflicts: dde-workspace, lastore-daemon-migration, dde-daemon
+Conflicts: dde-workspace, lastore-daemon-migration, dde-daemon (>> 4.0.1)
 Provides: lastore-daemon-migration, dde-daemon
 Recommends: 
  proxychains4, 
