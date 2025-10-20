@@ -18092,7 +18092,7 @@ Name[vi]=Tiếng Trung (Hồng Kông)
 Name[wa]=Chinwès (Hong Kong)
 Name[x-test]=xxChinese (Hong Kong)xx
 Name[zh_CN]=繁体中文(香港)
-Name[zh_TW]=正體中文（香港）
+Name[zh_TW]=繁體中文（香港）
 [zh_TW]
 Name=Chinese Traditional
 Name[af]=Sjinees tradisioneel
@@ -18189,8 +18189,8 @@ Name[vi]=Trung Quốc phồn thể
 Name[wa]=Chinwès tradicionel
 Name[x-test]=xxChinese Traditionalxx
 Name[zh_CN]=繁体中文
-Name[zh_HK]=繁體中文
-Name[zh_TW]=正體中文
+Name[zh_HK]=繁體中文(中國香港)
+Name[zh_TW]=繁體中文(中國臺灣)
 [zu]
 Name=Zulu
 Name[af]=Zoeloe

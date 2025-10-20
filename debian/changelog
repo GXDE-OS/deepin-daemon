@@ -1,4 +1,4 @@
-deepin-daemon (4.0.3) UNRELEASED; urgency=medium
+deepin-daemon (4.0.4) UNRELEASED; urgency=medium
 
   * Repair WIFI Connect Problem
   * Replace deepin-installer-timezones => gxde-installer-timezones
@@ -11,8 +11,9 @@ deepin-daemon (4.0.3) UNRELEASED; urgency=medium
   * dde-polkit-agent=>gxde-polkit-agent
   * 调整 Conflicts 版本
   * 移除 lastore-daemon 依赖
+  * 修改语言描述（正體中文=》繁體中文（中國臺灣））
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 15 Jun 2025 16:09:16 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Mon, 20 Oct 2025 12:32:27 +0800
 
 deepin-daemon (3.28.1gxde1) unstable; urgency=medium
 
