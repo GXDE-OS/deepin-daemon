@@ -8,6 +8,6 @@ on:
       - "*"
 
 jobs:
-  call:
-    uses: GXDE-OS/GXDE/.github/workflows/building-deb.yml@master
+  call-tianlu:
+    uses: GXDE-OS/GXDE/.github/workflows/building-deb-tianlu.yml@master
     secrets: inherit
