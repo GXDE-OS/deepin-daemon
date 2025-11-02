@@ -63,6 +63,7 @@ const (
 	gsKeyAppsUseProxy       = "apps-use-proxy"
 	gsKeyAppsDisableScaling = "apps-disable-scaling"
 	gsKeyAppsHidden         = "apps-hidden"
+	gKeyAppsNoSandbox       = "apps-no-sandbox"
 )
 
 type Manager struct {
@@ -142,6 +143,8 @@ type Manager struct {
 		SetUseProxy              func() `in:"id,value"`
 		GetDisableScaling        func() `in:"id" out:"value"`
 		SetDisableScaling        func() `in:"id,value"`
+		GetNoSandbox             func() `in:"id" out:"value"`
+		SetNoSandbox             func() `in:"id,value"`
 	}
 }
 

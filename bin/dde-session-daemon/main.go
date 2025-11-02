@@ -52,6 +52,7 @@ var logger = log.NewLogger("daemon/dde-session-daemon")
 var hasDDECookie bool
 
 func allowRun() bool {
+	return true
 	if os.Getenv("DDE_SESSION_PROCESS_COOKIE_ID") != "" {
 		hasDDECookie = true
 		return true

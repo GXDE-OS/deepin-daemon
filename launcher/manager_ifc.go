@@ -212,3 +212,11 @@ func (m *Manager) GetDisableScaling(id string) (bool, *dbus.Error) {
 func (m *Manager) SetDisableScaling(id string, val bool) *dbus.Error {
 	return m.setUseFeature(gsKeyAppsDisableScaling, id, val)
 }
+
+func (m *Manager) GetNoSandbox(id string) (bool, *dbus.Error) {
+	return m.getUseFeature(gKeyAppsNoSandbox, id)
+}
+
+func (m *Manager) SetNoSandbox(id string, val bool) *dbus.Error {
+	return m.setUseFeature(gKeyAppsNoSandbox, id, val)
+}
