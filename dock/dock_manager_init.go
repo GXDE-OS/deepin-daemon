@@ -34,12 +34,15 @@ import (
 	"pkg.deepin.io/lib/dbus1"
 	"pkg.deepin.io/lib/dbusutil"
 	"pkg.deepin.io/lib/gsettings"
+	"pkg.deepin.io/dde/daemon/loader"
 )
 
 const (
 	ddeDataDir         = "/usr/share/dde/data"
 	windowPatternsFile = ddeDataDir + "/window_patterns.json"
 )
+
+var restartTimer *time.Timer
 
 func (m *Manager) initEntries() {
 	m.initDockedApps()
@@ -62,6 +65,31 @@ func (m *Manager) connectSettingKeyChanged(key string, handler func(key string))
 	gsettings.ConnectChanged(dockSchema, key, handler)
 }
 
+
+// 重启 dock 模块的函数
+func restartDockModule() {
+    module := loader.GetModule("dock")
+    if module == nil {
+        logger.Error("Failed to get dock module")
+        return
+    }
+    logger.Info("Restarting dock module...")
+
+    // 停止模块
+    if err := module.Enable(false); err != nil {
+        logger.Warning("Failed to stop dock module:", err)
+        // 如果停止失败，尝试强制重启？通常可以直接返回
+        return
+    }
+
+    // 启动模块
+    if err := module.Enable(true); err != nil {
+        logger.Error("Failed to start dock module:", err)
+        return
+    }
+    logger.Info("Dock module restarted successfully")
+}
+
 func (m *Manager) listenSettingsChanged() {
 	// listen hide mode change
 	m.connectSettingKeyChanged(settingKeyHideMode, func(key string) {
@@ -80,6 +108,17 @@ func (m *Manager) listenSettingsChanged() {
 	m.connectSettingKeyChanged(settingKeyPosition, func(key string) {
 		position := positionType(m.settings.GetEnum(key))
 		logger.Debug(key, "changed to", position)
+	})
+
+	// listen window split change
+	m.connectSettingKeyChanged(settingKeyWindowSplit, func(key string) {
+		logger.Debug("Window split setting changed, will restart dock module...")
+		
+		// 去抖：短时间内多次触发只执行最后一次
+		if restartTimer != nil {
+			restartTimer.Stop()
+		}
+		restartTimer = time.AfterFunc(1*time.Second, restartDockModule)
 	})
 }
 
@@ -194,6 +233,7 @@ func (m *Manager) init() error {
 	m.DockedApps.Bind(m.settings, settingKeyDockedApps)
 	m.appearanceSettings = gio.NewSettings(appearanceSchema)
 	m.Opacity.Bind(m.appearanceSettings, settingKeyOpacity)
+	m.WindowSplit.Bind(m.settings, settingKeyWindowSplit)
 
 	m.FrontendWindowRect = NewRect()
 	m.smartHideModeTimer = time.AfterFunc(10*time.Second, m.smartHideModeTimerExpired)

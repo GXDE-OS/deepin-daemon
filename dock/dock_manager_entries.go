@@ -147,18 +147,19 @@ func (m *Manager) removeAppEntry(e *AppEntry) {
 
 func (m *Manager) attachWindow(winInfo *WindowInfo) {
 	entry := m.Entries.GetByInnerId(winInfo.entryInnerId)
-
-	if entry != nil {
-		// existed
-		entry.attachWindow(winInfo)
-	} else {
-		entry = newAppEntry(m, winInfo.entryInnerId, winInfo.appInfo)
-		ok := entry.attachWindow(winInfo)
-		if ok {
-			err := m.exportAppEntry(entry)
-			if err == nil {
-				m.Entries.Append(entry)
-			}
+	if m.WindowSplit.Get() {
+		if entry != nil {
+			// existed
+			entry.attachWindow(winInfo)
+			return
+		}
+	}
+	entry = newAppEntry(m, winInfo.entryInnerId, winInfo.appInfo)
+	ok := entry.attachWindow(winInfo)
+	if ok {
+		err := m.exportAppEntry(entry)
+		if err == nil {
+			m.Entries.Append(entry)
 		}
 	}
 }

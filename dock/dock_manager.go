@@ -53,6 +53,7 @@ type Manager struct {
 	HideTimeout        gsprop.Uint `prop:"access:rw"`
 	DockedApps         gsprop.Strv
 	Opacity            gsprop.Double
+	WindowSplit        gsprop.Bool
 	HideState          HideStateType
 	FrontendWindowRect *Rect
 
@@ -144,6 +145,7 @@ const (
 	settingKeyWinIconPreferredApps = "win-icon-preferred-apps"
 	settingKeyOpacity              = "opacity"
 	settingKeyPluginSettings       = "plugin-settings"
+	settingKeyWindowSplit          = "window-split"
 
 	frontendWindowWmClass = "dde-dock"
 
