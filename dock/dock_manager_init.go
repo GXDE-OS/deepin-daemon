@@ -34,7 +34,8 @@ import (
 	"pkg.deepin.io/lib/dbus1"
 	"pkg.deepin.io/lib/dbusutil"
 	"pkg.deepin.io/lib/gsettings"
-	"pkg.deepin.io/dde/daemon/loader"
+	"os"
+    "syscall"
 )
 
 const (
@@ -66,28 +67,22 @@ func (m *Manager) connectSettingKeyChanged(key string, handler func(key string))
 }
 
 
-// 重启 dock 模块的函数
-func restartDockModule() {
-    module := loader.GetModule("dock")
-    if module == nil {
-        logger.Error("Failed to get dock module")
-        return
-    }
-    logger.Info("Restarting dock module...")
+func restartProcess() {
+    // 执行必要的清理工作（可选，但建议）
+    // 例如：注销 DBus 对象、关闭文件描述符等
+    // dockManager.destroy()  // 如果存在 manager 实例
 
-    // 停止模块
-    if err := module.Enable(false); err != nil {
-        logger.Warning("Failed to stop dock module:", err)
-        // 如果停止失败，尝试强制重启？通常可以直接返回
+    exe, err := os.Executable()
+    if err != nil {
+        logger.Error("Failed to get executable:", err)
         return
     }
-
-    // 启动模块
-    if err := module.Enable(true); err != nil {
-        logger.Error("Failed to start dock module:", err)
-        return
+    args := os.Args
+    logger.Info("Restarting process...")
+    err = syscall.Exec(exe, args, os.Environ())
+    if err != nil {
+        logger.Error("Failed to restart:", err)
     }
-    logger.Info("Dock module restarted successfully")
 }
 
 func (m *Manager) listenSettingsChanged() {
@@ -112,13 +107,8 @@ func (m *Manager) listenSettingsChanged() {
 
 	// listen window split change
 	m.connectSettingKeyChanged(settingKeyWindowSplit, func(key string) {
-		logger.Debug("Window split setting changed, will restart dock module...")
-		
-		// 去抖：短时间内多次触发只执行最后一次
-		if restartTimer != nil {
-			restartTimer.Stop()
-		}
-		restartTimer = time.AfterFunc(1*time.Second, restartDockModule)
+	    logger.Debug("Window split setting changed, restarting process...")
+    	restartProcess()
 	})
 }
 

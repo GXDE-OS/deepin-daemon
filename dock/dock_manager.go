@@ -51,9 +51,9 @@ type Manager struct {
 	IconSize           gsprop.Uint `prop:"access:rw"`
 	ShowTimeout        gsprop.Uint `prop:"access:rw"`
 	HideTimeout        gsprop.Uint `prop:"access:rw"`
+	WindowSplit        gsprop.Bool `prop:"access:rw"`
 	DockedApps         gsprop.Strv
 	Opacity            gsprop.Double
-	WindowSplit        gsprop.Bool
 	HideState          HideStateType
 	FrontendWindowRect *Rect
 
