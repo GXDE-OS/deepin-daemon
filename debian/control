@@ -42,7 +42,8 @@ Build-Depends: debhelper (>= 9), golang-go,
  librsvg2-bin,
  golang-gxde-dev,
  libgdk-pixbuf-xlib-2.0-dev,
- libfprint-2-dev
+ libfprint-2-dev,
+ gxde-api-dev
 Standards-Version: 3.9.8
 Homepage: http://www.deepin.org
 
