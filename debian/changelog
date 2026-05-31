@@ -1,3 +1,9 @@
+deepin-daemon (4.0.9-1) UNRELEASED; urgency=medium
+
+  * 修复Wayland会话下因为x.NewConn()闪退的问题
+
+ -- CharOfString <markus_verify@126.com>  Sun, 31 May 2026 21:08:43 +0800
+
 deepin-daemon (4.0.9) UNRELEASED; urgency=medium
 
   * Repair WIFI Connect Problem

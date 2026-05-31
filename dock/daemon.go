@@ -65,8 +65,12 @@ func (d *Daemon) Start() error {
 
 	globalXConn, err = x.NewConn()
 	if err != nil {
-		d.startFailed()
-		return err
+		// Patch: 当前这玩意在Wayland下因为NewConn()包闪退的（那是X11的玩意）
+		//        其中一个坏处就是Wayland下壁纸也靠这个daemon获取，闪退了壁纸列表直接为空
+		//        临时打一个Patch，当X11不可用时跳过此dock模块。
+		//        反正日后也要patch GXDE Dock的...
+		logger.Warning("dock: X11 connection unavailable, skip module:", err)
+		return nil
 	}
 
 	initAtom()
