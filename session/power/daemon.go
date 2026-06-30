@@ -20,6 +20,9 @@
 package power
 
 import (
+	"os"
+	"strings"
+
 	"pkg.deepin.io/dde/daemon/loader"
 	"pkg.deepin.io/lib/log"
 )
@@ -42,6 +45,10 @@ func NewDaemon(logger *log.Logger) *Daemon {
 }
 
 func (d *Daemon) GetDependencies() []string {
+	if os.Getenv("WAYLAND_DISPLAY") != "" ||
+		strings.EqualFold(os.Getenv("XDG_SESSION_TYPE"), "wayland") {
+		return []string{"sessionwatcher"}
+	}
 	return []string{"screensaver", "sessionwatcher"}
 }
 

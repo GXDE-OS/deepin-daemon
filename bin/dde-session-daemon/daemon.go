@@ -23,13 +23,14 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"strings"
 	"sync"
 
-	"pkg.deepin.io/gir/gio-2.0"
-	"pkg.deepin.io/gir/glib-2.0"
 	"pkg.deepin.io/dde/api/session"
 	"pkg.deepin.io/dde/daemon/calltrace"
 	"pkg.deepin.io/dde/daemon/loader"
+	"pkg.deepin.io/gir/gio-2.0"
+	"pkg.deepin.io/gir/glib-2.0"
 	"pkg.deepin.io/lib/dbus1"
 	"pkg.deepin.io/lib/dbusutil"
 	"pkg.deepin.io/lib/gsettings"
@@ -44,6 +45,11 @@ const (
 	dbusServiceName = "com.deepin.daemon.Daemon"
 	dbusInterface   = dbusServiceName
 )
+
+func isWaylandSession() bool {
+	return os.Getenv("WAYLAND_DISPLAY") != "" ||
+		strings.EqualFold(os.Getenv("XDG_SESSION_TYPE"), "wayland")
+}
 
 func runMainLoop() {
 	err := gsettings.StartMonitor()
@@ -158,6 +164,10 @@ func (s *SessionDaemon) initModules() {
 	}
 
 	for _, moduleName := range part1ModuleNames {
+		if isWaylandSession() {
+			s.part1DisabledModules = append(s.part1DisabledModules, moduleName)
+			continue
+		}
 		if s.isModuleDefaultEnabled(moduleName) {
 			s.part1EnabledModules = append(s.part1EnabledModules, moduleName)
 		} else {
@@ -197,13 +207,33 @@ func (s *SessionDaemon) getAllDefaultDisabledModules() []string {
 	return result
 }
 
+// 禁用Part2中与Wayland冲突的
+func (s *SessionDaemon) getWaylandPart2Modules() ([]string, []string) {
+	excludedModules := []string{
+		"screensaver",
+		"clipboard",
+		"keybinding",
+		"inputdevices",
+		"gesture",
+		"screenedge",
+	}
+	enabledModules := filterList(s.part2EnabledModules, excludedModules)
+	disabledModules := filterList(s.part2DisabledModules, excludedModules)
+	disabledModules = append(disabledModules, excludedModules...)
+	return enabledModules, disabledModules
+}
+
 func (s *SessionDaemon) execDefaultAction() {
 	var err error
 	if hasDDECookie {
 		// start part1
 		err = loader.EnableModules(s.part1EnabledModules, s.part1DisabledModules, 0)
 		session.Register()
-
+	} else if isWaylandSession() {
+		enabledModules, disabledModules := s.getWaylandPart2Modules()
+		disabledModules = append(disabledModules, s.part1DisabledModules...)
+		err = loader.EnableModules(enabledModules, disabledModules,
+			getEnableFlag(s.flags))
 	} else {
 		err = loader.EnableModules(s.getAllDefaultEnabledModules(),
 			s.getAllDefaultDisabledModules(), getEnableFlag(s.flags))
@@ -260,7 +290,12 @@ func (s *SessionDaemon) StartPart2() *dbus.Error {
 		return dbusutil.ToError(errors.New("env DDE_SESSION_PROCESS_COOKIE_ID is empty"))
 	}
 	// start part2
-	err := loader.EnableModules(s.part2EnabledModules, s.part2DisabledModules, 0)
+	enabledModules := s.part2EnabledModules
+	disabledModules := s.part2DisabledModules
+	if isWaylandSession() {
+		enabledModules, disabledModules = s.getWaylandPart2Modules()
+	}
+	err := loader.EnableModules(enabledModules, disabledModules, 0)
 	return dbusutil.ToError(err)
 }
 
