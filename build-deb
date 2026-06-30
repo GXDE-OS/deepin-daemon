@@ -1,0 +1,246 @@
+#!/bin/bash
+
+# Copyright (C) 2026 MarcusPy827
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+# 此脚本用于在调试时生成安装包，便于在调试机器上轻松部署与卸载。
+# 用法: ./build_deb <选项>
+
+# 选项:
+#    -b, --binary          仅构建二进制包（也就是跳过源码包）
+#    -s, --source          构建时同时构建源码包
+#    -d, --install-deps    安装构建依赖
+#    -c, --clean           仅清理构建产物
+#    -h, --help            打印帮助信息
+
+# 路径配置
+CUR_SCRIPT_PATH="$0"
+CUR_SCRIPT_DIR="$(dirname "$CUR_SCRIPT_PATH")"
+cd "$CUR_SCRIPT_DIR" || exit 1
+PROJ_ROOT="$(dirname "$CUR_SCRIPT_DIR")"
+
+# 参数
+BUILD_BIN=true
+BUILD_SRC=false
+NO_ASSERT_DEPS=false
+ACT_CLEANUPS=false
+
+# 打印帮助
+print_help() {
+    echo "使用方法: $0 <选项>"
+    echo ""
+    echo "可用选项:"
+    echo "  -b, --binary          仅构建二进制包而不构建源码包（默认行为）"
+    # echo "  -s, --source        在构建二进制包的同时构建源码包" # 已废弃
+    echo "  -c, --clean           清理构建产物后退出"
+    echo "  -d, --install-deps    安装构建依赖，然后构建二进制包"
+    echo "  -h, --help            打印此信息"
+    echo ""
+    echo "用法示例:"
+    echo "  $0 --install-deps    # 在构建二进制包的同时构建源码包"
+    echo "  $0 -c                # 清理构建产物"
+    exit 0
+}
+
+# 解析参数
+parse_args() {
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -b|--binary)
+                BUILD_BIN=true
+                BUILD_SRC=false
+                shift
+                ;;
+            -c|--clean)
+                ACT_CLEANUPS=true
+                shift
+                ;;
+            -d|--install-deps)
+                NO_ASSERT_DEPS=true
+                BUILD_BIN=true
+                BUILD_SRC=false
+                shift
+                ;;
+            -h|--help)
+                print_help
+                ;;
+            *)
+                echo "未知选项: $1"
+                echo "以下文档可能有帮助: "
+                print_help
+                ;;
+        esac
+    done
+}
+
+# Util: 检查工具链是否存在
+is_toolchain_exists() {
+    local cur_dep="$1"
+    if ! command -v "$cur_dep" &> /dev/null; then
+        return 1
+    fi
+    return 0
+}
+
+# 检查必要的工具链
+check_toolchains() {
+    echo "正在检查必要的工具链是否安装，请稍候..."
+    local missing_tools=()
+
+    if ! is_toolchain_exists "dpkg-buildpackage"; then
+        missing_tools+=("dpkg-dev")
+    fi
+
+    if ! is_toolchain_exists "cmake"; then
+        missing_tools+=("cmake")
+    fi
+
+    local missing_count=${#missing_tools[@]}
+    if [[ $missing_count -gt 0 ]]; then
+        echo "缺少以下必要工具链: ${missing_tools[*]}"
+        echo "可以尝试运行 sudo apt install ${missing_tools[*]}"
+        exit 1
+    fi
+
+    echo "恭喜，必要工具链检查通过！"
+}
+
+# 如果指定了则安装依赖
+auto_install_deps() {
+    if [[ "$NO_ASSERT_DEPS" == true ]]; then
+        echo "准备安装构建依赖，请稍候..."
+
+        cd "$CUR_SCRIPT_DIR" || exit 1
+
+        # 先装基础工具链
+        sudo apt install -y build-essential devscripts debhelper cmake pkg-config liblayershellqtinterface-dev
+        sudo apt install -y \
+                golang-github-linuxdeepin-go-lib-dev \
+                golang-gir-gobject-2.0-dev \
+                golang-gir-gio-2.0-dev \
+                golang-gir-glib-2.0-dev \
+                golang-gir-gudev-1.0-dev \
+                golang-github-mattn-go-sqlite3-dev \
+                golang-gopkg-alecthomas-kingpin.v2-dev \
+                golang-github-smartystreets-goconvey-dev \
+                golang-gopkg-check.v1-dev \
+                golang-gopkg-yaml.v2-dev \
+                golang-golang-x-sys-dev \
+                golang-github-axgle-mahonia-dev \
+                golang-github-msteinert-pam-dev \
+                golang-github-nfnt-resize-dev \
+                golang-github-gosexy-gettext-dev \
+                golang-github-linuxdeepin-go-x11-client-dev \
+                golang-github-linuxdeepin-go-dbus-factory-dev \
+                gxde-api-dev \
+                libgtk-3-dev \
+                libxkbfile-dev \
+                libxtst-dev \
+                libxcursor-dev \
+                libxcb-record0-dev \
+                libpam-dev \
+                deepin-gettext-tools \
+                libnl-3-dev \
+                libnl-genl-3-dev \
+                libsystemd-dev \
+                gxde-desktop-schemas \
+                golang-gxde-dev \
+                libgdk-pixbuf-xlib-2.0-dev \
+                libfprint-2-dev
+
+        # 从 debian/control 自动安装构建依赖
+        if command -v mk-build-deps &> /dev/null; then
+            echo "使用 mk-build-deps 安装依赖..."
+            sudo mk-build-deps --install --remove \
+                --root-cmd sudo \
+                debian/control
+        else
+            echo "mk-build-deps 不可用，尝试 apt-get build-dep..."
+            sudo apt-get build-dep -y .
+        fi
+
+        echo "构建依赖安装完成！"
+    fi
+}
+
+# 清理构建产物
+exec_clean() {
+    echo "执行清理..."
+
+    cd "$PROJ_ROOT" || exit 1
+    echo "已经切换到项目根目录: $PROJ_ROOT"
+
+    # 中间目录
+    rm -rf debian/.debhelper/
+    rm -f debian/files
+    rm -f debian/*.debhelper.log
+    rm -f debian/*.substvars
+    rm -f debian/debhelper-build-stamp
+    rm -rf debian/deepin-daemon*/
+    rm -rf debian/tmp/
+    rm -rf deepin-daemon-build-deps_*
+
+    # CMake构建产物
+    rm -rf obj-*-linux-gnu/
+
+    # Artifacts
+    rm -f "$PROJ_ROOT"/../deepin-daemon_*.deb
+    rm -f "$PROJ_ROOT"/../deepin-daemon_*.buildinfo
+    rm -f "$PROJ_ROOT"/../deepin-daemon_*.changes
+
+    echo "清理完成！！"
+}
+
+# 构建
+exec_build() {
+    local dpkg_args=("-us")
+    dpkg_args+=("-uc")
+
+    if [[ "$BUILD_SRC" == true ]]; then
+        dpkg_args+=("-S")
+    fi
+
+    if [[ "$BUILD_BIN" == true ]]; then
+        dpkg_args+=("-b")
+    fi
+
+    echo "准备构建DEB包，DPKG的构建参数已经被设置为: ${dpkg_args[*]}"
+    echo "正在构建中，请稍候..."
+
+    cd "$PROJ_ROOT" || exit 1
+    echo "已经切换到项目根目录: $PROJ_ROOT"
+
+    echo "开始使用DPKG构建&打包..."
+    dpkg-buildpackage "${dpkg_args[@]}"
+
+    echo "恭喜，如果无报错输出则构建已经完成，Deb包应该可以在上级目录中被找到了！"
+}
+
+# 主脚本
+echo "========================================"
+echo "    DDE-Daemon DEB 构建脚本 REL 0.9.0"
+echo "========================================"
+echo ""
+
+parse_args "$@"
+
+if [[ "$ACT_CLEANUPS" == true ]]; then
+    exec_clean
+    exit 0
+fi
+
+check_toolchains
+auto_install_deps
+exec_build
