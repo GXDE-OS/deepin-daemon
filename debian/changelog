@@ -1,8 +1,12 @@
-deepin-daemon (4.0.9-1) UNRELEASED; urgency=medium
+deepin-daemon (4.0.10) UNRELEASED; urgency=medium
 
+  [ CharOfString ]
   * 修复Wayland会话下因为x.NewConn()闪退的问题
 
- -- CharOfString <markus_verify@126.com>  Sun, 31 May 2026 21:08:43 +0800
+  [ gfdgd_xi ]
+  * fix: Wayland state not cleared when switching back to X11
+
+ -- gfdgd_xi <3025613752@qq.com>  Tue, 30 Jun 2026 23:01:57 +0800
 
 deepin-daemon (4.0.9) UNRELEASED; urgency=medium
 
