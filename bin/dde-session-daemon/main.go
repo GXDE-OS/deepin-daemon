@@ -51,6 +51,45 @@ import (
 var logger = log.NewLogger("daemon/dde-session-daemon")
 var hasDDECookie bool
 
+const sessionManagerService = "com.deepin.SessionManager"
+
+// For current user, daemon noe automatically exits to reset the Wayland config
+// This is helpful if you switch back to X11 from wayland.
+// This should be harmless, for dde-daemon is in user scope, and at the time
+// it exits, the user already logs out, and it will be restarted right away.
+func exitWhenSessionManagerStops(conn *dbus.Conn) error {
+	const matchRule = "type='signal',sender='org.freedesktop.DBus'," +
+		"path='/org/freedesktop/DBus',interface='org.freedesktop.DBus'," +
+		"member='NameOwnerChanged',arg0='" + sessionManagerService + "'"
+
+	signals := make(chan *dbus.Signal, 1)
+	conn.Signal(signals)
+	if err := conn.BusObject().Call("org.freedesktop.DBus.AddMatch", 0,
+		matchRule).Err; err != nil {
+		return err
+	}
+
+	go func() {
+		for signal := range signals {
+			if signal.Name != "org.freedesktop.DBus.NameOwnerChanged" ||
+				len(signal.Body) != 3 {
+				continue
+			}
+			name, nameOK := signal.Body[0].(string)
+			oldOwner, oldOwnerOK := signal.Body[1].(string)
+			if !nameOK || !oldOwnerOK || name != sessionManagerService ||
+				oldOwner == "" {
+				continue
+			}
+
+			logger.Info("Session manager stopped, exiting...")
+			logger.Info("It should be restarted right away!!")
+			os.Exit(0)
+		}
+	}()
+	return nil
+}
+
 func allowRun() bool {
 	if os.Getenv("DDE_SESSION_PROCESS_COOKIE_ID") != "" {
 		hasDDECookie = true
@@ -69,7 +108,7 @@ func allowRun() bool {
 		dbus.FlagNoAutoStart).Store(&allowRun)
 	if err != nil {
 		logger.Warning(err)
-		return true
+		return false
 	}
 
 	return allowRun
@@ -112,6 +151,9 @@ func main() {
 	service, err := dbusutil.NewSessionService()
 	if err != nil {
 		logger.Fatal(err)
+	}
+	if err = exitWhenSessionManagerStops(service.Conn()); err != nil {
+		logger.Warning("failed to watch session manager:", err)
 	}
 
 	if err = app.register(service); err != nil {
