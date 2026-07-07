@@ -220,3 +220,11 @@ func (m *Manager) GetNoSandbox(id string) (bool, *dbus.Error) {
 func (m *Manager) SetNoSandbox(id string, val bool) *dbus.Error {
 	return m.setUseFeature(gKeyAppsNoSandbox, id, val)
 }
+
+func (m *Manager) GetPrimeNvidia(id string) (bool, *dbus.Error) {
+	return m.getUseFeature(gKeyAppsPrimeNvidia, id)
+}
+
+func (m *Manager) SetPrimeNvidia(id string, val bool) *dbus.Error {
+	return m.setUseFeature(gKeyAppsPrimeNvidia, id, val)
+}

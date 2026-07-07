@@ -64,6 +64,7 @@ const (
 	gsKeyAppsDisableScaling = "apps-disable-scaling"
 	gsKeyAppsHidden         = "apps-hidden"
 	gKeyAppsNoSandbox       = "apps-no-sandbox"
+	gKeyAppsPrimeNvidia     = "apps-prime-nvidia"
 )
 
 type Manager struct {
@@ -145,6 +146,8 @@ type Manager struct {
 		SetDisableScaling        func() `in:"id,value"`
 		GetNoSandbox             func() `in:"id" out:"value"`
 		SetNoSandbox             func() `in:"id,value"`
+		GetPrimeNvidia           func() `in:"id" out:"value"`
+		SetPrimeNvidia           func() `in:"id,value"`
 	}
 }
 
