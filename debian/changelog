@@ -1,4 +1,4 @@
-deepin-daemon (4.0.12) UNRELEASED; urgency=medium
+deepin-daemon (4.0.13) UNRELEASED; urgency=medium
 
   [ CharOfString ]
   * 在Wayland下禁用Part2启动中与Wayland不兼容的模块
@@ -6,8 +6,9 @@ deepin-daemon (4.0.12) UNRELEASED; urgency=medium
   [ gfdgd_xi ]
   * 支持使用 prime-run 调用 Nvidia 显卡运行应用
   * 修复无法使用快捷键打开通知中心的问题
+  * 设置可选依赖 gxde-wlcom
 
- -- gfdgd_xi <3025613752@qq.com>  Thu, 23 Jul 2026 21:12:39 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Thu, 30 Jul 2026 11:16:27 +0800
 
 deepin-daemon (4.0.10) UNRELEASED; urgency=medium
 
