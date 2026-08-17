@@ -35,8 +35,8 @@ out/bin/%: prepare
 out/bin/default-file-manager: bin/default-file-manager/main.c
 	gcc $^ $(shell pkg-config --cflags --libs gio-unix-2.0) -o $@
 
-out/bin/desktop-toggle: bin/desktop-toggle/main.c
-	gcc $^ $(shell pkg-config --cflags --libs x11) -o $@
+out/bin/desktop-toggle: bin/desktop-toggle/main.c | prepare
+	gcc $^ $(shell pkg-config --cflags --libs x11 gio-2.0) -o $@
 
 out/pam_deepin_auth.so: misc/pam-module/deepin_auth.c
 	gcc -fPIC -shared -Wall $(shell pkg-config --libs libsystemd) -o $@ $^

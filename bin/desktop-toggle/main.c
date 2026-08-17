@@ -30,73 +30,124 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
-int main(int argc, char *argv[])
+#include <gio/gio.h>
+
+#define DEEPIN_WM_SERVICE "com.deepin.wm"
+#define DEEPIN_WM_PATH "/com/deepin/wm"
+#define DEEPIN_WM_INTERFACE "com.deepin.wm"
+
+// 判断当前是否处于 Wayland 会话 
+static bool is_wayland_session(void)
 {
-    Display *disp;
-    Window root;
-    Atom showing_desktop_atom, actual_type;
-    int actual_format, error, current = 0;
-    unsigned long nitems, after;
+    const char *wayland_display = getenv("WAYLAND_DISPLAY");
+    if (wayland_display != NULL && wayland_display[0] != '\0') {
+        return true;
+    }
+    const char *session_type = getenv("XDG_SESSION_TYPE");
+    if (session_type != NULL && strcmp(session_type, "wayland") == 0) {
+        return true;
+    }
+    return false;
+}
+
+// 原有 x11 实现
+static int show_desktop_x11(void)
+{
+    Display *display = XOpenDisplay(NULL);
+    if (display == NULL) {
+        fprintf(stderr, "Cannot open display\n");
+        return -1;
+    }
+
+    Window root = DefaultRootWindow(display);
+    Atom showing_desktop = XInternAtom(display, "_NET_SHOWING_DESKTOP", False);
+    Atom actual_type;
+    int actual_format;
+    unsigned long nitems, bytes_after;
     unsigned char *data = NULL;
 
-    /* Open the default display */
-    if(!(disp = XOpenDisplay(NULL))) {
-        fprintf(stderr, "Cannot open display \"%s\".\n", XDisplayName(NULL));
-        return -1;
-    }
+    int result = XGetWindowProperty(display, root, showing_desktop, 0, 1, False,
+                                    XA_CARDINAL, &actual_type, &actual_format,
+                                    &nitems, &bytes_after, &data);
 
-    /* This is the default root window */
-    root = DefaultRootWindow(disp);
-
-    /* find the Atom for _NET_SHOWING_DESKTOP */
-    showing_desktop_atom = XInternAtom(disp, "_NET_SHOWING_DESKTOP", False);
-
-    /* Obtain the current state of _NET_SHOWING_DESKTOP on the default root window */
-    error = XGetWindowProperty(disp, root, showing_desktop_atom, 0, 1, False, XA_CARDINAL,
-                               &actual_type, &actual_format, &nitems, &after, &data);
-    if(error != Success) {
-        fprintf(stderr, "Get '_NET_SHOWING_DESKTOP' property error %d!\n", error);
-        XCloseDisplay(disp);
-        return -1;
-    }
-
-    /* The current state should be in data[0] */
-    if(data) {
-        current = data[0];
+    int current_desktop = 0;
+    if (result == Success && data != NULL && nitems > 0) {
+        current_desktop = (int)(*(unsigned long *)data);
         XFree(data);
-        data = NULL;
-    }
-    printf("Current state: %d\n", current);
-
-    /* If nitems is 0, forget about data[0] and assume that current should be False */
-    if(!nitems) {
-        fprintf(stderr, "Unexpected result.\n");
-        fprintf(stderr, "Assuming unshown desktop!\n");
-        current = False;
+    } else {
+        fprintf(stderr, "Failed to get _NET_SHOWING_DESKTOP property\n");
     }
 
-    /* Initialize Xevent struct */
-    XEvent xev = {
-        .xclient = {
-            .type = ClientMessage,
-            .send_event = True,
-            .display = disp,
-            .window = root,
-            .message_type = showing_desktop_atom,
-            .format = 32,
-            .data.l[0] = !current /* That’s what we want the new state to be */
-        }
-    };
+    int new_desktop = current_desktop ? 0 : 1;
+    XChangeProperty(display, root, showing_desktop, XA_CARDINAL, 32,
+                    PropModeReplace, (unsigned char *)&new_desktop, 1);
+    XSync(display, False);
+    XCloseDisplay(display);
 
-    /* Send the event to the window manager */
-    XSendEvent(disp, root, False, SubstructureRedirectMask | SubstructureNotifyMask, &xev);
-
-    /* Output the new state ("visible" or "hidden") so the calling program
-     * can react accordingly.
-     */
-    /* printf("%s\n", current ? "hidden" : "visible"); */
-
-    XCloseDisplay(disp);
+    printf("Current state: %d\n", current_desktop);
     return 0;
+}
+
+static int show_desktop_via_deepin_wm_dbus(void)
+{
+    GError *error = NULL;
+    GDBusConnection *conn = g_bus_get_sync(G_BUS_TYPE_SESSION, NULL, &error);
+    if (conn == NULL) {
+        fprintf(stderr, "Failed to connect to session bus: %s\n",
+                error ? error->message : "unknown");
+        g_clear_error(&error);
+        return -1;
+    }
+
+    // 读取当前状态 
+    GVariant *result = g_dbus_connection_call_sync(
+        conn, DEEPIN_WM_SERVICE, DEEPIN_WM_PATH, DEEPIN_WM_INTERFACE,
+        "GetIsShowDesktop", NULL, G_VARIANT_TYPE("(b)"),
+        G_DBUS_CALL_FLAGS_NONE, -1, NULL, &error);
+    if (result == NULL) {
+        fprintf(stderr, "com.deepin.wm.GetIsShowDesktop unavailable: %s\n",
+                error ? error->message : "unknown");
+        g_clear_error(&error);
+        g_object_unref(conn);
+        return -1;
+    }
+
+    gboolean current = FALSE;
+    g_variant_get(result, "(b)", &current);
+    g_variant_unref(result);
+
+    // 取反并写回 
+    gboolean target = !current;
+    result = g_dbus_connection_call_sync(
+        conn, DEEPIN_WM_SERVICE, DEEPIN_WM_PATH, DEEPIN_WM_INTERFACE,
+        "SetShowDesktop", g_variant_new("(b)", target), NULL,
+        G_DBUS_CALL_FLAGS_NONE, -1, NULL, &error);
+    if (result == NULL) {
+        fprintf(stderr, "com.deepin.wm.SetShowDesktop failed: %s\n",
+                error ? error->message : "unknown");
+        g_clear_error(&error);
+        g_object_unref(conn);
+        return -1;
+    }
+    g_variant_unref(result);
+    g_object_unref(conn);
+
+    printf("Current state: %d\n", current ? 1 : 0);
+    return 0;
+}
+
+int main(void)
+{
+    if (is_wayland_session()) {
+        if (show_desktop_via_deepin_wm_dbus() == 0) {
+            return 0;
+        }
+        fprintf(stderr, "Show desktop failed under Wayland\n");
+        return -1;
+    }
+
+    // X11 保持原有逻辑
+    return show_desktop_x11();
 }
