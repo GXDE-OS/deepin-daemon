@@ -72,21 +72,36 @@ static int show_desktop_x11(void)
                                     XA_CARDINAL, &actual_type, &actual_format,
                                     &nitems, &bytes_after, &data);
 
-    int current_desktop = 0;
+    int current = 0;
     if (result == Success && data != NULL && nitems > 0) {
-        current_desktop = (int)(*(unsigned long *)data);
+        current = (int)(*(unsigned long *)data);
         XFree(data);
     } else {
         fprintf(stderr, "Failed to get _NET_SHOWING_DESKTOP property\n");
     }
 
-    int new_desktop = current_desktop ? 0 : 1;
-    XChangeProperty(display, root, showing_desktop, XA_CARDINAL, 32,
-                    PropModeReplace, (unsigned char *)&new_desktop, 1);
+    int target = current ? 0 : 1;
+
+    XClientMessageEvent event;
+    memset(&event, 0, sizeof(event));
+    event.type = ClientMessage;
+    event.window = root;
+    event.message_type = showing_desktop;
+    event.format = 32;
+    event.data.l[0] = target;
+    event.data.l[1] = 1;  /* source indication: 1 = application（KWin 要求非 0 才处理） */
+
+    if (XSendEvent(display, root, False,
+                   SubstructureNotifyMask | SubstructureRedirectMask,
+                   (XEvent *)&event) == 0) {
+        fprintf(stderr, "Failed to send _NET_SHOWING_DESKTOP ClientMessage\n");
+        XCloseDisplay(display);
+        return -1;
+    }
     XSync(display, False);
     XCloseDisplay(display);
 
-    printf("Current state: %d\n", current_desktop);
+    printf("Current state: %d\n", current);
     return 0;
 }
 
@@ -101,7 +116,7 @@ static int show_desktop_via_deepin_wm_dbus(void)
         return -1;
     }
 
-    // 读取当前状态 
+    // 读取当前状态
     GVariant *result = g_dbus_connection_call_sync(
         conn, DEEPIN_WM_SERVICE, DEEPIN_WM_PATH, DEEPIN_WM_INTERFACE,
         "GetIsShowDesktop", NULL, G_VARIANT_TYPE("(b)"),
@@ -148,6 +163,5 @@ int main(void)
         return -1;
     }
 
-    // X11 保持原有逻辑
     return show_desktop_x11();
 }
