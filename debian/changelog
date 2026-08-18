@@ -1,4 +1,4 @@
-deepin-daemon (4.0.14) UNRELEASED; urgency=medium
+deepin-daemon (4.0.15) UNRELEASED; urgency=medium
 
   [ CharOfString ]
   * 在Wayland下禁用Part2启动中与Wayland不兼容的模块
@@ -9,9 +9,10 @@ deepin-daemon (4.0.14) UNRELEASED; urgency=medium
   * 设置可选依赖 gxde-wlcom
 
   [ zeqi ]
-  * 修复 deepin-toggle-desktop 无法在 wayland 下使用的问题
+  * 修复 deepin-toggle-desktop 无法在 wayland 下使用的问题 
+  * 修复x11下显示桌面失效的问题
 
- -- gfdgd_xi <3025613752@qq.com>  Mon, 17 Aug 2026 19:11:28 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Tue, 18 Aug 2026 20:32:44 +0800
 
 deepin-daemon (4.0.10) UNRELEASED; urgency=medium
 
