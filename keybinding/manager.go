@@ -372,6 +372,13 @@ func (m *Manager) execCmd(cmd string, viaStartdde bool) error {
 func (m *Manager) eliminateKeystrokeConflict() {
 	for _, ks := range m.shortcutManager.ConflictingKeystrokes {
 		shortcut := ks.Shortcut
+		if shortcut != nil &&
+			shortcut.GetType() == shortcuts.ShortcutTypeMedia &&
+			shortcut.GetId() == "audio-play" {
+			logger.Infof("eliminate conflict: keep audio-play for key %s", ks)
+			m.shortcutManager.PreferShortcutForConflict(ks)
+			continue
+		}
 		logger.Infof("eliminate conflict shortcut: %s keystroke: %s",
 			ks.Shortcut.GetUid(), ks)
 		m.DeleteShortcutKeystroke(shortcut.GetId(), shortcut.GetType(), ks.String())

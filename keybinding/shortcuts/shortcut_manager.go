@@ -309,6 +309,51 @@ func (sm *ShortcutManager) ungrabKeystroke(ks *Keystroke, dummy bool) {
 	}
 }
 
+func (sm *ShortcutManager) PreferShortcutForConflict(ks *Keystroke) {
+	if ks == nil || ks.Shortcut == nil {
+		return
+	}
+	key, err := ks.ToKey(sm.keySymbols)
+	if err != nil {
+		logger.Debug(err)
+		return
+	}
+
+	sm.keyKeystrokeMapMu.Lock()
+	winnerKs := sm.keyKeystrokeMap[key]
+	sm.keyKeystrokeMapMu.Unlock()
+	if winnerKs == nil || winnerKs.Shortcut == nil {
+		// no current owner, just grab it
+		sm.grabKeystroke(ks.Shortcut, ks, false)
+		return
+	}
+	if winnerKs == ks {
+		return
+	}
+
+	// remove the conflicting keystroke from its current owner (in-memory)
+	winnerShortcut := winnerKs.Shortcut
+	winnerShortcut.setKeystrokes(removeKeystrokeFromList(winnerShortcut.GetKeystrokes(), winnerKs))
+	// ungrab the key from the current owner
+	sm.ungrabKeystroke(winnerKs, false)
+	// grab it for ks
+	sm.grabKeystroke(ks.Shortcut, ks, false)
+}
+
+func removeKeystrokeFromList(list []*Keystroke, target *Keystroke) []*Keystroke {
+	out := make([]*Keystroke, 0, len(list))
+	for _, k := range list {
+		if k == target {
+			continue
+		}
+		if target != nil && k != nil && k.String() == target.String() {
+			continue
+		}
+		out = append(out, k)
+	}
+	return out
+}
+
 func (sm *ShortcutManager) grabShortcut(shortcut Shortcut) {
 	//logger.Debug("grabShortcut shortcut id:", shortcut.GetId())
 	for _, ks := range shortcut.GetKeystrokes() {
