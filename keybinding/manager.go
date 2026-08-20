@@ -369,7 +369,33 @@ func (m *Manager) execCmd(cmd string, viaStartdde bool) error {
 	return m.startManager.RunCommand(0, "/bin/sh", []string{"-c", cmd})
 }
 
+func (m *Manager) repairAudioPlayKeystroke() {
+	const id = "audio-play"
+	for _, sc := range m.shortcutManager.ListByType(shortcuts.ShortcutTypeMedia) {
+		if sc.GetId() != id {
+			continue
+		}
+		if len(sc.GetKeystrokes()) != 0 {
+			return
+		}
+		ks, err := shortcuts.ParseKeystroke("XF86AudioPlay")
+		if err != nil {
+			logger.Warning("repairAudioPlayKeystroke: parse failed:", err)
+			return
+		}
+		logger.Infof("repairAudioPlayKeystroke: restore default keystroke for %s", id)
+		m.shortcutManager.AddShortcutKeystroke(sc, ks)
+		if err := sc.SaveKeystrokes(); err != nil {
+			logger.Warning("repairAudioPlayKeystroke: save failed:", err)
+		}
+		return
+	}
+}
+
 func (m *Manager) eliminateKeystrokeConflict() {
+	// Repair media keys that were emptied by older versions on conflicting laptops.
+	m.repairAudioPlayKeystroke()
+
 	for _, ks := range m.shortcutManager.ConflictingKeystrokes {
 		shortcut := ks.Shortcut
 		if shortcut != nil &&
