@@ -120,11 +120,15 @@ func (m *Manager) set(ty, value string) error {
 	switch strings.ToLower(ty) {
 	case TypeGtkTheme:
 		if m.GtkTheme.Get() == value {
+			m.syncColorScheme(value)
 			return nil
 		}
 		err = m.doSetGtkTheme(value)
 		if err == nil {
 			m.GtkTheme.Set(value)
+			// sync right away instead of waiting for the gtk-theme change
+			// notification to come back from dconf
+			m.syncColorScheme(value)
 		}
 	case TypeIconTheme:
 		if m.IconTheme.Get() == value {

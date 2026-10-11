@@ -42,6 +42,11 @@ func (m *Manager) listenGSettingChanged() {
 			ty = TypeGtkTheme
 			value = m.setting.GetString(key)
 			err = m.doSetGtkTheme(value)
+			if err == nil {
+				// gtk-theme is stored by now, so the color-scheme listener
+				// sees the new theme
+				m.syncColorScheme(value)
+			}
 		case gsKeyIconTheme:
 			ty = TypeIconTheme
 			value = m.setting.GetString(key)
@@ -85,6 +90,7 @@ func (m *Manager) listenGSettingChanged() {
 	})
 
 	m.listenBgGSettings()
+	m.listenColorSchemeChanged()
 }
 
 func (m *Manager) emitSignalChanged(type0, value string) {

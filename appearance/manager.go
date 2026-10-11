@@ -135,6 +135,8 @@ type Manager struct {
 	xSettingsGs    *gio.Settings
 	wrapBgSetting  *gio.Settings
 	gnomeBgSetting *gio.Settings
+	// org.gnome.desktop.interface, nil when it has no color-scheme key
+	gnomeIfcSetting *gio.Settings
 
 	defaultFontConfig   DefaultFontConfig
 	defaultFontConfigMu sync.Mutex
@@ -195,6 +197,7 @@ func newManager(service *dbusutil.Service) *Manager {
 	m.wsScheduler = newWSScheduler()
 
 	m.gnomeBgSetting, _ = dutils.CheckAndNewGSettings(gnomeBgSchema)
+	m.initColorSchemeSetting()
 
 	var err error
 	m.watcher, err = fsnotify.NewWatcher()
@@ -282,6 +285,11 @@ func (m *Manager) destroy() {
 	if m.gnomeBgSetting != nil {
 		m.gnomeBgSetting.Unref()
 		m.gnomeBgSetting = nil
+	}
+
+	if m.gnomeIfcSetting != nil {
+		m.gnomeIfcSetting.Unref()
+		m.gnomeIfcSetting = nil
 	}
 
 	if m.watcher != nil {
@@ -409,16 +417,24 @@ func (m *Manager) init() error {
 		logger.Warning("load default font config failed:", err)
 	}
 
-	// set gtk theme
+	// set gtk theme; an explicit color-scheme wins, as it does in the compositor
 	gtkThemes := subthemes.ListGtkTheme()
 	currentGtkTheme := m.GtkTheme.Get()
-	if gtkThemes.Get(currentGtkTheme) == nil {
-		m.GtkTheme.Set(defaultGtkTheme)
-		err = m.doSetGtkTheme(defaultGtkTheme)
+	gtkTheme := currentGtkTheme
+	if gtkThemes.Get(gtkTheme) == nil {
+		gtkTheme = defaultGtkTheme
+	}
+	if explicit, dark := m.explicitColorScheme(); explicit {
+		gtkTheme = gtkThemeForScheme(gtkTheme, dark)
+	}
+	if gtkTheme != currentGtkTheme {
+		m.GtkTheme.Set(gtkTheme)
+		err = m.doSetGtkTheme(gtkTheme)
 		if err != nil {
 			logger.Warning("failed to set gtk theme:", err)
 		}
 	}
+	m.syncColorScheme(m.GtkTheme.Get())
 
 	// set icon theme
 	iconThemes := subthemes.ListIconTheme()
