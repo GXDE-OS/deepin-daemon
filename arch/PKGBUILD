@@ -12,7 +12,7 @@ license=('GPL-3.0-or-later')
 # code (the former is missing on Arch, the latter on aarch64) and user-setup
 # is Debian installer specific, so they are left out.
 depends=('upower' 'networkmanager' 'iso-codes' 'gvfs' 'gnome-keyring' 'gxde-desktop-base-git'
-         'gxde-sound-theme-git' 'gxde-wlcom' 'gxde-desktop-schemas-git' 'mobile-broadband-provider-info'
+         'gxde-sound-theme-git' 'flakewm-git' 'gxde-desktop-schemas-git' 'mobile-broadband-provider-info'
          'bamf' 'gxde-polkit-agent-git' 'xdotool' 'pam' 'libnl' 'dnsmasq' 'imwheel' 'procps-ng'
          'gxde-shell-tools-git' 'gxde-installer-timezones-git' 'gxde-api-git' 'fprintd'
          'gtk3' 'glib2' 'gdk-pixbuf-xlib' 'fontconfig' 'libinput' 'libx11' 'libxcb' 'libxcursor'
