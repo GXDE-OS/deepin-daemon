@@ -10,7 +10,6 @@ import (
 	"strconv"
 	"strings"
 	"sync"
-	"regexp"
 
 	"github.com/linuxdeepin/go-dbus-factory/org.freedesktop.secrets"
 	"pkg.deepin.io/dde/daemon/network/nm"
@@ -42,6 +41,7 @@ const (
 type saveSecretsTaskKey struct {
 	connPath    dbus.ObjectPath
 	settingName string
+	id          uint64
 }
 
 type saveSecretsTask struct {
@@ -54,8 +54,9 @@ type SecretAgent struct {
 	defaultCollection   *secrets.Collection
 	defaultCollectionMu sync.Mutex
 
-	saveSecretsTasks   map[saveSecretsTaskKey]saveSecretsTask
-	saveSecretsTasksMu sync.Mutex
+	saveSecretsTasks      map[saveSecretsTaskKey]saveSecretsTask
+	saveSecretsTasksMu    sync.Mutex
+	nextSaveSecretsTaskID uint64
 
 	methods *struct {
 		GetSecrets        func() `in:"connection,connectionPath,settingName,hints,flags" out:"secrets"`
@@ -66,39 +67,51 @@ type SecretAgent struct {
 	}
 }
 
+// addSaveSecretsTask 登记一个密码询问进程，返回其唯一 id。
+// 同一个连接可能同时存在多个 GetSecrets 请求，不能用连接路径和 setting
+// 名称作为唯一键，否则后一个请求会覆盖前一个，导致 CancelGetSecrets
+// 杀错进程或漏杀。
 func (sa *SecretAgent) addSaveSecretsTask(connPath dbus.ObjectPath,
-	settingName string, process *os.Process) {
+	settingName string, process *os.Process) uint64 {
 	sa.saveSecretsTasksMu.Lock()
+	defer sa.saveSecretsTasksMu.Unlock()
 
+	sa.nextSaveSecretsTaskID++
+	id := sa.nextSaveSecretsTaskID
 	sa.saveSecretsTasks[saveSecretsTaskKey{
 		connPath:    connPath,
 		settingName: settingName,
+		id:          id,
 	}] = saveSecretsTask{process: process}
-
-	sa.saveSecretsTasksMu.Unlock()
+	return id
 }
 
 func (sa *SecretAgent) removeSaveSecretsTask(connPath dbus.ObjectPath,
-	settingName string) {
+	settingName string, id uint64) {
 	sa.saveSecretsTasksMu.Lock()
 	delete(sa.saveSecretsTasks, saveSecretsTaskKey{
 		connPath:    connPath,
 		settingName: settingName,
+		id:          id,
 	})
 	sa.saveSecretsTasksMu.Unlock()
 }
 
-func (sa *SecretAgent) getSaveSecretsTaskProcess(connPath dbus.ObjectPath,
-	settingName string) *os.Process {
+// cancelSaveSecretsTasks 取消该连接该 setting 下所有仍在运行的密码询问进程。
+func (sa *SecretAgent) cancelSaveSecretsTasks(connPath dbus.ObjectPath,
+	settingName string) {
 	sa.saveSecretsTasksMu.Lock()
+	defer sa.saveSecretsTasksMu.Unlock()
 
-	task := sa.saveSecretsTasks[saveSecretsTaskKey{
-		connPath:    connPath,
-		settingName: settingName,
-	}]
-
-	sa.saveSecretsTasksMu.Unlock()
-	return task.process
+	for key, task := range sa.saveSecretsTasks {
+		if key.connPath != connPath || key.settingName != settingName {
+			continue
+		}
+		if task.process != nil {
+			logger.Debug("kill process", task.process.Pid)
+			_ = task.process.Kill()
+		}
+	}
 }
 
 func (sa *SecretAgent) getDefaultCollection() (*secrets.Collection, error) {
@@ -329,49 +342,61 @@ func (sa *SecretAgent) askPasswords(connPath dbus.ObjectPath,
 	if err != nil {
 		return nil, err
 	}
-	sa.addSaveSecretsTask(connPath, settingName, cmd.Process)
-	err = cmd.Wait()
-	sa.removeSaveSecretsTask(connPath, settingName)
-	if err != nil {
-		return nil, err
+	taskID := sa.addSaveSecretsTask(connPath, settingName, cmd.Process)
+	waitErr := cmd.Wait()
+	sa.removeSaveSecretsTask(connPath, settingName, taskID)
+
+	// dnetwork-secret-dialog 先把密码结果写到 stdout，之后再退出进程。它在
+	// 退出时可能因 libdtkwidget 全局析构中的堆损坏而 SIGABRT (core dumped)，
+	// 此时 stdout 中的密码仍然完整有效。所以不能仅凭子进程的退出状态就丢弃
+	// 结果，必须先尝试解析 stdout，否则 NetworkManager 会收到空 secrets 并
+	// 以 no-secrets 让连接失败。
+	secretValues, parseErr := parseSecretsReply(cmdOutBuf.Bytes(), len(settingKeys))
+	if parseErr != nil {
+		if waitErr != nil {
+			return nil, fmt.Errorf("secret dialog failed: %v, parse stdout failed: %v",
+				waitErr, parseErr)
+		}
+		return nil, parseErr
+	}
+	if waitErr != nil {
+		logger.Warningf("secret dialog exited abnormally but returned valid secrets: %v", waitErr)
 	}
 
-	// ---------- 使用正则提取JSON ----------
-	// 以避免因如下输出导致无法正常解析 json 从而无法正确设置密码的问题
-	// 2025-03-30, 08:07:07.421 [Debug] [main.cpp             main                                64] read json data from STDIN
-    rawOutput := cmdOutBuf.Bytes()
-    
-    // 匹配最外层完整的JSON对象（支持多行）
-    jsonRegex := regexp.MustCompile(`(?s)\{.*\}`)
-    jsonMatch := jsonRegex.Find(rawOutput)
-    if jsonMatch == nil {
-        logger.Errorf("未找到有效的JSON数据，原始输出:\n%s", rawOutput)
-        return nil, fmt.Errorf("无效的JSON响应")
-    }
-
-    // 清理可能的尾随非JSON字符（如调试信息）
-    cleanedJSON := bytes.TrimSpace(jsonMatch)
-    logger.Debugf("提取的JSON内容:\n%s", cleanedJSON)
-
-    // ---------- 解析JSON ----------
-
-	var reply getSecretsReply
-	
-	err = json.Unmarshal(cleanedJSON, &reply)
-	if err != nil {
-		return nil, err
-	}
-
-	result := make(map[string]string)
-
-	if len(settingKeys) != len(reply.Secrets) {
-		return nil, errors.New("secretAgent.askPasswords: length not equal")
-	}
-
-	for i := 0; i < len(settingKeys); i++ {
-		result[settingKeys[i]] = reply.Secrets[i]
+	result := make(map[string]string, len(settingKeys))
+	for i, key := range settingKeys {
+		result[key] = secretValues[i]
 	}
 	return result, nil
+}
+
+// parseSecretsReply 从密码对话框的输出中提取密码列表。
+// 对话框会把 DTK 调试日志和格式化（多行）的 JSON 一起写到 stdout，日志可能
+// 出现在 JSON 之前或之后，用贪婪正则匹配整个输出很容易解析失败。这里逐个
+// 尝试以 '{' 开头的位置，用 Decoder 只解析第一个完整的 JSON 对象（自动忽略
+// 其后的日志），并要求 secrets 数量与请求的密钥数量一致。
+func parseSecretsReply(output []byte, expected int) ([]string, error) {
+	lastErr := errors.New("secretAgent.askPasswords: no valid secrets reply in stdout")
+	for i := 0; i < len(output); i++ {
+		if output[i] != '{' {
+			continue
+		}
+		var reply getSecretsReply
+		if err := json.NewDecoder(bytes.NewReader(output[i:])).Decode(&reply); err != nil {
+			lastErr = err
+			continue
+		}
+		if len(reply.Secrets) != expected {
+			lastErr = fmt.Errorf("secretAgent.askPasswords: length not equal, got %d, want %d",
+				len(reply.Secrets), expected)
+			continue
+		}
+		return reply.Secrets, nil
+	}
+	// 不要把 stdout 写进日志，其中可能包含用户输入的密码。
+	logger.Errorf("failed to parse secret dialog output, length: %d, err: %v",
+		len(output), lastErr)
+	return nil, lastErr
 }
 
 func (sa *SecretAgent) GetSecrets(connectionData map[string]map[string]dbus.Variant,
@@ -405,7 +430,10 @@ func isMustAsk(data connectionData, settingName, secretKey string) bool {
 	case nm.NM_SETTING_WIRELESS_SECURITY_SETTING_NAME:
 		wepTxKeyIdx := getSettingWirelessSecurityWepTxKeyidx(data)
 		switch mgmt {
-		case "wpa-psk":
+		// WPA3-Personal (SAE)、WPA2/WPA3 混合以及 802.11r 快速漫游的连接
+		// 同样使用 psk，否则这类网络永远不会被询问密码，NetworkManager 会
+		// 因为收不到 secrets 而直接把连接置为失败。
+		case "wpa-psk", "sae", "wpa-psk-sha256", "ft-psk", "ft-sae":
 			if secretKey == "psk" {
 				return true
 			}
@@ -556,11 +584,13 @@ func (sa *SecretAgent) getSecrets(connectionData map[string]map[string]dbus.Vari
 			}
 		}
 
+		var askErr error
 		if allowInteraction && len(askItems) > 0 {
 			resultAsk, err := sa.askPasswords(connectionPath, connectionData, connUUID,
 				settingName, askItems)
 			if err != nil {
 				logger.Warning("askPasswords error:", err)
+				askErr = err
 			} else {
 				for key, value := range resultAsk {
 					setting[key] = dbus.MakeVariant(value)
@@ -579,7 +609,26 @@ func (sa *SecretAgent) getSecrets(connectionData map[string]map[string]dbus.Vari
 				getSecretFlagsKeyName(key))
 			if secretFlags == secretFlagAgentOwned {
 				setting[key] = dbus.MakeVariant(value)
+				continue
 			}
+			// 密码询问失败时退回 keyring 中保存的密码，避免把空的 secrets
+			// 当作成功结果返回给 NetworkManager。
+			if askErr != nil && strv.Strv(askItems).Contains(key) {
+				if _, ok := setting[key]; !ok {
+					setting[key] = dbus.MakeVariant(value)
+				}
+			}
+		}
+
+		if askErr != nil {
+			for _, key := range askItems {
+				if _, ok := setting[key]; !ok {
+					// 确实拿不到密码，明确向 NetworkManager 报错，而不是
+					// 静默返回空结果造成 no-secrets/密码错误的误判。
+					return nil, askErr
+				}
+			}
+			logger.Warning("askPasswords failed, use saved secrets instead:", askErr)
 		}
 	}
 	return
@@ -599,12 +648,7 @@ func (sa *SecretAgent) CancelGetSecrets(connectionPath dbus.ObjectPath, settingN
 	logger.Debug("connection path:", connectionPath)
 	logger.Debug("setting name:", settingName)
 
-	process := sa.getSaveSecretsTaskProcess(connectionPath, settingName)
-	if process != nil {
-		logger.Debug("kill process", process.Pid)
-		process.Kill()
-	}
-
+	sa.cancelSaveSecretsTasks(connectionPath, settingName)
 	return nil
 }
 
