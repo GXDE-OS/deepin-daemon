@@ -1,4 +1,4 @@
-deepin-daemon (4.0.16) UNRELEASED; urgency=medium
+deepin-daemon (4.0.17) UNRELEASED; urgency=medium
 
   [ CharOfString ]
   * 在Wayland下禁用Part2启动中与Wayland不兼容的模块
@@ -7,13 +7,14 @@ deepin-daemon (4.0.16) UNRELEASED; urgency=medium
   * 支持使用 prime-run 调用 Nvidia 显卡运行应用
   * 修复无法使用快捷键打开通知中心的问题
   * 设置可选依赖 gxde-wlcom
+  * fix: 修复连接WPA3 WIFI概率无法保存密码的问题 
 
   [ zeqi ]
   * 修复 deepin-toggle-desktop 无法在 wayland 下使用的问题 
   * 修复x11下显示桌面失效的问题
   * 修复笔记本播放/暂停键只能暂停不能播放的问题
 
- -- gfdgd_xi <3025613752@qq.com>  Thu, 20 Aug 2026 13:59:11 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Thu, 12 Nov 2026 09:33:54 +0800
 
 deepin-daemon (4.0.10) UNRELEASED; urgency=medium
 
