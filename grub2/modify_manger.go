@@ -94,6 +94,7 @@ func (m *modifyManager) start(tasks ...modifyTask) {
 	logger.Debug("modifyManager.start len(tasks):", len(tasks))
 	var adjustTheme bool
 	var adjustThemeLang string
+	var themeDisabled *bool
 	for _, task := range tasks {
 		f := task.paramsModifyFunc
 		if f != nil {
@@ -103,7 +104,20 @@ func (m *modifyManager) start(tasks ...modifyTask) {
 			adjustTheme = true
 			adjustThemeLang = task.adjustThemeLang
 		}
+		if task.themeDisabled != nil {
+			// 多个任务时以最后一个为准
+			themeDisabled = task.themeDisabled
+		}
 	}
+
+	// 先写/删 grub-console.cfg,再重新生成 grub.cfg 使其生效
+	if themeDisabled != nil {
+		if err := setGrubConsoleCfg(*themeDisabled); err != nil {
+			logger.Warning("failed to set grub console cfg:", err)
+			return
+		}
+	}
+
 	err := writeGrubParams(params)
 	if err != nil {
 		logger.Warning("failed to write grub params:", err)

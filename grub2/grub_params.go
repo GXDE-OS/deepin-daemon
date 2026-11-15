@@ -3,7 +3,9 @@ package grub2
 import (
 	"bytes"
 	"io/ioutil"
+	"os"
 	"os/exec"
+	"path/filepath"
 	"sort"
 	"strconv"
 	"strings"
@@ -11,6 +13,9 @@ import (
 
 const (
 	grubParamsFile = "/etc/default/grub"
+	// 写入 GRUB_TERMINAL_OUTPUT=console 后 update-grub,GRUB 将使用纯文本
+	// console,不再加载任何主题;删除该文件即可恢复主题
+	grubConsoleCfgFile = "/etc/default/grub.d/grub-console.cfg"
 )
 
 const (
@@ -94,5 +99,28 @@ func writeGrubParams(params map[string]string) error {
 		return err
 	}
 
+	return nil
+}
+
+// grubConsoleCfgExists 返回主题是否已被禁用(grub-console.cfg 是否存在)
+func grubConsoleCfgExists() bool {
+	_, err := os.Stat(grubConsoleCfgFile)
+	return err == nil
+}
+
+// setGrubConsoleCfg 写入或删除 grub-console.cfg 以禁用/恢复 grub 主题
+func setGrubConsoleCfg(disabled bool) error {
+	if disabled {
+		dir := filepath.Dir(grubConsoleCfgFile)
+		if err := os.MkdirAll(dir, 0755); err != nil {
+			return err
+		}
+		return ioutil.WriteFile(grubConsoleCfgFile,
+			[]byte("GRUB_TERMINAL_OUTPUT=console\n"), 0644)
+	}
+	err := os.Remove(grubConsoleCfgFile)
+	if err != nil && !os.IsNotExist(err) {
+		return err
+	}
 	return nil
 }

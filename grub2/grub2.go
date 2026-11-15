@@ -65,18 +65,20 @@ type Grub2 struct {
 	inhibitFd          dbus.UnixFD
 	PropsMu            sync.RWMutex
 	// props:
-	ThemeFile    string
-	DefaultEntry string
-	EnableTheme  bool
-	Gfxmode      string
-	Timeout      uint32
-	Updating     bool
+	ThemeFile     string
+	DefaultEntry  string
+	EnableTheme   bool
+	ThemeDisabled bool
+	Gfxmode       string
+	Timeout       uint32
+	Updating      bool
 
 	methods *struct {
 		GetSimpleEntryTitles func() `out:"titles"` // ([]string, *dbus.Error) {
 		GetAvailableGfxmodes func() `out:"gfxmodes"`
 		SetDefaultEntry      func() `in:"entry"`
 		SetEnableTheme       func() `in:"enabled"`
+		SetThemeDisabled     func() `in:"disabled"`
 		SetGfxmode           func() `in:"gfxmode"`
 		SetTimeout           func() `in:"timeout"`
 	}
@@ -147,6 +149,14 @@ type modifyTask struct {
 	paramsModifyFunc func(map[string]string)
 	adjustTheme      bool
 	adjustThemeLang  string
+	// themeDisabled 非 nil 表示需要写/删除 grub-console.cfg(禁用/恢复主题)
+	themeDisabled *bool
+}
+
+func getModifyTaskThemeDisabled(disabled bool) modifyTask {
+	return modifyTask{
+		themeDisabled: &disabled,
+	}
 }
 
 func getModifyTaskEnableTheme(enable bool, lang string, gfxmodeDetectState gfxmodeDetectState) modifyTask {
@@ -325,6 +335,8 @@ func NewGrub2(service *dbusutil.Service) *Grub2 {
 	}
 
 	g.applyParams(params)
+	// 主题禁用状态以 grub-console.cfg 是否存在为准
+	g.ThemeDisabled = grubConsoleCfgExists()
 	g.modifyManager = newModifyManager()
 	g.modifyManager.g = g
 	g.modifyManager.stateChangeCb = func(running bool) {

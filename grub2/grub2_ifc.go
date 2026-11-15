@@ -102,6 +102,24 @@ func (g *Grub2) SetDefaultEntry(sender dbus.Sender, entry string) *dbus.Error {
 
 var errInGfxmodeDetect = errors.New("in gfxmode detection mode")
 
+// SetThemeDisabled 通过写/删除 /etc/default/grub.d/grub-console.cfg
+// (GRUB_TERMINAL_OUTPUT=console)禁用或恢复 grub 主题
+func (g *Grub2) SetThemeDisabled(sender dbus.Sender, disabled bool) *dbus.Error {
+	g.service.DelayAutoQuit()
+
+	err := g.checkAuth(sender, polikitActionIdCommon)
+	if err != nil {
+		return dbusutil.ToError(err)
+	}
+
+	g.PropsMu.Lock()
+	if g.setPropThemeDisabled(disabled) {
+		g.addModifyTask(getModifyTaskThemeDisabled(disabled))
+	}
+	g.PropsMu.Unlock()
+	return nil
+}
+
 func (g *Grub2) SetEnableTheme(sender dbus.Sender, enabled bool) *dbus.Error {
 	g.service.DelayAutoQuit()
 

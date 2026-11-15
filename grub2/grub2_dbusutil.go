@@ -2,6 +2,19 @@
 
 package grub2
 
+func (v *Grub2) setPropThemeDisabled(value bool) (changed bool) {
+	if v.ThemeDisabled != value {
+		v.ThemeDisabled = value
+		v.emitPropChangedThemeDisabled(value)
+		return true
+	}
+	return false
+}
+
+func (v *Grub2) emitPropChangedThemeDisabled(value bool) error {
+	return v.service.EmitPropertyChanged(v, "ThemeDisabled", value)
+}
+
 func (v *Grub2) setPropThemeFile(value string) (changed bool) {
 	if v.ThemeFile != value {
 		v.ThemeFile = value
