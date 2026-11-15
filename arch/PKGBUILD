@@ -1,6 +1,6 @@
 # Maintainer: CharOfString <root@charofstring.cc>
 pkgname=deepin-daemon-git
-pkgver=4.0.17
+pkgver=4.0.18
 pkgrel=1
 pkgdesc='Daemon handling the GXDE session settings'
 arch=('x86_64' 'aarch64')
