@@ -22,7 +22,7 @@ optdepends=('proxychains-ng: application proxy'
             'iio-sensor-proxy: automatic screen rotation and light sensors'
             'orca: screen reader'
             'bluez: Bluetooth')
-makedepends=('git' 'go' 'python' 'librsvg' 'deepin-gettext-tools' 'golang-gxde-dev-git')
+makedepends=('git' 'go' 'python' 'librsvg' 'deepin-gettext-tools' 'golang-gxde-dev')
 provides=('deepin-daemon' "deepin-daemon-git=$pkgver")
 conflicts=('deepin-daemon' 'deepin-daemon-git')
 replaces=('deepin-daemon-git')
